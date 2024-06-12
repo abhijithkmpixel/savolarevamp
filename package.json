@@ -1,0 +1,16 @@
+{
+  "name": "savolarevamp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css": "node-sass assets/scss/app.scss -o assets/css",
+    "css:watch": "npm run css && node-sass assets/scss/app.scss -wo assets/css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}

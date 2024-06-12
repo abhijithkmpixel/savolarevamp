@@ -1,0 +1,94 @@
+.latest__news__section{
+    padding: 60px 0  88px;
+       p{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #777777;
+    }
+    .latest__news__section__row{
+    margin-top: 52px;
+    }
+}
+.latest__news__section__row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    .latest__news__card{
+        width: calc(33.33% - 16px);
+        padding: 0 35px;
+        .latest__news__card__header{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-left: -35px;
+            margin-bottom: 20px;
+            .latest__news__card__header__date{
+                width: 75px;
+                height: 75px;
+                background-color: #63C5B7;
+                box-shadow: 6px 5px 18px 0px #00000036;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                margin-right: 24px;
+                &::after{
+                    content: "";
+                    width: 50px;
+                    height: 1px;
+                    background-color: #63C5B7;
+                    position: absolute;
+                    display: block;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateY(-50%);
+                }
+                span{
+                    font-size: 11px;
+                    font-weight: 600;
+                    line-height: 1.7;
+                    text-align: center;
+                    color: #fff;
+                    width: min-content;
+
+                }
+            }
+            .latest__news__card__header__category{
+                font-size: 13px;
+                font-weight: 500;
+                line-height: 1.8;
+                letter-spacing: 0.5px;
+                color: rgba($color: #212121, $alpha: 0.7);
+                text-transform: uppercase;
+            }
+        }
+        p{
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212121;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            min-height: 72px;
+            margin-bottom: 20px;
+        }
+        a{
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.7;
+            display: flex;
+            align-items: center;
+            color: #63C5B7;
+            text-decoration: none;
+            text-transform: uppercase;
+            svg{
+                width: 13px;
+                height: auto;
+                margin-left: 4px;
+            }
+        }
+    }
+}

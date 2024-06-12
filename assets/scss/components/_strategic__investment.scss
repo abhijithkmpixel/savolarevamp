@@ -1,0 +1,72 @@
+.strategic__investment{
+    padding: 80px 0 130px;
+    p{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #777777;
+    }
+}
+.strategic__investment__row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+        .strategic__investment__card{
+                border: 1px solid #B0B0B0;
+                padding: 28px 24px 60px;
+                transition: .3s all ease-in-out;
+                width: calc(33.33% - 16PX);
+                position: relative;
+                    img{
+                        width: 45px;
+                        margin-bottom: 12px;
+                transition: .3s all ease-in-out;
+
+                    }
+                h4{
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 1.5;
+                    color: #212121;
+                    margin-bottom: 12px;
+                transition: .3s all ease-in-out;
+
+                }
+                p{
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #616161;
+                margin-top: 0px;
+                margin-bottom: 12px;
+                transition: .3s all ease-in-out;
+                
+                }
+                a{
+                transition: .3s all ease-in-out;
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 1.5;
+                    text-decoration: underline;
+                    text-transform: uppercase;
+                    color: #63C5B7;
+                    position: absolute;
+                    left: 24px;
+                    bottom: 28px;
+                }
+                &:hover{
+                    @media (min-width:1200px) {
+                        background-color: #63C5B7;
+                        h4,p{
+                            color: #fff;
+                        }
+                        img{
+                            filter: invert(1);
+                        }
+                        a{
+                            color: #255574;
+                        }
+                    }
+                }
+        }
+}
