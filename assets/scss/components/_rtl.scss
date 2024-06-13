@@ -98,4 +98,8 @@
         left: 15px;
         right: auto;
     }
+    header .header__bottom .header__bottom__inner nav ul:not(.hamburger__menu__toggle):not(.sub__menu) li:not(:last-child){
+        margin-left: 24px;
+        margin-right: 0;
+    }
 }

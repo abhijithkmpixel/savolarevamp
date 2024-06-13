@@ -154,7 +154,8 @@ header {
             display: inline-block; }
             header .header__top .header__top__inner .header__analytics__wrap .header__analytics__wrap__value span svg {
               width: 100%;
-              height: auto; }
+              height: auto;
+              margin-bottom: 2px; }
   header .header__bottom {
     background-color: rgba(33, 33, 33, 0.8);
     padding: 22px 0; }
@@ -249,7 +250,8 @@ header {
                 padding-top: 0;
                 padding-bottom: 0; } }
             header .header__bottom .header__bottom__inner nav ul:not(.hamburger__menu__toggle):not(.sub__menu) li .sub__menu li {
-              width: 100%; }
+              width: 100%;
+              margin: 0; }
               header .header__bottom .header__bottom__inner nav ul:not(.hamburger__menu__toggle):not(.sub__menu) li .sub__menu li a {
                 font-size: 16px;
                 font-weight: 500;
@@ -317,7 +319,8 @@ header {
                 border-bottom: 1px solid #fff;
                 transform: rotate(-45deg);
                 margin-left: 12px;
-                display: block; }
+                display: block;
+                margin-bottom: 4px; }
                 @media (max-width: 1200px) {
                   header .header__bottom .header__bottom__inner nav ul:not(.hamburger__menu__toggle):not(.sub__menu) li.has__sub__menu a::after {
                     display: none; } }
@@ -418,14 +421,20 @@ header {
 
 .page__title {
   padding: 67px 0 90px; }
+  @media (max-width: 720px) {
+    .page__title {
+      padding: 40px 0 50px; } }
   .page__title h1 {
     font-size: 52px;
     font-weight: 700;
-    line-height: 78px;
+    line-height: 1.4;
     color: #212121;
     font-family: "Poppins",sans-serif;
     text-align: center;
     margin-bottom: 15px; }
+    @media (max-width: 720px) {
+      .page__title h1 {
+        font-size: 40px; } }
     .page__title h1 span {
       font-size: inherit;
       font-weight: 400;
@@ -769,7 +778,7 @@ footer {
     line-height: 2;
     color: #fff;
     margin: 0;
-    margin-bottom: 10px; }
+    margin-bottom: 8px; }
     @media (max-width: 1500px) {
       footer h5 {
         font-size: 16px; } }
@@ -777,7 +786,7 @@ footer {
     list-style: none;
     padding: 0; }
     footer ul li {
-      margin-bottom: 10px; }
+      margin-bottom: 8px; }
       footer ul li a {
         text-decoration: none;
         font-size: 16px;
@@ -928,11 +937,15 @@ footer {
         transform: translate(-50%, -50%);
         max-width: 1100px;
         width: 100%;
-        z-index: 10; }
+        z-index: 10;
+        margin-top: 50px; }
         @media (max-width: 1500px) {
           .hero__banner__homepage .hero__banner__homepage__slider .hero__banner__homepage__slide .hero__banner__homepage__slide__content {
             max-width: 900px;
             padding: 0 15px; } }
+        @media (max-width: 990px) {
+          .hero__banner__homepage .hero__banner__homepage__slider .hero__banner__homepage__slide .hero__banner__homepage__slide__content {
+            margin-top: 0px; } }
         .hero__banner__homepage .hero__banner__homepage__slider .hero__banner__homepage__slide .hero__banner__homepage__slide__content h1 {
           font-size: 84px;
           font-weight: 700;
@@ -989,9 +1002,11 @@ footer {
       display: block;
       font-family: inherit; }
   .brand__introduction .brand__introduction__footer {
-    margin-top: 48px;
+    margin-top: 23px;
+    padding-top: 23px;
     display: flex;
-    align-items: center; }
+    align-items: center;
+    border-top: 1px solid #E5E5E5; }
     .brand__introduction .brand__introduction__footer img {
       width: 174px;
       height: auto;
@@ -1113,7 +1128,9 @@ footer {
   position: relative; }
   .full_width__video__widget .overlay__blade {
     width: 100%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 1920/605;
+    position: relative;
     position: absolute;
     top: 0;
     left: 0;
@@ -1285,7 +1302,7 @@ footer {
       padding: 50px 0; } }
 
 .latest__news__section {
-  padding: 60px 0  88px; }
+  padding: 60px 0  114px; }
   @media (max-width: 1200px) {
     .latest__news__section {
       padding: 50px 0; } }
@@ -1394,6 +1411,14 @@ footer {
   width: 100%;
   height: auto;
   aspect-ratio: 1920/611; }
+  .timeline__and__history__primary__slider .slick-list, .timeline__and__history__primary__slider .slick-track {
+    height: 100%; }
+  @media (max-width: 990px) {
+    .timeline__and__history__primary__slider {
+      aspect-ratio: 1/1; } }
+  @media (max-width: 990px) {
+    .timeline__and__history__primary__slider {
+      aspect-ratio: 1/1.5; } }
   .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item {
     width: 100vw;
     height: 100%;
@@ -1420,7 +1445,7 @@ footer {
         z-index: 2; }
     .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item::after {
       content: "";
-      width: 55%;
+      width: 56%;
       height: 100%;
       position: absolute;
       left: 0;
@@ -1428,6 +1453,9 @@ footer {
       z-index: 5;
       background-color: rgba(33, 33, 33, 0.6);
       backdrop-filter: blur(5px); }
+      @media (max-width: 990px) {
+        .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item::after {
+          width: 100%; } }
     .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap {
       position: absolute;
       top: 0;
@@ -1441,14 +1469,27 @@ footer {
         height: 100%;
         width: 100%;
         max-width: 1163px; }
+        @media (max-width: 990px) {
+          .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .container {
+            flex-direction: column-reverse; } }
+        @media (max-width: 990px) {
+          .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .container {
+            flex-direction: column-reverse;
+            justify-content: flex-end; } }
       .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__content {
         width: 55%;
         flex: 0 0 55%; }
+        @media (max-width: 990px) {
+          .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__content {
+            width: 100%; } }
         .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__content p {
           font-size: 16px;
           font-weight: 400;
           line-height: 1.5;
           color: rgba(255, 255, 255, 0.7); }
+          @media (max-width: 1200px) {
+            .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__content p {
+              font-size: 14px; } }
         .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__content .timeline__and__history__primary__slide__item__accordian__wrap .timeline__and__history__primary__slide__item__accordian__item .timeline__and__history__primary__slide__item__accordian__button {
           background-color: transparent;
           outline: 0;
@@ -1462,6 +1503,10 @@ footer {
           text-align: left;
           padding: 10px 0;
           position: relative; }
+          @media (max-width: 720px) {
+            .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__content .timeline__and__history__primary__slide__item__accordian__wrap .timeline__and__history__primary__slide__item__accordian__item .timeline__and__history__primary__slide__item__accordian__button {
+              font-size: 14px;
+              padding-right: 20px; } }
           .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__content .timeline__and__history__primary__slide__item__accordian__wrap .timeline__and__history__primary__slide__item__accordian__item .timeline__and__history__primary__slide__item__accordian__button span {
             font-size: inherit;
             font-weight: inherit;
@@ -1483,6 +1528,9 @@ footer {
             line-height: 1.5;
             color: rgba(255, 255, 255, 0.7);
             padding: 18px 0; }
+            @media (max-width: 1200px) {
+              .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__content .timeline__and__history__primary__slide__item__accordian__wrap .timeline__and__history__primary__slide__item__accordian__item .timeline__and__history__primary__slide__item__accordian__content__wrap p {
+                font-size: 14px; } }
         .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__content .timeline__and__history__primary__slide__item__accordian__wrap .timeline__and__history__primary__slide__item__accordian__item.timeline__and__history__primary__slide__item__accordian__item--active .timeline__and__history__primary__slide__item__accordian__button svg {
           transform: translateY(-50%) rotate(90deg);
           right: 3px; }
@@ -1494,6 +1542,11 @@ footer {
         display: flex;
         align-items: center;
         justify-content: flex-end; }
+        @media (max-width: 990px) {
+          .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap {
+            justify-content: center;
+            width: 100%;
+            flex: 0 0 auto; } }
         .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap h3 {
           font-family: "Kaisei Opti";
           font-size: 170px;
@@ -1501,6 +1554,13 @@ footer {
           line-height: 1;
           color: #63C5B7;
           margin: 0; }
+          @media (max-width: 1200px) {
+            .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap h3 {
+              font-size: 110px; } }
+          @media (max-width: 720px) {
+            .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap h3 {
+              font-size: 70px;
+              margin: 50px 0 30px; } }
 
 .timeline__year__slider {
   width: 100%;
@@ -1526,6 +1586,14 @@ footer {
     background-color: rgba(33, 33, 33, 0.5);
     position: absolute;
     top: 95px; }
+    @media (max-width: 990px) {
+      .timeline__year__slider .slick-track::after {
+        width: calc(100% - 140px); } }
+    @media (max-width: 720px) {
+      .timeline__year__slider .slick-track::after {
+        top: 73px;
+        width: calc(100% - 110px);
+        left: 30px; } }
   .timeline__year__slider .time_line__nav {
     width: 40px;
     height: 40px;
@@ -1569,6 +1637,10 @@ footer {
     border: 1.5px solid #A3A3A3;
     cursor: pointer;
     position: relative; }
+    @media (max-width: 720px) {
+      .timeline__year__slider .timeline__year__slide__item {
+        width: 55px;
+        height: 55px; } }
     .timeline__year__slider .timeline__year__slide__item::after {
       content: "";
       width: 9px;
@@ -1586,6 +1658,9 @@ footer {
       font-size: 24px;
       font-weight: 700;
       line-height: 1; }
+      @media (max-width: 720px) {
+        .timeline__year__slider .timeline__year__slide__item span {
+          font-size: 16px; } }
   .timeline__year__slider .slick-current .timeline__year__slide__item {
     background-color: #63C5B7;
     border-color: #63C5B7; }
@@ -1690,3 +1765,7 @@ footer {
 [dir="rtl"] header .header__search {
   left: 15px;
   right: auto; }
+
+[dir="rtl"] header .header__bottom .header__bottom__inner nav ul:not(.hamburger__menu__toggle):not(.sub__menu) li:not(:last-child) {
+  margin-left: 24px;
+  margin-right: 0; }

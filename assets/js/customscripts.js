@@ -55,6 +55,8 @@ $(document).ready(function () {
         infinite: true,
         pauseOnFocus: false,
         pauseOnHover: false,
+        pauseOnDotsHover: false,
+        swipeToSlide:true,
         rtl: $('html').attr('dir') == 'ltr' ? false : true
     });
     $('.timeline__and__history__primary__slider').slick({
@@ -64,9 +66,10 @@ $(document).ready(function () {
         arrows: false,
         infinite: false,
         pauseOnFocus: false,
+        // fade:true,
         pauseOnHover: false,
+        swipeToSlide: true,
         asNavFor: '.timeline__year__slider',
-
         rtl: $('html').attr('dir') == 'ltr' ? false : true
     });
     $('.timeline__year__slide__item').each(function () {
@@ -81,6 +84,8 @@ $(document).ready(function () {
         pauseOnFocus: false,
         pauseOnHover: false,
         arrows: true,
+        swipe:false,
+        // swipeToSlide: true,
         // variableWidth:true,
         // centerMode: false,
         asNavFor: '.timeline__and__history__primary__slider',
@@ -93,6 +98,26 @@ $(document).ready(function () {
 <path d="M0.753009 0.189461C0.887494 0.0762543 1.06127 0.00955355 1.24413 0.000950135C1.42699 -0.00765328 1.60738 0.0423845 1.75395 0.142368L1.85889 0.229419L11.2934 9.52962C11.4087 9.64391 11.48 9.78934 11.4964 9.94386C11.5128 10.0984 11.4734 10.2536 11.3842 10.3859L11.2934 10.4943L1.85889 19.7703C1.72618 19.9013 1.54441 19.9824 1.34938 19.9974C1.15434 20.0125 0.960187 19.9605 0.805147 19.8517C0.650107 19.7428 0.545421 19.585 0.511707 19.4094C0.477994 19.2337 0.517697 19.0529 0.622997 18.9026L0.709149 18.8013L8.9422 10.7027C9.17721 10.5225 9.32746 10.2672 9.362 9.98913C9.31449 9.70973 9.15622 9.45587 8.91714 9.2756L0.709149 1.19697C0.584889 1.07445 0.511675 0.916135 0.502232 0.749542C0.492788 0.582949 0.547712 0.418606 0.657458 0.285075L0.753009 0.189461Z" fill="212121"/>
 </svg>
 </button>`,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 6,
+                }
+            },
+            {
+                breakpoint: 990,
+                settings: {
+                    slidesToShow: 5,
+                }
+            },
+            {
+                breakpoint: 580,
+                settings: {
+                    slidesToShow: 3,
+                }
+            }
+        ],
         // centerMode: true,
         rtl: $('html').attr('dir') == 'ltr' ? false : true
     });
