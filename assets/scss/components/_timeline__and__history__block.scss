@@ -1,0 +1,277 @@
+.timeline__and__history__block{
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 15px;
+}
+.timeline__and__history__primary__slider{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1920/611;
+    .timeline__and__history__primary__slide__item{
+        width: 100vw;
+        height: 100%;
+        position: relative;
+        .timeline__and__history__primary__slide__item__bg{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: relative;
+                z-index: 1;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+                            linear-gradient(180deg, rgba(0, 0, 0, 0) 58%, #000000 84.5%);
+                height: 100%;
+                z-index: 2;
+            }
+        }
+        &::after{
+            content: "";
+            width: 55%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 5;
+            background-color: rgba($color: #212121, $alpha: 0.6);
+            backdrop-filter: blur(5px);
+        }
+        .timeline__and__history__primary__slide__item__wrap{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            .container{
+                display: flex;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+                max-width: 1163px;
+            }
+            .timeline__and__history__primary__slide__item__content{
+                width: 55%;
+                flex: 0 0 55%;
+                p{
+                      font-size: 16px;
+                                font-weight: 400;
+                                line-height: 1.5;
+                                color: rgba($color: #fff, $alpha: 0.7);
+                }
+                .timeline__and__history__primary__slide__item__accordian__wrap{
+                    .timeline__and__history__primary__slide__item__accordian__item{
+                        .timeline__and__history__primary__slide__item__accordian__button{
+                            background-color: transparent;
+                            outline: 0;
+                            border: 0;
+                            font-size: 18px;
+                            font-weight: 600;
+                            line-height: 1.6;
+                            color: rgba($color: #fff, $alpha: 0.7);
+                            border-bottom: 2px solid #D3D3D3;
+                            width: 100%;
+                            text-align: left;
+                            padding: 10px 0;
+                            position: relative;
+                            span{
+                                font-size: inherit;
+                                font-weight: inherit;
+                                color: #63C5B7;
+                            }
+                            svg{
+                                position: absolute;
+                                width: 10px;
+                                height: auto;
+                                right: 0;
+                                top: 50%;
+                                transform: translateY(-50%);
+                            }
+
+                        }
+                        .timeline__and__history__primary__slide__item__accordian__content__wrap{
+                            padding: 0;
+                            // height: 0;
+                            // overflow: hidden;
+                            display: none;
+                            transition: .3s all ease-in-out;
+                            p{
+                                font-size: 16px;
+                                font-weight: 400;
+                                line-height: 1.5;
+                                color: rgba($color: #fff, $alpha: 0.7);
+                                padding: 18px 0;
+
+                            }
+                        }
+
+                        &.timeline__and__history__primary__slide__item__accordian__item--active{
+                            .timeline__and__history__primary__slide__item__accordian__button{
+                                svg{
+                                transform: translateY(-50%) rotate(90deg);
+                                right: 3px;
+                                }
+                            }
+                            .timeline__and__history__primary__slide__item__accordian__content__wrap{
+                            //     height: 130px;
+                            // overflow-y: auto;
+                            display: block;
+
+                            }
+                        }
+                    }
+                }
+            }
+            .timeline__and__history__primary__slide__item__year__wrap{
+                width: 45%;
+                flex: 0 0 45%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                h3{
+                    font-family: "Kaisei Opti";
+                    font-size: 170px;
+                    font-weight: 700;
+                    line-height: 1;
+                    color: #63C5B7;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+.timeline__year__slider{
+    width: 100%;
+    margin-top: 17px;
+    position: relative;
+    padding: 0 0px 0px 50px;
+    .slick-list{
+        position: relative;
+        padding-bottom: 30px;
+        &::after{
+            width: 40px;
+            height: 100%;
+            background-color: #fff;
+            content: "";
+            right: 0;
+            position: absolute;
+            top: 0;
+        }
+    }
+    .slick-track{
+        &::after{
+            content: "";
+            width: calc(100% - 155px);
+            left: 45px;
+            height: 1px;
+            background-color: rgba($color: #212121, $alpha: 0.5);
+            position: absolute;
+            top: 95px;
+        }
+    }
+    .time_line__nav{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: .2s all ease-in-out;
+      border: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      outline: none !important;
+      &.slick-disabled{
+        opacity: 1;
+      }
+      &.time_line__nav--prev{
+        left: 0;
+      }
+      &.time_line__nav--next{
+        right: 0;
+      }
+      svg{
+        width: 11px;
+        height: auto;
+        flex: 0 0 11px;
+        path{
+            fill: #212121;
+        }
+      }
+      &:hover{
+        @media (min-width:1200px) {
+            background-color: #63C5B7;
+            svg{
+                path{
+                    fill: #fff;
+                }
+            }
+        }
+      }
+    }
+    .timeline__year__slide__wrapper{
+        // margin: 0 45px;
+        &:last-child{
+            width: max-content !important;
+        }
+
+    }
+    .timeline__year__slide__item{
+        width: 77px;
+        height: 77px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1.5px solid #A3A3A3;
+        cursor: pointer;
+        position: relative;
+        &::after{
+            content: "";
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            border: 1px solid #A3A3A3;
+            background-color: rgba($color: #909090, $alpha: 1);
+            position: absolute;
+            top: calc(100% + 15px);
+            left: 50%;
+            z-index: 10;
+            transform: translateX(-50%);
+        }
+        span{
+            font-family: "Kaisei Opti";
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+
+        }
+        }
+            .slick-current .timeline__year__slide__item{
+                background-color: #63C5B7;
+                border-color: #63C5B7;
+                span{
+                    color: #fff;
+                }
+                &::after{
+                    width: 16px;
+                    height: 16px;
+                    background-color: #63C5B7;
+                    border-color: #63C5B7;
+                    top: calc(100% + 11px);
+
+                }
+            }
+}
