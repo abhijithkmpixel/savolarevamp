@@ -1,6 +1,10 @@
 .brand__introduction{
     padding: 124px 0 140px;
     background-color: #fff;
+    overflow: hidden;
+       @media (max-width:1200px) {
+                        padding: 50px 0;                    
+                }
     p{
         font-size: 16px;
         font-weight: 400;
@@ -39,6 +43,13 @@
         width: 100%;
         height: auto;
         position: relative;
+         @media (max-width:990px) {
+                  width: 360px;
+                  margin: 0 auto 30px;
+            }
+         @media (max-width:720px) {
+                  width: 100%;
+            }
         &::after{
             content: "";
            width: 430px;
@@ -61,16 +72,27 @@
     .row{
         display: flex;
         flex-wrap: wrap;
+         @media (max-width:990px) {
+          flex-direction: column-reverse;
+            }
         &>div{
             padding: 0 20px;
         }
         .col-xl-7{
             width: 60%;
             flex: 0 0 60%;
+            @media (max-width:990px) {
+                  width: 100%;
+            flex: 0 0 100%;
+            }
         }
         .col-xl-5{
             width: 40%;
             flex: 0 0 40%;
+             @media (max-width:990px) {
+                  width: 100%;
+            flex: 0 0 100%;
+            }
         }
     }
 }
@@ -84,6 +106,10 @@
     width: max-content;
     margin-bottom: 18px;
     text-transform: uppercase;
+    @media (max-width:990px) {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
     &::after{
         content: "";
         width: 50px;
@@ -103,8 +129,22 @@
     color: #212121;
     font-family: "Poppins",sans-serif ;
     margin-bottom: 23px;
+       @media (max-width:990px) {
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+       @media (max-width:720px) {
+                 font-size: 20px;
+             }
     &.primary__title--lg{
         font-size: 40px;
+           @media (max-width:990px) {
+                 font-size: 36px;
+             }
+           @media (max-width:720px) {
+                 font-size: 32px;
+             }
     }
+
 
 }

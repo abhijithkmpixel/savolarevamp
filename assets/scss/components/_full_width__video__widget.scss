@@ -28,9 +28,17 @@
         outline: 0;
         box-shadow: 0px 5px 20px 7px #63C5B733;
         z-index: 15;
+         @media (max-width:990px) {
+               width: 50px;
+               height: 50px;
+            }
         svg{
             width: 22px;
             height: auto;
+             @media (max-width:990px) {
+                  width: 18px;
+
+            }
         }
     }
     video{

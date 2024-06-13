@@ -1,5 +1,8 @@
 .latest__news__section{
     padding: 60px 0  88px;
+      @media (max-width:1200px) {
+                        padding: 50px 0;                    
+                }
        p{
     font-size: 14px;
     font-weight: 400;
@@ -17,12 +20,32 @@
     .latest__news__card{
         width: calc(33.33% - 16px);
         padding: 0 35px;
+         @media (max-width:1200px) {
+                       padding: 0 30px;
+
+                }
+         @media (max-width:990px) {
+                       padding: 0 0px;
+
+                }
+         @media (max-width:720px) {
+                      width: 100%;
+                      margin-bottom: 30px;
+                }
         .latest__news__card__header{
             display: flex;
             align-items: center;
-            width: 100%;
+            width: calc(100% + 60px);
             margin-left: -35px;
             margin-bottom: 20px;
+                @media (max-width:1200px) {
+                          margin-left: -30px;
+                }
+                @media (max-width:990px) {
+                          margin-left: 0px;
+                    width: 100%;
+
+                }
             .latest__news__card__header__date{
                 width: 75px;
                 height: 75px;
@@ -33,6 +56,11 @@
                 justify-content: center;
                 position: relative;
                 margin-right: 24px;
+                @media (max-width:1200px) {
+                    width: 60px;
+                    height: 60px;
+                    flex: 0 0 60px;
+                }
                 &::after{
                     content: "";
                     width: 50px;
@@ -74,21 +102,28 @@
             overflow: hidden;
             min-height: 72px;
             margin-bottom: 20px;
-        }
-        a{
-            font-size: 13px;
-            font-weight: 700;
-            line-height: 1.7;
-            display: flex;
-            align-items: center;
-            color: #63C5B7;
-            text-decoration: none;
-            text-transform: uppercase;
-            svg{
-                width: 13px;
-                height: auto;
-                margin-left: 4px;
+            @media (max-width:990px) {
+                font-size: 14px;
+                min-height: 64px;
+            }
+            @media (max-width:720px) {
+                min-height: unset;
             }
         }
+        // a{
+        //     font-size: 13px;
+        //     font-weight: 700;
+        //     line-height: 1.7;
+        //     display: flex;
+        //     align-items: center;
+        //     color: #63C5B7;
+        //     text-decoration: none;
+        //     text-transform: uppercase;
+        //     svg{
+        //         width: 13px;
+        //         height: auto;
+        //         margin-left: 4px;
+        //     }
+        // }
     }
 }

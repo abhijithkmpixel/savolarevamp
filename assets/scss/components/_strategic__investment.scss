@@ -1,10 +1,19 @@
 .strategic__investment{
     padding: 80px 0 130px;
+       @media (max-width:1200px) {
+                        padding: 50px 0;                    
+                }
     p{
     font-size: 14px;
     font-weight: 400;
     line-height: 1.4;
     color: #777777;
+    }
+    .strategic__investment__row{
+        margin-top: 50px;
+        @media (max-width:990px) {
+            margin-top: 30px;
+        }
     }
 }
 .strategic__investment__row{
@@ -17,11 +26,16 @@
                 transition: .3s all ease-in-out;
                 width: calc(33.33% - 16PX);
                 position: relative;
+                @media (max-width:990px) {
+                    width: calc(50% - 12PX);
+                }
+                @media (max-width:720px) {
+                    width: 100%;
+                }
                     img{
                         width: 45px;
                         margin-bottom: 12px;
                 transition: .3s all ease-in-out;
-
                     }
                 h4{
                     font-size: 20px;

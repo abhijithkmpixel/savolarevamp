@@ -4,4 +4,7 @@
     background-repeat: repeat-x;
     background-size: 1920px 450px;
     background-position: center top;
+    @media (max-width:1200px) {
+        padding: 50px 0;
+    }
 }
