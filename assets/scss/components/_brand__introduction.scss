@@ -25,10 +25,17 @@
         display: flex;
         align-items: center;
         border-top: 1px solid #E5E5E5;
+        @media (max-width:720px) {
+            flex-flow: column;
+            align-items: flex-start;
+        }
         img{
             width: 174px;
             height: auto;
             margin-right: 23px;
+            @media (max-width:720px) {
+           margin-bottom: 15px;
+        }
         }
         .brand__introduction__footer__right{
             h4{
@@ -90,6 +97,8 @@
         .col-xl-7{
             width: 60%;
             flex: 0 0 60%;
+            position: relative;
+            z-index: 10;
             @media (max-width:990px) {
                   width: 100%;
             flex: 0 0 100%;
@@ -152,6 +161,15 @@
              }
            @media (max-width:720px) {
                  font-size: 32px;
+             }
+    }
+    &.primary__title--md{
+        font-size: 36px;
+           @media (max-width:990px) {
+                 font-size: 30px;
+             }
+           @media (max-width:720px) {
+                 font-size: 26px;
              }
     }
 

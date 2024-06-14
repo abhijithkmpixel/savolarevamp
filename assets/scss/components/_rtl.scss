@@ -72,6 +72,9 @@
     .top__footer .top__footer__inner p{
         margin-left: 24px;
         margin-right: 0;
+        @media (max-width:720px) {
+            margin-left: 0;
+        }
     }
     footer .social__media__links__row li:not(:last-child){
         margin-left: 30px;
@@ -101,5 +104,62 @@
     header .header__bottom .header__bottom__inner nav ul:not(.hamburger__menu__toggle):not(.sub__menu) li:not(:last-child){
         margin-left: 24px;
         margin-right: 0;
+    }
+    .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item::after{
+        left: auto;
+        right: 0;
+    }
+    .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__content .timeline__and__history__primary__slide__item__accordian__wrap .timeline__and__history__primary__slide__item__accordian__item {
+    .timeline__and__history__primary__slide__item__accordian__button{
+        padding-left: 20px;
+        padding-right: 0;
+        text-align: right;
+        
+        svg{
+            right: auto;
+            left: 0;
+            transform: translateY(-50%) scaleX(-1);
+            }
+            }
+                &.timeline__and__history__primary__slide__item__accordian__item--active{
+                    svg{
+                    transform: translateY(-50%) scaleX(-1) rotate(90deg);
+                left: 3px;
+                }
+    }}
+    .timeline__year__slider{
+        padding-left: 0;
+        padding-right: 50px;
+           @media (max-width:720px) {
+        padding-right: 40px;
+        margin-left: 0;
+        margin-right: -15px;
+    }
+    }
+    .timeline__year__slider .slick-list::after{
+        left: 0;
+        right: auto;
+    }
+    .timeline__year__slider .time_line__nav{
+        transform: translateY(-50%) scaleX(-1);
+        &.time_line__nav--prev{
+            left: auto;
+            right: 0;
+        }
+        &.time_line__nav--next{
+            left: 0;
+            right: auto;
+        }
+    }
+    .timeline__year__slider .slick-track::after{
+        right: 45px;
+        left: auto;
+        @media (max-width:720px) {
+            right: 30px;
+        }
+    }
+    .brand__introduction .brand__introduction__featured__image::after{
+        right: -20px;
+        left: auto;
     }
 }

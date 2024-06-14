@@ -1,18 +1,20 @@
 .full_width__video__widget{
     width: 100%;
     height: auto;
-    aspect-ratio: 1920/605;
+    // aspect-ratio: 1920/605;
     position: relative;
     .overlay__blade{
         width: 100%;
         height: auto;
         aspect-ratio: 1920/605;
-        position: relative;
         position: absolute;
         top: 0;
         left: 0;
         z-index: 6;
         background-color: rgba($color: #212121, $alpha: 0.7);
+        @media (max-width:720px) {
+         aspect-ratio: 1920/980;
+        }
     }
     button{
         position: absolute;
@@ -45,9 +47,13 @@
     }
     video{
         width: 100%;
-        height: 100%;
+        height: auto;
+        aspect-ratio: 1920/605;
         object-fit: cover;
         position: relative;
         z-index: 1;
+        @media (max-width:720px) {
+         aspect-ratio: 1920/980;
+        }
     }
 }
