@@ -255,6 +255,7 @@ left: 30px;
       outline: none !important;
       &.slick-disabled{
         opacity: 1;
+        pointer-events: none;
       }
       &.time_line__nav--prev{
         left: 0;
@@ -323,6 +324,7 @@ left: 30px;
             font-weight: 700;
             line-height: 1;
         transition: .2s all ease-in-out;
+        color: rgba($color: #212121, $alpha: 0.7);
                @media (max-width:720px) {
         font-size: 16px;
         }

@@ -114,6 +114,16 @@ footer{
         color: #fff;
         margin: 0;
         margin-bottom: 8px;
+        a{
+            color: #fff;
+            transition: .2s all ease-in-out;
+            &:hover{
+                color: #fff;
+                @media (min-width:1200px) {
+                    opacity: .6;
+                }
+            }
+        }
         @media (max-width:1500px) {
             font-size: 16px;
         }
@@ -129,6 +139,13 @@ footer{
                 font-weight: 400;
                 line-height: 1.4;
                 color: #A3A3A3;
+                transition: .2s all ease-in-out;
+                  &:hover{
+                color: #A3A3A3;
+                @media (min-width:1200px) {
+                    opacity: .6;
+                }
+            }
                    @media (max-width:1500px) {
             font-size: 14px;
         }

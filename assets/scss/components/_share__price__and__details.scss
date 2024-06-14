@@ -1,9 +1,15 @@
-.share__price__and__details{
+.share__price__and__details , section:not(.section-carousel).share__price__and__details{
     padding: 50px 0 60px;
     background-image: url(../images/bg.svg);
     background-repeat: repeat-x;
     background-size: 1920px 450px;
     background-position: center top;
+    h2.primary__title{
+        margin-bottom: 40px;
+        @media (max-width:990px) {
+         margin-bottom: 30px;
+        }
+    }
     @media (max-width:1200px) {
         padding: 50px 0;
     }

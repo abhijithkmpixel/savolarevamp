@@ -42,6 +42,7 @@
                     font-weight: 500;
                     line-height: 1.5;
                     color: #212121;
+                    margin: 0;
                     margin-bottom: 12px;
                 transition: .3s all ease-in-out;
 
@@ -75,7 +76,7 @@
                             color: #fff;
                         }
                         img{
-                            filter: invert(1);
+                            filter: brightness(0) invert(1);
                         }
                         a{
                             color: #255574;
