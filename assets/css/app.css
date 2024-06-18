@@ -355,7 +355,7 @@ header {
   header .header__links {
     font-size: 16px;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.1;
     color: #fff; }
     @media (max-width: 1500px) {
       header .header__links {
@@ -378,7 +378,9 @@ header {
         margin-right: 40px; } }
     header .accessibility__menu__toggle svg {
       width: 100%;
-      height: auto; }
+      height: 100%;
+      object-fit: contain;
+      display: block; }
   header .header__search {
     display: flex;
     align-items: center;
@@ -403,7 +405,9 @@ header {
           height: 16px; } }
       header .header__search .header__search__toggle svg {
         width: 100%;
-        height: auto; }
+        height: 100%;
+        object-fit: contain;
+        display: block; }
     header .header__search input {
       width: 0;
       padding: 0;
@@ -725,7 +729,14 @@ header {
   outline: 0; }
   .cta__primary.cta__primary--light {
     background-color: #fff;
-    color: #212121; }
+    color: #212121;
+    transition: .2s all ease-in-out; }
+    .cta__primary.cta__primary--light:hover {
+      color: #212121; }
+      @media (min-width: 1200px) {
+        .cta__primary.cta__primary--light:hover {
+          background-color: #212121;
+          color: #fff; } }
 
 .cta__link {
   font-size: 13px;
@@ -1021,7 +1032,7 @@ footer {
       font-size: inherit;
       color: #212121;
       font-weight: 600;
-      margin-bottom: 5px;
+      margin-bottom: 12px;
       display: block;
       font-family: inherit; }
   .brand__introduction .brand__introduction__footer {
@@ -1275,6 +1286,9 @@ footer {
     font-weight: 400;
     line-height: 1.4;
     color: #777777; }
+    @media (min-width: 990px) {
+      .strategic__investment p {
+        max-width: 80%; } }
   .strategic__investment .strategic__investment__row {
     margin-top: 50px; }
     @media (max-width: 990px) {
@@ -1316,7 +1330,8 @@ footer {
       color: #616161;
       margin-top: 0px;
       margin-bottom: 12px;
-      transition: .3s all ease-in-out; }
+      transition: .3s all ease-in-out;
+      max-width: 100%; }
     .strategic__investment__row .strategic__investment__card a {
       transition: .3s all ease-in-out;
       font-size: 16px;
@@ -1363,6 +1378,9 @@ footer {
     font-weight: 400;
     line-height: 1.4;
     color: #777777; }
+    @media (min-width: 990px) {
+      .latest__news__section p {
+        max-width: 80%; } }
   .latest__news__section .latest__news__section__row {
     margin-top: 52px; }
 
@@ -1435,7 +1453,7 @@ footer {
         letter-spacing: 0.5px;
         color: rgba(33, 33, 33, 0.7);
         text-transform: uppercase; }
-    .latest__news__section__row .latest__news__card p {
+    .latest__news__section__row .latest__news__card p, .latest__news__section__row .latest__news__card a:not(.cta__link) {
       font-size: 16px;
       font-weight: 400;
       line-height: 1.5;
@@ -1445,14 +1463,18 @@ footer {
       -webkit-line-clamp: 3;
       overflow: hidden;
       min-height: 72px;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      max-width: 100%; }
       @media (max-width: 990px) {
-        .latest__news__section__row .latest__news__card p {
+        .latest__news__section__row .latest__news__card p, .latest__news__section__row .latest__news__card a:not(.cta__link) {
           font-size: 14px;
           min-height: 64px; } }
       @media (max-width: 720px) {
-        .latest__news__section__row .latest__news__card p {
+        .latest__news__section__row .latest__news__card p, .latest__news__section__row .latest__news__card a:not(.cta__link) {
           min-height: unset; } }
+    @media (min-width: 1200px) {
+      .latest__news__section__row .latest__news__card:hover p, .latest__news__section__row .latest__news__card:hover a:not(.cta__link) {
+        text-decoration: underline; } }
 
 .timeline__and__history__block {
   width: 100%;

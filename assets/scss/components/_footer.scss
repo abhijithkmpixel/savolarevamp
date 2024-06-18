@@ -44,6 +44,15 @@
     &.cta__primary--light{
         background-color:#fff ;
         color: #212121;
+        transition: .2s all ease-in-out;
+           &:hover{
+            color: #212121;
+            @media (min-width:1200px) {
+                background-color: #212121;
+            color: #fff;
+                
+            }
+        }
     }
 }
 .cta__link{
