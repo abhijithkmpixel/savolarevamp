@@ -48,9 +48,21 @@
            &:hover{
             color: #212121;
             @media (min-width:1200px) {
-                background-color: #212121;
+                background-color: #1a3c51;
             color: #fff;
                 
+            }
+        }
+    }
+    &.cta__primary--dark{
+        background-color:#63C5B7 ;
+        color: #fff;
+        transition: .2s all ease-in-out;
+           &:hover{
+            color: #fff;
+            @media (min-width:1200px) {
+                background-color: #21b19b;
+                color: #fff;
             }
         }
     }
@@ -65,17 +77,21 @@
     text-decoration: none;
     text-transform: uppercase;
     width: max-content;
+            transition: .2s all ease-in-out;
     svg{
         width: 13px;
         height: auto;
         margin-left: 4px;
-        transition: .2s all ease-in-out;
+        path{
+            transition: .2s all ease-in-out;
+        }
     }
     &:hover{
     color: #63C5B7;
     @media (min-width:1200px) {
-        svg{
-            margin-left: 8px;
+        color: #255574;
+        svg path{
+            fill: #255574;
         }
 }
     }
