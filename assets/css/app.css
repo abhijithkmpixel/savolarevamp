@@ -1519,6 +1519,9 @@ footer {
       aspect-ratio: 1/1; } }
   @media (max-width: 990px) {
     .timeline__and__history__primary__slider {
+      aspect-ratio: 1/1.2; } }
+  @media (max-width: 720px) {
+    .timeline__and__history__primary__slider {
       aspect-ratio: 1/1.5; } }
   .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item {
     width: 100vw;
@@ -1582,7 +1585,8 @@ footer {
         flex: 0 0 55%; }
         @media (max-width: 990px) {
           .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__content {
-            width: 100%; } }
+            width: 100%;
+            flex: 0 0 auto; } }
         .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__content p {
           font-size: 16px;
           font-weight: 400;
@@ -1644,11 +1648,53 @@ footer {
         display: flex;
         align-items: center;
         justify-content: flex-end; }
+        @media (max-width: 1200px) {
+          .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap {
+            justify-content: center; } }
         @media (max-width: 990px) {
           .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap {
             justify-content: center;
             width: 100%;
             flex: 0 0 auto; } }
+        .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap fieldset {
+          width: 300px;
+          height: auto;
+          border: 1px solid #63C5B7;
+          padding: 22px; }
+          @media (max-width: 1200px) {
+            .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap fieldset {
+              width: 200px;
+              padding: 14px; } }
+          @media (max-width: 990px) {
+            .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap fieldset {
+              width: 400px;
+              padding: 14px;
+              margin: 30px 0; } }
+          @media (max-width: 720px) {
+            .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap fieldset {
+              width: 70%; } }
+          .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap fieldset legend {
+            font-family: 'Kaisei Opti';
+            font-size: 80px;
+            font-weight: 700;
+            line-height: 1;
+            text-align: center;
+            color: #63C5B7;
+            padding: 0 10px;
+            width: max-content;
+            border: 0;
+            margin: 0 0 -40px;
+            position: relative;
+            z-index: 5; }
+            @media (max-width: 1200px) {
+              .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap fieldset legend {
+                font-size: 40px;
+                margin: 0 0 -20px; } }
+          .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap fieldset img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 404/364;
+            object-fit: cover; }
         .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap h3 {
           font-family: "Kaisei Opti";
           font-size: 170px;
@@ -1659,6 +1705,9 @@ footer {
           @media (max-width: 1200px) {
             .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap h3 {
               font-size: 110px; } }
+          @media (max-width: 990px) {
+            .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap h3 {
+              margin-top: 40px; } }
           @media (max-width: 720px) {
             .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap h3 {
               font-size: 70px;
@@ -1983,6 +2032,11 @@ p, .overview__slider__block .overview__slider__block__row .content__area p {
     .h3, h3 {
       font-size: 20px; } }
 
+h2, .h2, h3, .h3, h4, .h4, h5, .h6, .sf-Long-text a:not(.link-white), .new__contact__card h4 {
+  color: #212121; }
+  h2 strong, h2 b, .h2 strong, .h2 b, h3 strong, h3 b, .h3 strong, .h3 b, h4 strong, h4 b, .h4 strong, .h4 b, h5 strong, h5 b, .h6 strong, .h6 b, .sf-Long-text a:not(.link-white) strong, .sf-Long-text a:not(.link-white) b, .new__contact__card h4 strong, .new__contact__card h4 b {
+    color: #212121; }
+
 .bg-green, .btn.btn-default {
   background: #255574;
   color: #fff; }
@@ -2001,7 +2055,7 @@ p, .overview__slider__block .overview__slider__block__row .content__area p {
 .new__contact__card .new__contact__card__header {
   background-color: #E0E0E0; }
 
-.carousel-slide h1 {
+.carousel-slide h1:not(.color-blue) {
   font-size: 84px;
   font-weight: 700;
   line-height: 1.4;
@@ -2009,13 +2063,36 @@ p, .overview__slider__block .overview__slider__block__row .content__area p {
   font-family: "Poppins",sans-serif;
   margin-bottom: 10px; }
   @media (max-width: 1500px) {
-    .carousel-slide h1 {
+    .carousel-slide h1:not(.color-blue) {
       font-size: 60px; } }
   @media (max-width: 990px) {
-    .carousel-slide h1 {
+    .carousel-slide h1:not(.color-blue) {
       font-size: 40px; } }
   @media (max-width: 720px) {
-    .carousel-slide h1 {
+    .carousel-slide h1:not(.color-blue) {
+      font-size: 30px; } }
+
+.fancy-select .options li {
+  color: #212121; }
+
+.fancy-select .trigger:after {
+  background-color: #255574; }
+
+.carousel-slide h1.color-blue {
+  font-size: 84px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #255574;
+  font-family: "Poppins",sans-serif;
+  margin-bottom: 10px; }
+  @media (max-width: 1500px) {
+    .carousel-slide h1.color-blue {
+      font-size: 60px; } }
+  @media (max-width: 990px) {
+    .carousel-slide h1.color-blue {
+      font-size: 40px; } }
+  @media (max-width: 720px) {
+    .carousel-slide h1.color-blue {
       font-size: 30px; } }
 
 .bg-grey-light.page-section, .bg-grey-light {

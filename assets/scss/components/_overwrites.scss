@@ -50,6 +50,12 @@ p,.overview__slider__block .overview__slider__block__row .content__area p{
                  font-size: 20px;
              }
 }
+h2,.h2,h3,.h3,h4,.h4,h5,.h6,.sf-Long-text a:not(.link-white),.new__contact__card h4{
+    color: #212121;
+    strong,b{
+        color: #212121;
+    }
+}
 .bg-green, .btn.btn-default{
     background: #255574;
     color: #fff;
@@ -72,11 +78,34 @@ p,.overview__slider__block .overview__slider__block__row .content__area p{
 .new__contact__card .new__contact__card__header{
     background-color: #E0E0E0;
 }
-.carousel-slide h1{
+.carousel-slide h1:not(.color-blue){
         font-size: 84px;
         font-weight: 700;
         line-height: 1.4 ;
         color: #fff;
+        font-family: "Poppins",sans-serif ;
+        margin-bottom: 10px;
+            @media (max-width:1500px) {
+                font-size: 60px;
+                    }
+            @media (max-width:990px) {
+                font-size: 40px;
+                    }
+            @media (max-width:720px) {
+                font-size: 30px;
+                }
+}
+.fancy-select .options li{
+    color: #212121;
+}
+.fancy-select .trigger:after{
+    background-color: #255574;
+}
+.carousel-slide h1.color-blue{
+        font-size: 84px;
+        font-weight: 700;
+        line-height: 1.4 ;
+        color: #255574;
         font-family: "Poppins",sans-serif ;
         margin-bottom: 10px;
             @media (max-width:1500px) {
