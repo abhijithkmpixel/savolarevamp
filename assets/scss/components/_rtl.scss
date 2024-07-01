@@ -1,4 +1,7 @@
 [dir="rtl"]{
+    .primary__title, section:not(.section-carousel) h2.primary__title , .page__title , .page__title h1,.hero__banner__homepage .hero__banner__homepage__slider .hero__banner__homepage__slide .hero__banner__homepage__slide__content h1,.page-section-title,.from-h1,section:not(.section-carousel) h1, section:not(.section-carousel) h2.from-h1,body ,.h3, h3, .carousel-slide h1:not(.color-blue) ,.carousel-slide h1.color-blue,.leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem, .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem a{
+        font-family: "Avenir Black" !important;
+    }
     header .header__top .header__top__inner .header__analytics__wrap .header__analytics__wrap__value{
         margin-left: 0;
         margin-right: 12px;
@@ -11,7 +14,7 @@
         border-right: 0;
         border-left: 1px solid rgba(255, 255, 255, 0.2);
     }
-    header .language__btn{
+    header .language__btn , header .link.lang-link{
         margin-left: 24px;
         margin-right: 0;
     }

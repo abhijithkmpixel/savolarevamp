@@ -95,11 +95,11 @@ body{
     padding-top: 0 !important;
 }
 .page-content{
-    @media (min-width:1500px) {
-        margin-top: 138px;
-    }
-    @media (max-width:1500px) {
-        margin-top: 125px;
+    // @media (min-width:1500px) {
+        margin-top: var(--header-height);
+    // }
+    // @media (max-width:1500px) {
+    //     // margin-top: 125px;
         
-    }
+    // }
 }

@@ -90,6 +90,14 @@ header{
                     height: auto;
                     margin-bottom: 2px;
                   }
+                  &.header__analytics__wrap__value__status--up{
+                    transform: rotate(180deg);
+                    svg{
+                      path{
+                        fill: #e2de4e;
+                      }
+                    }
+                  }
                 }
             }
             }
@@ -140,7 +148,7 @@ header{
                               margin-right: 0 !important;
                             }
                         a{
-                             font-size: 16px;
+                             font-size: 15px;
                             font-weight: 300;
                             line-height: 2;
                             color: #fff;
@@ -169,6 +177,7 @@ header{
                         .sub__menu{
                            position: absolute;
                            top: calc(100% );
+                           min-width: 250px;
                            display: flex;
                            flex-flow: column;
                            background-color: #fff;
@@ -328,7 +337,7 @@ header{
             height: auto;
         }
     }
-    .language__btn{
+    .language__btn , .link.lang-link{
         margin-right: 24px;
     }
     .header__links{
@@ -342,7 +351,7 @@ header{
     }
     .accessibility__menu__toggle{
         width: 20PX;
-        height: 20px;
+        height: auto;
         cursor: pointer;
         background-color: transparent;
         border: 0;
@@ -351,7 +360,7 @@ header{
         margin-right: 12px;
             @media (max-width:1500px) {
               width: 16px;
-              height: 16px;
+              // height: 16px;
             }
             @media (max-width:720px) {
            margin-right: 40px;
@@ -426,15 +435,15 @@ header{
 
     }
   h1{
-  font-size: 52px;
-  font-weight: 700;
-  line-height: 1.4;
-  color: #212121;
-  font-family: "Poppins",sans-serif ;
-  text-align: center;
-  margin-bottom: 0;
+  font-size: 52px !important;
+  font-weight: 700 !important;
+  line-height: 1.4!important;
+  color: #212121!important;
+  font-family: "Poppins",sans-serif !important;
+  text-align: center!important;
+  margin-bottom: 0!important;
     @media (max-width:720px) {
-      font-size: 40px;
+      font-size: 40px!important;
     }
   span{
     font-size: inherit;

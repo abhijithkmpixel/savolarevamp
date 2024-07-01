@@ -67,7 +67,7 @@
                     line-height: 1.5;
                     text-decoration: underline;
                     text-transform: uppercase;
-                    color: #63C5B7;
+                    color: #63C5B7 !important;
                     position: absolute;
                     left: 24px;
                     bottom: 28px;
@@ -82,7 +82,7 @@
                             filter: brightness(0) invert(1);
                         }
                         a{
-                            color: #255574;
+                            color: #255574 !important;
                         }
                     }
                 }

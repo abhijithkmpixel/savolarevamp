@@ -42,14 +42,14 @@
     border: 0;
     outline: 0;
     &.cta__primary--light{
-        background-color:#fff ;
-        color: #212121;
+        background-color:#fff !important;
+        color: #212121 !important;
         transition: .2s all ease-in-out;
            &:hover{
-            color: #212121;
+            color: #212121 !important;
             @media (min-width:1200px) {
-                background-color: #1a3c51;
-            color: #fff;
+                background-color: #1a3c51 !important;
+            color: #fff !important;
                 
             }
         }
@@ -71,7 +71,7 @@
     font-size: 13px;
     font-weight: 700;
     line-height: 1;
-    color: #63C5B7;
+    color: #63C5B7 !important;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -87,9 +87,9 @@
         }
     }
     &:hover{
-    color: #63C5B7;
+    color: #63C5B7 !important;
     @media (min-width:1200px) {
-        color: #255574;
+        color: #255574 !important;
         svg path{
             fill: #255574;
         }
@@ -217,8 +217,8 @@ footer{
             a{
                 text-decoration: none;
                 svg,img{
-                    width: 14px;
-                    height: 14px;
+                    width: 20px;
+                    height: 20px;
                     object-fit: contain;
                 }
             }
