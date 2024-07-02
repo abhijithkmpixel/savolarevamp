@@ -166,25 +166,44 @@ h2,.h2,h3,.h3,h4,.h4,h5,.h6,.sf-Long-text a:not(.link-white),.new__contact__card
                 }
 }
 .bg-grey-light.page-section, .bg-grey-light{
-    --section-background:#E0E0E0;
+    // --section-background:#E0E0E0;
 }
 .bg-grey-light{
-    background: #E0E0E0;
+    // background: #E0E0E0;
+    background: #f5f5f5 !important;
+}
+.info-box-link{
+    transition: .2s all ease-in-out;
+    h3, .h3{
+         font-size: 20px;
+        font-weight: 600;
+        line-height: 1.1;
+        text-align: center;
+        text-decoration: none; 
+        font-family: "Poppins",sans-serif ;
+        margin: 0;
+    }
+}
+.info-box-link:hover .info-box-title{
+    color: #fff;
+}
+.fancy-select .options{
+    width: max-content;
 }
 .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem{
     background-color: #63C5B7;
     font-family: "Poppins",sans-serif ;
     .leadershipTabs-tabItemLink{
-        min-width: 282px;
+        min-width: 340px;
         @media (max-width:580px) {
             min-width: 100%;
         }
     }
     a{
-        font-size: 16px;
-        font-weight: 700;
+        font-size: 20px;
+        font-weight: 600;
         line-height: 1.1;
-        padding: 12px 50px;
+        padding: 20px 50px;
         text-align: center;
         text-decoration: none; 
         font-family: "Poppins",sans-serif ;
@@ -202,6 +221,9 @@ h2,.h2,h3,.h3,h4,.h4,h5,.h6,.sf-Long-text a:not(.link-white),.new__contact__card
     .leadershipCard-description{
         color: #616161;
     }
+}
+.leadershipCard .leadershipCard-title{
+    font-weight: 600;
 }
 .documentCard .documentCard-cta{
         font-size: 16px;
@@ -230,6 +252,12 @@ a.link-green:hover, a.link-green:active{
 .shareholderCard:before{
     content: none !important;
 }
+.page-section.bg-grey-light:nth-child(even){
+    // background: transparent !important;
+}
+.frequentlty__asked__questions__row .faq__wrap h4 , .quick__navigation__links__wrap .quick__navigation__link.active span{
+    font-weight: 600;
+}
 
 // .hero__banner__homepage-- + .page-section , 
 .page__title + .page-section:not(.bg-grey-light){
@@ -249,7 +277,7 @@ a.link-green:hover, a.link-green:active{
     .quick__navigation__link__icon{
         background-color: #fff;
         img{
-            // filter: invert(1);
+            filter: invert(1);
         }
     }
     &:hover{
