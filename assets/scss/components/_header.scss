@@ -3,7 +3,7 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 101;
  .hamburger{
     display: none;
     @media (max-width:1200px) {
@@ -157,6 +157,9 @@ header{
                             @media (max-width:1500px) {
                                 font-size: 13px;
                             }
+                            @media (max-width:1380px) {
+                                font-size: 11px;
+                            }
                             @media (max-width:1200px) {
                                 font-size: 18px;
                             font-weight: 400;
@@ -220,6 +223,9 @@ header{
                                     @media (max-width:1500px) {
                                       font-size: 13px;
                                       }
+                                         @media (max-width:1380px) {
+                                font-size: 11px;
+                            }
                                       @media (max-width:1200px) {
                                           margin: 0 !important;
                                           padding: 0;

@@ -74,10 +74,15 @@ p,.overview__slider__block .overview__slider__block__row .content__area p{
     font-weight: 400;
     line-height: 1.5;
     color: #616161;
-
+    &:not(:last-child){
+        margin-bottom: 20px;
+    }
     b,strong{
         color: #212121;
     }
+}
+.disclaimer__popup__outer .disclaimer__popup__contentbox h4{
+    color: #212121;
 }
 .color-blue{
     color: #255574;
@@ -262,6 +267,29 @@ a.link-green:hover, a.link-green:active{
 // .hero__banner__homepage-- + .page-section , 
 .page__title + .page-section:not(.bg-grey-light){
     padding-top: 0;
+}
+.disclaimer__popup__outer .disclaimer__popup__contentbox p{
+    font-size: 14px;
+}
+.disclaimer__popup__outer .disclaimer__popup__contentbox button{
+     font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;
+    padding: 12px 50px;
+    text-align: center;
+    text-decoration: none;
+    border: 0;
+    outline: 0;
+     background-color:#63C5B7 ;
+        color: #fff;
+        transition: .2s all ease-in-out;
+           &:hover{
+            color: #fff;
+            @media (min-width:1200px) {
+                background-color: #21b19b;
+                color: #fff;
+            }
+        }
 }
 .fancy-select .options li:hover{
     background-color: #255574;

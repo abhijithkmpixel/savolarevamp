@@ -82,7 +82,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; }
+  z-index: 101; }
   header .hamburger {
     display: none; }
     @media (max-width: 1200px) {
@@ -212,6 +212,9 @@ header {
             @media (max-width: 1500px) {
               header .header__bottom .header__bottom__inner nav ul:not(.hamburger__menu__toggle):not(.sub__menu) li a {
                 font-size: 13px; } }
+            @media (max-width: 1380px) {
+              header .header__bottom .header__bottom__inner nav ul:not(.hamburger__menu__toggle):not(.sub__menu) li a {
+                font-size: 11px; } }
             @media (max-width: 1200px) {
               header .header__bottom .header__bottom__inner nav ul:not(.hamburger__menu__toggle):not(.sub__menu) li a {
                 font-size: 18px;
@@ -270,6 +273,9 @@ header {
                 @media (max-width: 1500px) {
                   header .header__bottom .header__bottom__inner nav ul:not(.hamburger__menu__toggle):not(.sub__menu) li .sub__menu li a {
                     font-size: 13px; } }
+                @media (max-width: 1380px) {
+                  header .header__bottom .header__bottom__inner nav ul:not(.hamburger__menu__toggle):not(.sub__menu) li .sub__menu li a {
+                    font-size: 11px; } }
                 @media (max-width: 1200px) {
                   header .header__bottom .header__bottom__inner nav ul:not(.hamburger__menu__toggle):not(.sub__menu) li .sub__menu li a {
                     margin: 0 !important;
@@ -894,7 +900,7 @@ footer {
   margin-top: var(--header-height-neg); }
   @media (min-width: 1200px) {
     .hero__banner__homepage {
-      min-height: 700px; } }
+      min-height: 660px; } }
   @media (max-width: 720px) {
     .hero__banner__homepage {
       height: 100dvh; } }
@@ -1049,7 +1055,7 @@ footer {
             font-size: 14px; } }
 
 .brand__introduction {
-  padding: 124px 0 140px;
+  padding: 120px 0 120px;
   background-color: #fff;
   overflow: hidden; }
   @media (max-width: 1200px) {
@@ -1100,8 +1106,7 @@ footer {
   .brand__introduction .brand__introduction__featured__image {
     width: 100%;
     height: auto;
-    position: relative;
-    box-shadow: 0px 2px 4px 0px #00000014,0px 0px 4px 0px #00000014; }
+    position: relative; }
     @media (max-width: 990px) {
       .brand__introduction .brand__introduction__featured__image {
         width: 360px;
@@ -1298,7 +1303,7 @@ footer {
     .principles__row .principles__card p {
       font-size: 14px;
       font-weight: 400;
-      line-height: 1.3;
+      line-height: 1.6;
       color: #616161;
       transition: .3s all ease-in-out; }
     @media (min-width: 1200px) {
@@ -2081,8 +2086,13 @@ p, .overview__slider__block .overview__slider__block__row .content__area p {
   font-weight: 400;
   line-height: 1.5;
   color: #616161; }
+  p:not(:last-child), .overview__slider__block .overview__slider__block__row .content__area p:not(:last-child) {
+    margin-bottom: 20px; }
   p b, p strong, .overview__slider__block .overview__slider__block__row .content__area p b, .overview__slider__block .overview__slider__block__row .content__area p strong {
     color: #212121; }
+
+.disclaimer__popup__outer .disclaimer__popup__contentbox h4 {
+  color: #212121; }
 
 .color-blue {
   color: #255574; }
@@ -2246,6 +2256,28 @@ a.link-green:hover, a.link-green:active {
 
 .page__title + .page-section:not(.bg-grey-light) {
   padding-top: 0; }
+
+.disclaimer__popup__outer .disclaimer__popup__contentbox p {
+  font-size: 14px; }
+
+.disclaimer__popup__outer .disclaimer__popup__contentbox button {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.1;
+  padding: 12px 50px;
+  text-align: center;
+  text-decoration: none;
+  border: 0;
+  outline: 0;
+  background-color: #63C5B7;
+  color: #fff;
+  transition: .2s all ease-in-out; }
+  .disclaimer__popup__outer .disclaimer__popup__contentbox button:hover {
+    color: #fff; }
+    @media (min-width: 1200px) {
+      .disclaimer__popup__outer .disclaimer__popup__contentbox button:hover {
+        background-color: #21b19b;
+        color: #fff; } }
 
 .fancy-select .options li:hover {
   background-color: #255574; }
