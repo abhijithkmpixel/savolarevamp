@@ -1054,6 +1054,9 @@ footer {
           .hero__banner__homepage .hero__banner__homepage__slide .hero__banner__homepage__slide__content p {
             font-size: 14px; } }
 
+.hero__banner__homepage--innerbanner.hero__banner__homepage .hero__banner__homepage__slide .hero__banner__homepage__slide__content p {
+  display: none; }
+
 .brand__introduction {
   padding: 120px 0 120px;
   background-color: #fff;
