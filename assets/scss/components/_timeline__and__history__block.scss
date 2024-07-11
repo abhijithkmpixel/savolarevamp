@@ -242,8 +242,8 @@
                             }
                         }
                 h3{
-                    font-family: "Kaisei Opti";
-                    font-size: 170px;
+                    font-family: "Poppins", sans-serif;
+                    font-size: 100px;
                     font-weight: 700;
                     line-height: 1;
                     color: #63C5B7;
@@ -387,13 +387,21 @@ left: 30px;
         }
         span{
             font-family: "Kaisei Opti";
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
             line-height: 1;
         transition: .2s all ease-in-out;
+        position: relative;
         color: rgba($color: #212121, $alpha: 0.7);
                @media (max-width:720px) {
         font-size: 16px;
+        &::after{
+            width: 100%;
+            height: 1px solid #000;
+            content: '';
+            position: absolute;
+            bottom: 0;
+        }
         }
 
         }

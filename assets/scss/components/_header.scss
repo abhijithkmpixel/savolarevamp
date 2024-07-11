@@ -20,7 +20,7 @@ header{
     }
  }
     .header__top{
-        background-color: #212122;
+        background-color: #255574;
         padding: 12.5px 0;
             @media (max-width:1500px) {
                          padding: 10px 0;
@@ -104,7 +104,7 @@ header{
         }
     }
     .header__bottom{
-        background-color: rgba($color: #212121, $alpha: 0.8);
+        background-color: rgba($color: #ffffff, $alpha: 0.8);
         padding: 22px 0;
             @media (max-width:1500px) {
                     padding: 18px 0;
@@ -151,7 +151,7 @@ header{
                              font-size: 15px;
                             font-weight: 300;
                             line-height: 2;
-                            color: #fff;
+                            color: #000000;
                             transition: .2s all ease-in-out;
                             letter-spacing: 0.5px;
                             @media (max-width:1500px) {
@@ -170,7 +170,7 @@ header{
                                           }
                             &:hover{
                                 @media (min-width:1200px) {
-                                    color: #E2DE4E;
+                                    color: #255574;
                                     &::after{
                                         border-color: #E2DE4E;
                                     }
@@ -262,7 +262,7 @@ header{
                         }
                         &.active{
                             a{
-                                color: #E2DE4E;
+                                color: #255574;
                             }
                         }
                         &.has__sub__menu{
@@ -297,8 +297,8 @@ header{
                                     content: "";
                                     width: 5px;
                                     height: 5px;
-                                    border-left: 1px solid #fff;
-                                    border-bottom: 1px solid #fff;
+                                    border-left: 1px solid #255574;
+                                    border-bottom: 1px solid #255574;
                                     transform: rotate(-45deg);
                                     margin-left: 12px;
                                     display: block;
