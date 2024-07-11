@@ -69,11 +69,11 @@
             transform: translate(-50%,-50%) rotate(-90deg);
                 @media (max-width:1500px) {
                         transform: translate(-50%,-50%) rotate(-90deg) scale(.8);
-
                  }
-                 @media (max-width:1200px) {
-                    transform: translate(-48%,-51%) rotate(-90deg) scale(.8);
-                 }
+                 @media only screen and (min-width: 1200px) and (max-width: 1500px) {
+                    transform: translate(-48%,-52%) rotate(-90deg) scale(.8);
+                  }
+                  
         }
 
         svg {
