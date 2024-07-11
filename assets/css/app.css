@@ -230,7 +230,7 @@ header {
                   border-color: #E2DE4E; } }
           header .header__bottom .header__bottom__inner nav ul:not(.hamburger__menu__toggle):not(.sub__menu) li .sub__menu {
             position: absolute;
-            top: calc(100%);
+            top: calc(100% + 18px);
             min-width: 250px;
             display: flex;
             flex-flow: column;
@@ -311,8 +311,8 @@ header {
                 content: "";
                 width: 12px;
                 height: 12px;
-                border-left: 1px solid #fff;
-                border-bottom: 1px solid #fff;
+                border-left: 1px solid #255574;
+                border-bottom: 1px solid #255574;
                 transform: rotate(-45deg);
                 margin-left: 12px;
                 display: block;
@@ -955,7 +955,10 @@ footer {
       transform: translate(-50%, -50%) rotate(-90deg); }
       @media (max-width: 1500px) {
         .hero__banner__homepage .hero__banner__homepage__slider .circle-container {
-          transform: translate(-49%, -49%) rotate(-90deg) scale(0.8); } }
+          transform: translate(-50%, -50%) rotate(-90deg) scale(0.8); } }
+      @media (max-width: 1200px) {
+        .hero__banner__homepage .hero__banner__homepage__slider .circle-container {
+          transform: translate(-48%, -51%) rotate(-90deg) scale(0.8); } }
     .hero__banner__homepage .hero__banner__homepage__slider svg {
       width: 24px;
       height: 24px;
@@ -1710,7 +1713,7 @@ footer {
             .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap fieldset {
               width: 70%; } }
           .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap fieldset legend {
-            font-family: 'Kaisei Opti';
+            font-family: 'Poppins';
             font-size: 80px;
             font-weight: 700;
             line-height: 1;
