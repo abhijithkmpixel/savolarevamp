@@ -231,7 +231,7 @@ header {
                   border-color: #E2DE4E; } }
           header .header__bottom .header__bottom__inner nav ul:not(.hamburger__menu__toggle):not(.sub__menu) li .sub__menu {
             position: absolute;
-            top: calc(100% + 18px);
+            top: calc(100% + 26px);
             min-width: 250px;
             display: flex;
             flex-flow: column;
@@ -859,7 +859,10 @@ footer {
     width: 50%;
     height: auto;
     display: block;
-    margin-bottom: 16px; }
+    margin-bottom: 70px; }
+    @media (max-width: 1200px) {
+      footer .brand__logo {
+        width: 30%; } }
     footer .brand__logo img {
       width: 100%;
       height: auto;
@@ -892,7 +895,10 @@ footer {
         height: 20px;
         object-fit: contain; }
     footer .social__media__links__row li:not(:last-child) {
-      margin-right: 30px; }
+      margin-right: 20px; }
+      @media (max-width: 1200px) {
+        footer .social__media__links__row li:not(:last-child) {
+          margin-right: 15px; } }
 
 .hero__banner__homepage {
   width: 100%;
