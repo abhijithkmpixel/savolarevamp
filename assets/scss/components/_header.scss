@@ -180,6 +180,8 @@ header {
               color: #212121;
               transition: 0.2s all ease-in-out;
               letter-spacing: 0.5px;
+              display: flex;
+              align-items: center;
               text-decoration: none;
               @media (max-width: 1500px) {
                 font-size: 13px;
