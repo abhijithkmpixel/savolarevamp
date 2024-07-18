@@ -259,13 +259,13 @@ h5,
   padding: 12px 50px;
   text-align: center;
   text-decoration: none;
-  background-color: #63c5b7;
+  background-color: #616161;
   color: #fff;
   transition: 0.2s all ease-in-out;
   &:hover {
     color: #fff;
     @media (min-width: 1200px) {
-      background-color: #21b19b;
+      background-color: #63c5b7;
       color: #fff;
     }
   }
@@ -275,7 +275,7 @@ a.link-green:active {
   color: #255574;
 }
 .documentCard .documentCard-cta:hover {
-  background-color: #1a3c51;
+  background-color: #63c5b7;
 }
 .shareholderCard:before {
   content: none !important;
@@ -322,7 +322,7 @@ a.link-green:active {
   margin: 0 10px;
 }
 .quick__navigation__links__wrap .quick__navigation__link {
-  background-color: #63c5b7;
+  background-color: #616161;
   span {
     color: #fff;
   }
@@ -334,7 +334,7 @@ a.link-green:active {
   }
   &:hover {
     @media (min-width: 1200px) {
-      background-color: #255574;
+      background-color: #63c5b7;
       .quick__navigation__link__icon {
         background-color: #fff;
         img {
@@ -344,7 +344,7 @@ a.link-green:active {
     }
   }
   &.active {
-    background-color: #255574;
+    background-color: #63c5b7;
     .quick__navigation__link__icon {
       background-color: #fff;
       img {
