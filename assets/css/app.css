@@ -2240,21 +2240,21 @@ h5,
 
 .bg-green,
 .btn.btn-default {
-  background: #255574;
+  background: #616161;
   color: #fff; }
   .bg-green h2,
   .btn.btn-default h2 {
     color: #fff; }
   .bg-green:hover,
   .btn.btn-default:hover {
-    background: #255574; }
+    background: #616161; }
     .bg-green:hover h2,
     .btn.btn-default:hover h2 {
       color: #fff; }
     @media (min-width: 1200px) {
       .bg-green:hover,
       .btn.btn-default:hover {
-        background: #1a3c51; }
+        background: #63c5b7; }
         .bg-green:hover h2,
         .btn.btn-default:hover h2 {
           color: #fff; } }
@@ -2283,7 +2283,7 @@ h5,
   color: #212121; }
 
 .fancy-select .trigger:after {
-  background-color: #255574; }
+  background-color: #616161; }
 
 .carousel-slide h1.color-blue {
   font-size: 84px;
@@ -2324,7 +2324,7 @@ h5,
   width: max-content; }
 
 .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem {
-  background-color: #63c5b7;
+  background-color: #616161;
   font-family: "Poppins", sans-serif; }
   .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem .leadershipTabs-tabItemLink {
     min-width: 340px; }
@@ -2339,6 +2339,12 @@ h5,
     text-align: center;
     text-decoration: none;
     font-family: "Poppins", sans-serif; }
+
+.leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem.active,
+.leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem:hover,
+.leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem:active,
+.leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem:focus {
+  background-color: #63c5b7; }
 
 .leadershipCard {
   padding: 0;
@@ -2399,14 +2405,15 @@ a.link-green:active {
   text-decoration: none;
   border: 0;
   outline: 0;
-  background-color: #63c5b7;
+  background-color: #616161;
   color: #fff;
   transition: 0.2s all ease-in-out; }
   .disclaimer__popup__outer .disclaimer__popup__contentbox button:hover {
-    color: #fff; }
+    color: #fff;
+    background-color: #616161; }
     @media (min-width: 1200px) {
       .disclaimer__popup__outer .disclaimer__popup__contentbox button:hover {
-        background-color: #21b19b;
+        background-color: #63c5b7;
         color: #fff; } }
 
 .fancy-select .options li:hover {
@@ -2478,6 +2485,15 @@ input.form-control {
   border-radius: 50%; }
 
 .btn-secondary-rev {
+  background-color: #616161; }
+  .btn-secondary-rev:hover {
+    background-color: #616161; }
+    @media (min-width: 1200px) {
+      .btn-secondary-rev:hover {
+        background-color: #63c5b7; } }
+
+.active .btn-secondary-rev,
+.nav-tabs li.active .btn-secondary-rev {
   background-color: #63c5b7; }
 
 [dir="rtl"] .page-section-title,

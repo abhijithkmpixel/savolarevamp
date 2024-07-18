@@ -129,18 +129,18 @@ h5,
 }
 .bg-green,
 .btn.btn-default {
-  background: #255574;
+  background: #616161;
   color: #fff;
   h2 {
     color: #fff;
   }
   &:hover {
-    background: #255574;
+    background: #616161;
     h2 {
       color: #fff;
     }
     @media (min-width: 1200px) {
-      background: #1a3c51;
+      background: #63c5b7;
       h2 {
         color: #fff;
       }
@@ -171,7 +171,7 @@ h5,
   color: #212121;
 }
 .fancy-select .trigger:after {
-  background-color: #255574;
+  background-color: #616161;
 }
 .carousel-slide h1.color-blue {
   font-size: 84px;
@@ -218,7 +218,7 @@ h5,
   width: max-content;
 }
 .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem {
-  background-color: #63c5b7;
+  background-color: #616161;
   font-family: "Poppins", sans-serif;
   .leadershipTabs-tabItemLink {
     min-width: 340px;
@@ -235,6 +235,12 @@ h5,
     text-decoration: none;
     font-family: "Poppins", sans-serif;
   }
+}
+.leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem.active,
+.leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem:hover,
+.leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem:active,
+.leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem:focus {
+  background-color: #63c5b7;
 }
 .leadershipCard {
   padding: 0;
@@ -304,13 +310,14 @@ a.link-green:active {
   text-decoration: none;
   border: 0;
   outline: 0;
-  background-color: #63c5b7;
+  background-color: #616161;
   color: #fff;
   transition: 0.2s all ease-in-out;
   &:hover {
     color: #fff;
+    background-color: #616161;
     @media (min-width: 1200px) {
-      background-color: #21b19b;
+      background-color: #63c5b7;
       color: #fff;
     }
   }
@@ -398,7 +405,19 @@ input.form-control {
   border-radius: 50%;
 }
 .btn-secondary-rev {
-  background-color: #63c5b7;
+  background-color: #616161;
+  &:hover {
+    background-color: #616161;
+    @media (min-width: 1200px) {
+      background-color: #63c5b7;
+    }
+  }
+}
+.active,
+.nav-tabs li.active {
+  .btn-secondary-rev {
+    background-color: #63c5b7;
+  }
 }
 // arabic styles
 [dir="rtl"] {
