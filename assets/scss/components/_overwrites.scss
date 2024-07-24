@@ -121,21 +121,21 @@ h5,
 .h6,
 .sf-Long-text a:not(.link-white),
 .new__contact__card h4 {
-  color: #212121;
+  color: #212122;
   strong,
   b {
-    color: #212121;
+    color: #212122;
   }
 }
 .bg-green,
 .btn.btn-default {
-  background: #616161;
+  background: #212122;
   color: #fff;
   h2 {
     color: #fff;
   }
   &:hover {
-    background: #616161;
+    background: #212122;
     h2 {
       color: #fff;
     }
@@ -218,7 +218,7 @@ h5,
   width: max-content;
 }
 .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem {
-  background-color: #616161;
+  background-color: #212122;
   font-family: "Poppins", sans-serif;
   .leadershipTabs-tabItemLink {
     min-width: 340px;
@@ -265,11 +265,12 @@ h5,
   padding: 12px 50px;
   text-align: center;
   text-decoration: none;
-  background-color: #616161;
+  background-color: #212122;
   color: #fff;
   transition: 0.2s all ease-in-out;
   &:hover {
     color: #fff;
+    background-color: #212122;
     @media (min-width: 1200px) {
       background-color: #63c5b7;
       color: #fff;
@@ -310,12 +311,12 @@ a.link-green:active {
   text-decoration: none;
   border: 0;
   outline: 0;
-  background-color: #616161;
+  background-color: #212122;
   color: #fff;
   transition: 0.2s all ease-in-out;
   &:hover {
     color: #fff;
-    background-color: #616161;
+    background-color: #212122;
     @media (min-width: 1200px) {
       background-color: #63c5b7;
       color: #fff;
@@ -329,7 +330,7 @@ a.link-green:active {
   margin: 0 10px;
 }
 .quick__navigation__links__wrap .quick__navigation__link {
-  background-color: #616161;
+  background-color: #212122;
   span {
     color: #fff;
   }
@@ -340,6 +341,7 @@ a.link-green:active {
     }
   }
   &:hover {
+    background-color: #212122;
     @media (min-width: 1200px) {
       background-color: #63c5b7;
       .quick__navigation__link__icon {
@@ -405,9 +407,9 @@ input.form-control {
   border-radius: 50%;
 }
 .btn-secondary-rev {
-  background-color: #616161;
+  background-color: #212122;
   &:hover {
-    background-color: #616161;
+    background-color: #212122;
     @media (min-width: 1200px) {
       background-color: #63c5b7;
     }

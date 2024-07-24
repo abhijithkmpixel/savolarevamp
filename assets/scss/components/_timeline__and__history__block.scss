@@ -372,8 +372,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid #616161;
-    background-color: #616161;
+    border: 1.5px solid #212122;
+    background-color: #212122;
     cursor: pointer;
     position: relative;
     transition: 0.2s all ease-in-out;
@@ -386,8 +386,8 @@
       width: 9px;
       height: 9px;
       border-radius: 50%;
-      border: 1px solid #a3a3a3;
-      background-color: rgba($color: #909090, $alpha: 1);
+      border: 1px solid #212122;
+      background-color: rgba($color: #212122, $alpha: 1);
       position: absolute;
       top: calc(100% + 16px);
       left: 50%;
@@ -405,6 +405,12 @@
       color: rgba($color: #fff, $alpha: 1.7);
       @media (max-width: 720px) {
         font-size: 16px;
+      }
+    }
+    &:hover {
+      @media (min-width: 1200px) {
+        background-color: #63c5b7;
+        border-color: #63c5b7;
       }
     }
   }
