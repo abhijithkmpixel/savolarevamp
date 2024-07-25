@@ -170,8 +170,9 @@ h5,
 .fancy-select .options li {
   color: #212121;
 }
-.fancy-select .trigger:after {
-  background-color: #616161;
+.fancy-select .trigger:after,
+.food-brands .foods_wrap .brand_info button {
+  background-color: #212122;
 }
 .carousel-slide h1.color-blue {
   font-size: 84px;
