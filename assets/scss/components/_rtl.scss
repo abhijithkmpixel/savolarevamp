@@ -61,6 +61,10 @@
       margin-left: 40px;
     }
   }
+  .principles__row .principles__card img {
+    margin-right: -24px;
+    margin-left: 0;
+  }
   header .header__search,
   header .navigationSearch {
     @media (max-width: 720px) {

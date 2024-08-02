@@ -2027,6 +2027,10 @@ li:not(:last-child) {
     [dir="rtl"] header .accessibility__menu__toggle {
       margin-left: 40px; } }
 
+[dir="rtl"] .principles__row .principles__card img {
+  margin-right: -24px;
+  margin-left: 0; }
+
 @media (max-width: 720px) {
   [dir="rtl"] header .header__search,
   [dir="rtl"] header .navigationSearch {
