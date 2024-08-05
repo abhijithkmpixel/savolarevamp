@@ -298,12 +298,12 @@
   .slick-track {
     &::after {
       content: "";
-      width: calc(100% - 155px);
-      left: 33px;
+      width: calc(100% - 145px);
+      left: 22px;
       height: 1px;
       background-color: rgba($color: #212121, $alpha: 0.5);
       position: absolute;
-      top: 79px;
+      top: 69px;
       @media (max-width: 990px) {
         width: calc(100% - 140px);
       }
@@ -365,15 +365,15 @@
     }
   }
   .timeline__year__slide__item {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     // width: 77px;
     // height: 77px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid #212122;
-    background-color: #212122;
+    border: 1.5px solid #616161;
+    background-color: #616161;
     cursor: pointer;
     position: relative;
     transition: 0.2s all ease-in-out;
@@ -398,7 +398,7 @@
     span {
       //   font-family: "Kaisei Opti";
       font-family: "Avenir Black";
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
       line-height: 1;
       transition: 0.2s all ease-in-out;
