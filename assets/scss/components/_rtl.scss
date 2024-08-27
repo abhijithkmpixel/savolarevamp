@@ -61,6 +61,14 @@
       margin-left: 40px;
     }
   }
+  .timeline__and__history__primary__slider
+    .timeline__and__history__primary__slide__item
+    .timeline__and__history__primary__slide__item__wrap
+    .timeline__and__history__primary__slide__item__content
+    p::before {
+    margin-right: 0;
+    margin-left: 10px;
+  }
   .principles__row .principles__card img {
     margin-right: -24px;
     margin-left: 0;

@@ -54,20 +54,20 @@
         z-index: 2;
       }
     }
-    &::after {
-      content: "";
-      width: 56%;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 5;
-      background-color: rgba($color: #63c5b7, $alpha: 0.3);
-      backdrop-filter: blur(20px);
-      @media (max-width: 990px) {
-        width: 100%;
-      }
-    }
+    // &::after {
+    //   content: "";
+    //   width: 56%;
+    //   height: 100%;
+    //   position: absolute;
+    //   left: 0;
+    //   top: 0;
+    //   z-index: 5;
+    //   background-color: rgba($color: #63c5b7, $alpha: 0.3);
+    //   backdrop-filter: blur(20px);
+    //   @media (max-width: 990px) {
+    //     width: 100%;
+    //   }
+    // }
     .timeline__and__history__primary__slide__item__wrap {
       position: absolute;
       top: 0;
@@ -119,9 +119,25 @@
           font-size: 16px;
           font-weight: 400;
           line-height: 1.5;
-          color: rgba($color: #fff, $alpha: 0.7);
+          color: rgba($color: #fff, $alpha: 1);
+          padding: 15px 0;
+          margin: 0;
+          &::before{
+            content: "";
+            width: 8px;
+            min-width: 8px;
+            display: inline-block;
+            margin-right: 10px;
+            height: 8px;
+            margin-bottom: 1px;
+            border-radius: 50%;
+            background-color: #fff;
+          }
           @media (max-width: 1200px) {
             font-size: 14px;
+          }
+          &:not(:last-child) {
+            border-bottom: 1px solid #fff;
           }
         }
         .timeline__and__history__primary__slide__item__accordian__wrap {
@@ -193,8 +209,8 @@
         }
       }
       .timeline__and__history__primary__slide__item__year__wrap {
-        width: 45%;
-        flex: 0 0 45%;
+        width: 100%;
+        flex: 0 0 100%;
         display: flex;
         align-items: center;
         justify-content: flex-end;
@@ -206,10 +222,15 @@
           width: 100%;
           flex: 0 0 auto;
         }
+        .timeline__and__history__primary__slide__item__year__wrap__inner{
+          padding: 30px;
+          background-color: #63c5b7;
+          margin-top: 20px;
+        }
         fieldset {
-          width: 300px;
+          width: 100%;
           height: auto;
-          border: 1px solid #63c5b7;
+          border: 1px solid #fff;
           padding: 22px;
           @media (max-width: 1200px) {
             width: 200px;
@@ -221,16 +242,16 @@
             margin: 30px 0;
           }
           @media (max-width: 720px) {
-            width: 70%;
+            // width: 70%;
           }
           legend {
             // font-family: "Kaisei Opti";
             font-family: "Avenir Black";
-            font-size: 70px;
+            font-size: 50px;
             font-weight: 700;
             line-height: 1;
             text-align: center;
-            color: #63c5b7;
+            color: #fff;
             padding: 0 10px;
             width: max-content;
             border: 0;
@@ -242,6 +263,7 @@
               margin: 0 0 -20px;
             }
           }
+
           img {
             width: 100%;
             height: auto;
