@@ -238,8 +238,11 @@
     }
   }
   .timeline__year__slider .slick-track::after {
-    right: 45px;
+    right: 25px;
     left: auto;
+    @media (max-width: 1200px) {
+      right: 20px;
+    }
     @media (max-width: 720px) {
       right: 30px;
     }

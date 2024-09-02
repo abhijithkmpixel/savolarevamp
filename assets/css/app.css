@@ -1804,7 +1804,7 @@ p {
               padding: 14px;
               margin: 30px 0; } }
           .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap fieldset legend {
-            font-family: "Avenir Black";
+            font-family: "Poppins", sans-serif !important;
             font-size: 50px;
             font-weight: 700;
             line-height: 1;
@@ -1866,12 +1866,18 @@ p {
       top: 0; }
   .timeline__year__slider .slick-track::after {
     content: "";
-    width: calc(100% - 145px);
+    width: calc(100% - 150px);
     left: 22px;
     height: 1px;
     background-color: rgba(33, 33, 33, 0.5);
     position: absolute;
     top: 69px; }
+    @media (max-width: 1280px) {
+      .timeline__year__slider .slick-track::after {
+        width: calc(100% - 127px); } }
+    @media (max-width: 1200px) {
+      .timeline__year__slider .slick-track::after {
+        width: calc(100% - 145px); } }
     @media (max-width: 990px) {
       .timeline__year__slider .slick-track::after {
         width: calc(100% - 140px); } }
@@ -1943,7 +1949,7 @@ p {
       transform: translateX(-50%);
       transition: 0.2s all ease-in-out; }
     .timeline__year__slider .timeline__year__slide__item span {
-      font-family: "Avenir Black";
+      font-family: "Poppins", sans-serif !important;
       font-size: 16px;
       font-weight: 700;
       line-height: 1;
@@ -2207,8 +2213,11 @@ li:not(:last-child) {
     right: auto; }
 
 [dir="rtl"] .timeline__year__slider .slick-track::after {
-  right: 45px;
+  right: 25px;
   left: auto; }
+  @media (max-width: 1200px) {
+    [dir="rtl"] .timeline__year__slider .slick-track::after {
+      right: 20px; } }
   @media (max-width: 720px) {
     [dir="rtl"] .timeline__year__slider .slick-track::after {
       right: 30px; } }

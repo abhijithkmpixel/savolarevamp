@@ -246,7 +246,7 @@
           }
           legend {
             // font-family: "Kaisei Opti";
-            font-family: "Avenir Black";
+            font-family: "Poppins", sans-serif !important;
             font-size: 50px;
             font-weight: 700;
             line-height: 1;
@@ -320,12 +320,18 @@
   .slick-track {
     &::after {
       content: "";
-      width: calc(100% - 145px);
+      width: calc(100% - 150px);
       left: 22px;
       height: 1px;
       background-color: rgba($color: #212121, $alpha: 0.5);
       position: absolute;
       top: 69px;
+      @media (max-width: 1280px) {
+        width: calc(100% - 127px);
+      }
+      @media (max-width: 1200px) {
+        width: calc(100% - 145px);
+      }
       @media (max-width: 990px) {
         width: calc(100% - 140px);
       }
@@ -419,7 +425,7 @@
     }
     span {
       //   font-family: "Kaisei Opti";
-      font-family: "Avenir Black";
+      font-family: "Poppins", sans-serif !important;
       font-size: 16px;
       font-weight: 700;
       line-height: 1;
