@@ -122,7 +122,7 @@
           color: rgba($color: #fff, $alpha: 1);
           padding: 15px 0;
           margin: 0;
-          &::before{
+          &::before {
             content: "";
             width: 8px;
             min-width: 8px;
@@ -222,7 +222,7 @@
           width: 100%;
           flex: 0 0 auto;
         }
-        .timeline__and__history__primary__slide__item__year__wrap__inner{
+        .timeline__and__history__primary__slide__item__year__wrap__inner {
           padding: 30px;
           background-color: #63c5b7;
           margin-top: 20px;
@@ -245,8 +245,8 @@
             // width: 70%;
           }
           legend {
-            // font-family: "Kaisei Opti";
-            font-family: "Poppins", sans-serif !important;
+            font-family: "Avenir Black";
+            // font-family: "Poppins", sans-serif !important;
             font-size: 50px;
             font-weight: 700;
             line-height: 1;
@@ -424,8 +424,8 @@
       transition: 0.2s all ease-in-out;
     }
     span {
-      //   font-family: "Kaisei Opti";
-      font-family: "Poppins", sans-serif !important;
+      font-family: "Avenir Black";
+      // font-family: "Poppins", sans-serif !important;
       font-size: 16px;
       font-weight: 700;
       line-height: 1;

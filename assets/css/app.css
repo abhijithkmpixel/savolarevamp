@@ -1804,7 +1804,7 @@ p {
               padding: 14px;
               margin: 30px 0; } }
           .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap fieldset legend {
-            font-family: "Poppins", sans-serif !important;
+            font-family: "Avenir Black";
             font-size: 50px;
             font-weight: 700;
             line-height: 1;
@@ -1949,7 +1949,7 @@ p {
       transform: translateX(-50%);
       transition: 0.2s all ease-in-out; }
     .timeline__year__slider .timeline__year__slide__item span {
-      font-family: "Poppins", sans-serif !important;
+      font-family: "Avenir Black";
       font-size: 16px;
       font-weight: 700;
       line-height: 1;
