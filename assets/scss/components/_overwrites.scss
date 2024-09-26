@@ -422,6 +422,26 @@ input.form-control {
     background-color: #63c5b7;
   }
 }
+.fancy-select .options {
+  min-width: 100%;
+}
+@media (max-width: 990px) {
+  [style="display:flex;align-items:center;justify-content:center;"] {
+    flex-flow: column;
+  }
+  [style="display:flex;align-items:center;justify-content:center;"]
+    .logo_icon
+    + .logo_icon {
+    margin-top: 40px !important;
+  }
+}
+.p-0 {
+  padding: 0 !important;
+}
+.leadershipCard .leadershipCard-content {
+  padding-left: 15px;
+  padding-right: 15px;
+}
 // arabic styles
 [dir="rtl"] {
   .page-section-title,

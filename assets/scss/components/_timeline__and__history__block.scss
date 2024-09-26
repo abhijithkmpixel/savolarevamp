@@ -14,13 +14,10 @@
     height: 100%;
   }
   @media (max-width: 990px) {
-    aspect-ratio: 1/1;
-  }
-  @media (max-width: 990px) {
-    aspect-ratio: 1/1.2;
+    aspect-ratio: 1/0.7;
   }
   @media (max-width: 720px) {
-    aspect-ratio: 1/1.5;
+    aspect-ratio: 1/1.1;
   }
   .timeline__and__history__primary__slide__item {
     width: 100vw;
@@ -122,17 +119,17 @@
           color: rgba($color: #fff, $alpha: 1);
           padding: 15px 0;
           margin: 0;
-          &::before {
-            content: "";
-            width: 8px;
-            min-width: 8px;
-            display: inline-block;
-            margin-right: 10px;
-            height: 8px;
-            margin-bottom: 1px;
-            border-radius: 50%;
-            background-color: #fff;
-          }
+          // &::before {
+          //   content: "";
+          //   width: 8px;
+          //   min-width: 8px;
+          //   display: inline-block;
+          //   margin-right: 10px;
+          //   height: 8px;
+          //   margin-bottom: 1px;
+          //   border-radius: 50%;
+          //   background-color: #fff;
+          // }
           @media (max-width: 1200px) {
             font-size: 14px;
           }
@@ -223,9 +220,37 @@
           flex: 0 0 auto;
         }
         .timeline__and__history__primary__slide__item__year__wrap__inner {
-          padding: 30px;
+          padding: 30px 50px;
           background-color: #63c5b7;
           margin-top: 20px;
+          position: relative;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 1.5;
+          color: rgba($color: #fff, $alpha: 0.7);
+          // padding: 18px 0;
+          @media (max-width: 1200px) {
+            font-size: 14px;
+            padding: 30px;
+          }
+          &::before {
+            content: "";
+            width: 8px;
+            min-width: 8px;
+            display: inline-block;
+            position: absolute;
+            // margin-right: 10px;
+            height: 8px;
+            margin-bottom: 1px;
+            border-radius: 50%;
+            background-color: #fff;
+            left: 35px;
+            top: 38px;
+            @media (max-width: 1200px) {
+              top: 36px;
+              left: 15px;
+            }
+          }
         }
         fieldset {
           width: 100%;

@@ -251,7 +251,21 @@
     right: -20px;
     left: auto;
   }
-.timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__content{
-  margin-right: auto;
-}
+  .timeline__and__history__primary__slider
+    .timeline__and__history__primary__slide__item
+    .timeline__and__history__primary__slide__item__wrap
+    .timeline__and__history__primary__slide__item__content {
+    // margin-right: auto;
+  }
+  .timeline__and__history__primary__slider
+    .timeline__and__history__primary__slide__item
+    .timeline__and__history__primary__slide__item__wrap
+    .timeline__and__history__primary__slide__item__year__wrap
+    .timeline__and__history__primary__slide__item__year__wrap__inner::before {
+    left: auto;
+    right: 35px;
+    @media (max-width:1200px) {
+      right: 15px;
+    }
+  }
 }
