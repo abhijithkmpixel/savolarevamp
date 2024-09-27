@@ -1469,6 +1469,15 @@ p {
       .full_width__video__widget video {
         aspect-ratio: 1920/980; } }
 
+.full_width__video__widget__innerwrap {
+  position: relative; }
+
+.full_width__video__widget .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+  .full_width__video__widget .row .col-md-3, .full_width__video__widget .row .p-0 {
+    padding: 0 15px !important; }
+
 /** @format */
 .principles__block {
   padding: 110px 0 80px; }
@@ -1749,7 +1758,7 @@ p {
       aspect-ratio: 1/0.7; } }
   @media (max-width: 720px) {
     .timeline__and__history__primary__slider {
-      aspect-ratio: 1/1.1; } }
+      aspect-ratio: 1/1.55; } }
   .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item {
     width: 100vw;
     height: 100%;
@@ -2372,6 +2381,23 @@ li:not(:last-child) {
 .timeline__and__history__primary__slide__item__year__wrap__inner::before {
       right: 15px; } }
 
+[dir="rtl"] .radio-buttons ul li input[type="radio"].radio:checked + label::after {
+  right: 17.9px;
+  left: auto;
+  top: 11px; }
+
+[dir="rtl"] .holder .table-responsive .table thead tr th {
+  text-align: right; }
+
+@media (max-width: 1200px) {
+  [dir="rtl"] header
+.header__bottom
+.header__bottom__inner
+nav
+ul:not(.hamburger__menu__toggle):not(.sub__menu)
+li:not(:last-child) {
+    margin-left: 0; } }
+
 /** @format */
 .page-section-title,
 .from-h1,
@@ -2808,6 +2834,31 @@ input.form-control {
 
 .contact-section-details .result-msg {
   color: #212121; }
+
+@media (max-width: 720px) {
+  .documentsGrid .documentsGrid-item {
+    margin: 15px 0; } }
+
+@media (max-width: 720px) {
+  .overview__slider__block .documentsGrid, .documentsGrid {
+    margin: 0; } }
+
+@media (max-width: 720px) {
+  .leadershipCard {
+    width: 100%; } }
+
+@media (max-width: 720px) {
+  .overview__slider__block .documentCard .documentCard-cta {
+    padding: 12px 30px; } }
+
+.radio-buttons ul li input[type="radio"].radio:checked + label::before {
+  background-color: #266aaa;
+  outline: 1px solid #266aaa;
+  outline-offset: 2px; }
+
+.radio-buttons ul li input[type="radio"].radio + label::after,
+.radio-buttons ul li input[type="radio"].radio:checked + label::after {
+  content: none !important; }
 
 [dir="rtl"] .page-section-title,
 [dir="rtl"] .from-h1 {

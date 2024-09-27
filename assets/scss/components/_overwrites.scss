@@ -442,8 +442,37 @@ input.form-control {
   padding-left: 15px;
   padding-right: 15px;
 }
-.contact-section-details .result-msg{
+.contact-section-details .result-msg {
   color: #212121;
+}
+.documentsGrid .documentsGrid-item {
+  @media (max-width: 720px) {
+    margin: 15px 0;
+  }
+}
+.overview__slider__block .documentsGrid , .documentsGrid {
+  @media (max-width: 720px) {
+    margin: 0;
+  }
+}
+.leadershipCard {
+  @media (max-width: 720px) {
+    width: 100%;
+  }
+}
+.overview__slider__block .documentCard .documentCard-cta {
+  @media (max-width: 720px) {
+    padding: 12px 30px;
+  }
+}
+.radio-buttons ul li input[type="radio"].radio:checked + label::before{
+  background-color: #266aaa;
+ outline: 1px solid #266aaa;
+ outline-offset: 2px;
+}
+.radio-buttons ul li input[type="radio"].radio + label::after,
+.radio-buttons ul li input[type="radio"].radio:checked + label::after{
+  content: none !important;
 }
 // arabic styles
 [dir="rtl"] {

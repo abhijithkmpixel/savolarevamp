@@ -58,3 +58,13 @@
         }
     }
 }
+.full_width__video__widget__innerwrap{
+    position: relative;
+}
+.full_width__video__widget .row{
+    margin-left: 0 !important ;
+    margin-right: 0 !important;
+    .col-md-3, .p-0{
+        padding: 0 15px !important;
+    }
+}

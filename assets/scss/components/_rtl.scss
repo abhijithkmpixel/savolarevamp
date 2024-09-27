@@ -264,8 +264,26 @@
     .timeline__and__history__primary__slide__item__year__wrap__inner::before {
     left: auto;
     right: 35px;
-    @media (max-width:1200px) {
+    @media (max-width: 1200px) {
       right: 15px;
+    }
+  }
+  .radio-buttons ul li input[type="radio"].radio:checked + label::after {
+    right: 17.9px;
+    left: auto;
+    top: 11px;
+  }
+  .holder .table-responsive .table thead tr th {
+    text-align: right;
+  }
+    header
+    .header__bottom
+    .header__bottom__inner
+    nav
+    ul:not(.hamburger__menu__toggle):not(.sub__menu)
+    li:not(:last-child) {
+    @media (max-width: 1200px) {
+      margin-left: 0;
     }
   }
 }
