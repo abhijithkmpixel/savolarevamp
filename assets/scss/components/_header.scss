@@ -143,7 +143,7 @@ header {
             // background-color: rgba(33, 33, 33, 1);
             background-color: #fff;
             width: 100dvw;
-            height: calc(100svh - 127px);
+            height: calc(100svh - 119px);
             padding: 20px 15px 20px;
             flex-direction: column;
             align-items: flex-start;
@@ -551,6 +551,7 @@ header {
   }
 }
 .hamburger__menu__toggle__active {
+  overflow: hidden;
   header
     .header__bottom
     .header__bottom__inner

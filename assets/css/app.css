@@ -198,7 +198,7 @@ header {
             left: 0;
             background-color: #fff;
             width: 100dvw;
-            height: calc(100svh - 127px);
+            height: calc(100svh - 119px);
             padding: 20px 15px 20px;
             flex-direction: column;
             align-items: flex-start;
@@ -639,14 +639,16 @@ header {
       margin: 0 12px;
       display: inline-block; }
 
-.hamburger__menu__toggle__active header
+.hamburger__menu__toggle__active {
+  overflow: hidden; }
+  .hamburger__menu__toggle__active header
 .header__bottom
 .header__bottom__inner
 nav
 ul:not(.hamburger__menu__toggle):not(.sub__menu):not(
-.mobile__header__footer__list
+  .mobile__header__footer__list
 ) {
-  transform: translateX(0); }
+    transform: translateX(0); }
 
 .mobile__header__footer__list {
   background-color: #212122;
@@ -2803,6 +2805,9 @@ input.form-control {
 .leadershipCard .leadershipCard-content {
   padding-left: 15px;
   padding-right: 15px; }
+
+.contact-section-details .result-msg {
+  color: #212121; }
 
 [dir="rtl"] .page-section-title,
 [dir="rtl"] .from-h1 {
