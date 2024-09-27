@@ -2840,7 +2840,8 @@ input.form-control {
     margin: 15px 0; } }
 
 @media (max-width: 720px) {
-  .overview__slider__block .documentsGrid, .documentsGrid {
+  .overview__slider__block .documentsGrid,
+  .documentsGrid {
     margin: 0; } }
 
 @media (max-width: 720px) {
@@ -2859,6 +2860,12 @@ input.form-control {
 .radio-buttons ul li input[type="radio"].radio + label::after,
 .radio-buttons ul li input[type="radio"].radio:checked + label::after {
   content: none !important; }
+
+.mt-50 {
+  margin-top: 50px; }
+  @media (max-width: 720px) {
+    .mt-50 {
+      margin-top: 30px; } }
 
 [dir="rtl"] .page-section-title,
 [dir="rtl"] .from-h1 {
