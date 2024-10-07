@@ -1096,7 +1096,7 @@ footer {
   height: 75dvh;
   overflow: hidden;
   margin-top: var(--header-height-neg); }
-  .hero__banner__homepage .btn.btn-default {
+  .hero__banner__homepage .btn-default {
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -1230,6 +1230,16 @@ footer {
         text-align: center;
         margin-bottom: 10px;
         text-transform: unset !important; }
+        .hero__banner__homepage .hero__banner__homepage__slide .hero__banner__homepage__slide__content h1 a {
+          font-size: inherit;
+          color: inherit;
+          font-weight: inherit;
+          font-family: inherit;
+          text-decoration: none; }
+          .hero__banner__homepage .hero__banner__homepage__slide .hero__banner__homepage__slide__content h1 a span {
+            font-size: inherit;
+            font-weight: inherit;
+            color: #63c5b7; }
         @media (max-width: 1500px) {
           .hero__banner__homepage .hero__banner__homepage__slide .hero__banner__homepage__slide__content h1 {
             font-size: 60px; } }
@@ -1254,9 +1264,19 @@ footer {
         @media (max-width: 1500px) {
           .hero__banner__homepage .hero__banner__homepage__slide .hero__banner__homepage__slide__content p {
             font-size: 16px; } }
-        @media (max-width: 990x) {
+        @media (max-width: 990px) {
           .hero__banner__homepage .hero__banner__homepage__slide .hero__banner__homepage__slide__content p {
             font-size: 14px; } }
+        .hero__banner__homepage .hero__banner__homepage__slide .hero__banner__homepage__slide__content p a {
+          font-size: inherit;
+          color: inherit;
+          font-weight: inherit;
+          font-family: inherit;
+          text-decoration: none; }
+          .hero__banner__homepage .hero__banner__homepage__slide .hero__banner__homepage__slide__content p a span {
+            font-size: inherit;
+            font-weight: inherit;
+            color: #63c5b7; }
 
 .hero__banner__homepage--innerbanner.hero__banner__homepage
 .hero__banner__homepage__slide
