@@ -2019,23 +2019,33 @@ p {
   padding: 0 0px 0px 50px; }
   @media (max-width: 720px) {
     .timeline__year__slider {
-      padding-left: 40px;
+      padding-left: 50px;
       width: calc(100% + 30px);
       margin-left: -15px; } }
   .timeline__year__slider .slick-list {
     position: relative;
-    padding-bottom: 30px; }
+    padding-bottom: 30px;
+    width: calc(100% + 50px); }
+    @media (max-width: 720px) {
+      .timeline__year__slider .slick-list {
+        width: 100%; } }
     .timeline__year__slider .slick-list::after {
-      width: 40px;
+      width: 105px;
       height: 100%;
       background-color: #fff;
       content: "";
       right: 0;
       position: absolute;
       top: 0; }
+      @media (max-width: 990px) {
+        .timeline__year__slider .slick-list::after {
+          width: 93px; } }
+      @media (max-width: 720px) {
+        .timeline__year__slider .slick-list::after {
+          width: 45px; } }
   .timeline__year__slider .slick-track::after {
     content: "";
-    width: calc(100% - 150px);
+    width: calc(100% - 157px);
     left: 22px;
     height: 1px;
     background-color: rgba(33, 33, 33, 0.5);
@@ -2066,7 +2076,7 @@ p {
     justify-content: center;
     transition: 0.2s all ease-in-out;
     border: 0;
-    top: 50%;
+    top: 31%;
     transform: translateY(-50%);
     z-index: 10;
     outline: none !important; }
@@ -2364,7 +2374,7 @@ li:not(:last-child) {
   padding-right: 50px; }
   @media (max-width: 720px) {
     [dir="rtl"] .timeline__year__slider {
-      padding-right: 40px;
+      padding-right: 50px;
       margin-left: 0;
       margin-right: -15px; } }
 
@@ -2426,6 +2436,9 @@ nav
 ul:not(.hamburger__menu__toggle):not(.sub__menu)
 li:not(:last-child) {
     margin-left: 0; } }
+
+[dir="rtl"] section:not(.section-carousel) h2.from-h1 {
+  text-align: right; }
 
 /** @format */
 .page-section-title,

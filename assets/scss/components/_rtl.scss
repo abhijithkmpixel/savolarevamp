@@ -217,7 +217,7 @@
     padding-left: 0;
     padding-right: 50px;
     @media (max-width: 720px) {
-      padding-right: 40px;
+      padding-right: 50px;
       margin-left: 0;
       margin-right: -15px;
     }
@@ -276,7 +276,7 @@
   .holder .table-responsive .table thead tr th {
     text-align: right;
   }
-    header
+  header
     .header__bottom
     .header__bottom__inner
     nav
@@ -285,5 +285,8 @@
     @media (max-width: 1200px) {
       margin-left: 0;
     }
+  }
+  section:not(.section-carousel) h2.from-h1 {
+    text-align: right;
   }
 }

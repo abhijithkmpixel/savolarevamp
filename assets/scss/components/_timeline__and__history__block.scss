@@ -326,27 +326,37 @@
   position: relative;
   padding: 0 0px 0px 50px;
   @media (max-width: 720px) {
-    padding-left: 40px;
+    padding-left: 50px;
     width: calc(100% + 30px);
     margin-left: -15px;
   }
   .slick-list {
     position: relative;
     padding-bottom: 30px;
+    width: calc(100% + 50px);
+    @media (max-width: 720px) {
+      width: 100%;
+    }
     &::after {
-      width: 40px;
+      width: 105px;
       height: 100%;
       background-color: #fff;
       content: "";
       right: 0;
       position: absolute;
       top: 0;
+      @media (max-width: 990px) {
+        width: 93px;
+      }
+      @media (max-width: 720px) {
+        width: 45px;
+      }
     }
   }
   .slick-track {
     &::after {
       content: "";
-      width: calc(100% - 150px);
+      width: calc(100% - 157px);
       left: 22px;
       height: 1px;
       background-color: rgba($color: #212121, $alpha: 0.5);
@@ -379,7 +389,7 @@
     justify-content: center;
     transition: 0.2s all ease-in-out;
     border: 0;
-    top: 50%;
+    top: 31%;
     transform: translateY(-50%);
     z-index: 10;
     outline: none !important;
