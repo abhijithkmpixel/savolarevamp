@@ -2440,6 +2440,10 @@ li:not(:last-child) {
 [dir="rtl"] section:not(.section-carousel) h2.from-h1 {
   text-align: right; }
 
+[dir="rtl"] .page__title h1,
+[dir="rtl"] .page__title h2.from-h1 {
+  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+
 /** @format */
 .page-section-title,
 .from-h1,

@@ -289,4 +289,8 @@
   section:not(.section-carousel) h2.from-h1 {
     text-align: right;
   }
+  .page__title h1,
+  .page__title h2.from-h1 {
+    font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  }
 }
