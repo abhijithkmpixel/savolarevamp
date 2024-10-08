@@ -1236,6 +1236,8 @@ footer {
           font-weight: inherit;
           font-family: inherit;
           text-decoration: none; }
+          .hero__banner__homepage .hero__banner__homepage__slide .hero__banner__homepage__slide__content h1 a:focus, .hero__banner__homepage .hero__banner__homepage__slide .hero__banner__homepage__slide__content h1 a:focus-within {
+            outline: none; }
           .hero__banner__homepage .hero__banner__homepage__slide .hero__banner__homepage__slide__content h1 a span {
             font-size: inherit;
             font-weight: inherit;
@@ -1273,6 +1275,8 @@ footer {
           font-weight: inherit;
           font-family: inherit;
           text-decoration: none; }
+          .hero__banner__homepage .hero__banner__homepage__slide .hero__banner__homepage__slide__content p a:focus, .hero__banner__homepage .hero__banner__homepage__slide .hero__banner__homepage__slide__content p a:focus-within {
+            outline: none; }
           .hero__banner__homepage .hero__banner__homepage__slide .hero__banner__homepage__slide__content p a span {
             font-size: inherit;
             font-weight: inherit;

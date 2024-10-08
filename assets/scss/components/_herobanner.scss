@@ -165,6 +165,10 @@
           font-weight: inherit;
           font-family: inherit;
           text-decoration: none;
+          &:focus,
+          &:focus-within {
+            outline: none;
+          }
           span {
             font-size: inherit;
             font-weight: inherit;
@@ -207,6 +211,10 @@
           font-weight: inherit;
           font-family: inherit;
           text-decoration: none;
+          &:focus,
+          &:focus-within {
+            outline: none;
+          }
           span {
             font-size: inherit;
             font-weight: inherit;
