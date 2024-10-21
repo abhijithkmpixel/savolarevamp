@@ -2444,6 +2444,10 @@ li:not(:last-child) {
 [dir="rtl"] .page__title h2.from-h1 {
   font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
 
+[dir="rtl"] .accessibility-menu-col:first-child {
+  border-left: 1px solid #D8D8D8;
+  border-right: 0; }
+
 /** @format */
 .page-section-title,
 .from-h1,
