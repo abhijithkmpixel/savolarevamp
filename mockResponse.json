@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "message": "Mock data received successfully",
+  "data": {
+    "writtenOffShares": 100,
+    "savolaSharesAfterCapitalReduction": 150,
+    "roundedSavolaSharesAfterCapitalReduction": 149,
+    "remainingFractionalSharesOfSavolaToBeCompensatedInCash": 0.5,
+    "numberOfAlmaraiShares": 200,
+    "roundedAlmaraiSharesPostDistribution": 198,
+    "remainingFractionalSharesOfAlmaraiToBeCompensatedInCash": 0.25
+  }
+}

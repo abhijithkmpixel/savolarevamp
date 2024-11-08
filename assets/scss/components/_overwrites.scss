@@ -481,6 +481,33 @@ input.form-control {
     margin-top: 30px;
   }
 }
+.quick__navigation__links__wrap .quick__navigation__link {
+  padding: 7px 20px;
+  @media (max-width: 1300px) {
+    padding: 7px 15px;
+  }
+  span {
+    font-size: 16px;
+    width: max-content;
+    display: block;
+    @media (max-width: 1300px) {
+      font-size: 14px;
+    }
+  }
+  .quick__navigation__link__icon {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    padding: 10px;
+  }
+}
+.quick__navigation__links__wrap {
+  @media (max-width: 1200px) {
+    padding: 40px 0;
+    width: 100%;
+    overflow-x: auto;
+  }
+}
 // arabic styles
 [dir="rtl"] {
   .page-section-title,

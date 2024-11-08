@@ -311,7 +311,9 @@
               the food and retail sectors in the MENA(Middle East, North Africa)
               region.
             </p>
-            <a class="btn btn-default margin-bottom" href="/news-media">Learn More</a>
+            <a class="btn btn-default margin-bottom" href="/news-media"
+              >Learn More</a
+            >
           </div>
         </div>
         <div class="hero__banner__homepage__slide">
@@ -325,7 +327,9 @@
               sint necessitatibus delectus quidem iure vitae voluptatem tempora
               ab atque?
             </p>
-            <a class="btn btn-default margin-bottom" href="/news-media">Learn More</a>
+            <a class="btn btn-default margin-bottom" href="/news-media"
+              >Learn More</a
+            >
           </div>
         </div>
         <div class="hero__banner__homepage__slide">
@@ -338,7 +342,9 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, vitae
               quae? Iusto perferendis voluptatibus repellendus fugit.
             </p>
-            <a class="btn btn-default margin-bottom" href="/news-media">Learn More</a>
+            <a class="btn btn-default margin-bottom" href="/news-media"
+              >Learn More</a
+            >
           </div>
         </div>
       </div>
@@ -384,6 +390,92 @@
               <img src="./uploads/ceo.jpg" alt="" />
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="share__calculator__block">
+      <div class="container">
+        <div class="share__calculator__block__header" id="share__calculator">
+          <div class="share__calculator__block__header--left">
+            <h2 class="from-h1 text-left">Share Calculation Tool</h2>
+            <p>
+              Enter your current Savola shares to see the results post-capital
+              reduction and distribution.
+            </p>
+            <div class="share__calculator__form">
+              <form action="POST" id="share__calculator">
+                <input
+                  type="text"
+                  placeholder="Enter Savola Shares Prior to Capital Reduction" />
+                <button type="submit">Calculate</button>
+              </form>
+            </div>
+          </div>
+          <div class="share__calculator__block__header--right">
+            <img src="./uploads/calculator.png" alt="" />
+          </div>
+        </div>
+        <div class="share__calculator__block__details">
+          <table class="capital__reduction">
+            <thead>
+              <tr>
+                <th colspan="2">Capital reduction</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Written off shares</td>
+                <td id="writtenOffShares">0</td>
+              </tr>
+              <tr>
+                <td>Savola shares after capital reduction</td>
+                <td id="savolaSharesAfterCapitalReduction">0</td>
+              </tr>
+              <tr>
+                <td>Rounded Savola shares after capital reduction</td>
+                <td id="roundedSavolaSharesAfterCapitalReduction">0</td>
+              </tr>
+              <tr>
+                <td>
+                  Remaining fractional shares of Savola to be compensated in
+                  cash
+                </td>
+                <td id="remainingFractionalSharesOfSavolaToBeCompensatedInCash">
+                  0
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="distribution">
+            <thead>
+              <tr>
+                <th colspan="2">
+                  Distribution-in-kind of the full Almarai stake
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Number of Almarai shares</td>
+                <td id="numberOfAlmaraiShares">0</td>
+              </tr>
+              <tr>
+                <td>Rounded Almarai shares post distribution</td>
+                <td id="roundedAlmaraiSharesPostDistribution">0</td>
+              </tr>
+              <tr>
+                <td>
+                  Remaining fractional shares of Almarai to be compensated in
+                  cash
+                </td>
+                <td
+                  id="remainingFractionalSharesOfAlmaraiToBeCompensatedInCash">
+                  0
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>

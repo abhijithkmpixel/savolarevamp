@@ -293,8 +293,17 @@
   .page__title h2.from-h1 {
     font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   }
-  .accessibility-menu-col:first-child{
-    border-left: 1px solid #D8D8D8;
+  .accessibility-menu-col:first-child {
+    border-left: 1px solid #d8d8d8;
     border-right: 0;
+  }
+  .share__calculator__block__details table th {
+    text-align: right;
+  }
+  @media (min-width: 720px) {
+    .share__calculator__form button {
+      margin-right: 35px;
+      margin-left: 0;
+    }
   }
 }
