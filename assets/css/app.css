@@ -2233,7 +2233,8 @@ section:not(.section-carousel) h2.primary__title,
     font-weight: 600;
     line-height: 1;
     color: #fff;
-    margin-left: 35px; }
+    margin-left: 35px;
+    width: auto; }
     @media (max-width: 720px) {
       .share__calculator__form button, .share__calculator__form input[type="button"] {
         margin: 0; } }
