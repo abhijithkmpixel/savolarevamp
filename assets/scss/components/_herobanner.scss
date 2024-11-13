@@ -155,7 +155,7 @@
         font-weight: 700;
         line-height: 1.4;
         color: #fff;
-        font-family: "Poppins", sans-serif;
+        font-family: "Avenir Black", sans-serif;
         text-align: center;
         margin-bottom: 10px;
         text-transform: unset !important;
@@ -221,6 +221,11 @@
             color: #63c5b7;
           }
         }
+      }
+      .btn.btn-default {
+        display: block;
+        width: max-content;
+        margin: auto;
       }
     }
   }

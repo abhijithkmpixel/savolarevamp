@@ -1,0 +1,94 @@
+/** @format */
+
+.new__custom__accordian__parent {
+  margin-top: 50px;
+  .frequentlty__asked__questions__row {
+    margin-top: 20px;
+    .active__tab {
+      svg {
+        display: none;
+      }
+    }
+  }
+  .frequentlty__asked__questions__row .faq__wrap h4 {
+    font-weight: 800;
+  }
+}
+.new__custom__accordian--item {
+  & + .new__custom__accordian--item {
+    padding-top: 30px;
+    border-top: 1px solid rgba(147, 147, 147, 0.341);
+  }
+  .new__custom__accordian--item--header {
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+    h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #212121;
+      font-family: "Avenir Black", sans-serif;
+      @media (max-width: 720px) {
+        font-size: 18px;
+      }
+    }
+    &::after {
+      content: "";
+      width: 12px;
+      height: 12px;
+      display: block;
+      border-right: 2px solid #212121;
+      border-bottom: 2px solid #212121;
+      transform: rotate(45deg) translateY(-50%);
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transition: 0.3s all ease-in-out;
+    }
+    svg {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      transition: 0.3s all ease-in-out;
+      height: 20px;
+      display: none !important;
+    }
+  }
+  .new__custom__accordian--item--body {
+    // display: none;
+    height: auto;
+    transition: 0.3s all ease-in-out;
+    overflow: hidden;
+    max-height: 0;
+  }
+  &.new__custom__accordian--item--active {
+    .new__custom__accordian--item--body {
+      //   display: block;
+      max-height: 30000px;
+    }
+    .new__custom__accordian--item--header {
+      svg {
+        transform: translateY(-50%) rotate(45deg);
+      }
+      &::after {
+        transform: rotate(135deg) translateY(-50%) scaleX(-1);
+      }
+    }
+  }
+}
+[dir="rtl"] {
+  .new__custom__accordian--item .new__custom__accordian--item--header {
+    padding-right: 0;
+    padding-left: 30px;
+    svg {
+      right: auto;
+      left: 10px;
+    }
+    &::after {
+      right: auto;
+      left: 10px;
+    }
+  }
+}

@@ -1,0 +1,268 @@
+<div class="page__title">
+    <h2 class="from-h1">حقوق الأولوية والتوزيع</h2>
+    <ul class="bread__crumbs">
+        <li><a href="/" data-sf-ec-immutable="">الصفحة الرئيسية</a></li>
+        <li><a href="/right-issue-and-distribution/overview" sfref="[f669d9a7-009d-4d83-ddaa-000000000002%7Clng%3Aar]D559B436-1A0C-63EE-A6D0-FF0000BB930F" data-sf-ec-immutable="">حقوق الأولوية والتوزيع</a></li>
+        <li>الأسئلة الشائعة</li>
+    </ul>
+</div>
+<div class="quick__navigation__links__outer">
+    <hr class="dash" />
+    <div class="container">
+        <div class="quick__navigation__links__wrap"><a class="quick__navigation__link" href="/right-issue-and-distribution/overview" sfref="[f669d9a7-009d-4d83-ddaa-000000000002%7Clng%3Aar]D559B436-1A0C-63EE-A6D0-FF0000BB930F">
+                <div class="quick__navigation__link__icon"><img src="https://savola.blob.core.windows.net/website/images/default-source/default-album/1763147537.png" alt="" data-sf-ec-immutable="" /></div><span>نظرة عامة</span>
+            </a>
+            <span></span><a class="quick__navigation__link" href="/right-issue-and-distribution/downloads" sfref="[f669d9a7-009d-4d83-ddaa-000000000002%7Clng%3Aar]925AB436-1A0C-63EE-A6D0-FF0000BB930F">
+                <div class="quick__navigation__link__icon"><img src="https://savola.blob.core.windows.net/website/images/default-source/default-album/2-995966696.png" alt="" data-sf-ec-immutable="" /></div><span>المستندات</span>
+            </a>
+            <span></span><a class="quick__navigation__link active" href="/right-issue-and-distribution/faq" sfref="[f669d9a7-009d-4d83-ddaa-000000000002%7Clng%3Aar]335BB436-1A0C-63EE-A6D0-FF0000BB930F">
+                <div class="quick__navigation__link__icon"><img src="https://savola.blob.core.windows.net/website/images/default-source/default-album/3.png" alt="" data-sf-ec-immutable="" /></div><span>الأسئلة الشائعة</span>
+            </a>
+            <span></span><a class="quick__navigation__link" href="/right-issue-and-distribution/contact" sfref="[f669d9a7-009d-4d83-ddaa-000000000002%7Clng%3Aar]D05BB436-1A0C-63EE-A6D0-FF0000BB930F">
+                <div class="quick__navigation__link__icon"><img src="https://savola.blob.core.windows.net/website/images/default-source/default-album/41796496530.png" alt="" data-sf-ec-immutable="" /></div><span>للتواصل معنا</span>
+            </a>
+        </div>
+    </div>
+</div>
+<section class="frequentlty__asked__questions__block">
+    <div class="container">
+        <h2 class="from-h1 text-left no_decor" style="margin-bottom:20px;">الأسئلة الشائعة
+        </h2>
+        <div class="row">
+            <div class="col-12 col-md-5"><!-- <p>
+              ما لها حصدت أفريقيا وايرلندا. الفترة إنطلاق الصينية حين كل. أم
+              العظمى استرجاع لكل. بـ بها الخاسرة التبرعات, عل ذلك هاربر الأمريكي
+              وباستثناء. من قررت الأهداف الى, مع عرفها إختار سبتمبر بعد.
+            </p> -->
+            </div>
+        </div>
+        <div class="frequentlty__asked__questions__row" id="frequentlty__asked__questions__row">
+            <div class="faq__wrap 1">
+                <h4>هل يمكن إعطاء مزيد من التوضيح عن هذه العملية؟</h4>
+                <p>● تتضمن هذه العملية ثلاث مراحل وهي إصدار حقوق أولوية بقيمة 6
+                    مليارات ريال والتي سيليها تخفيض لرأس المال، ومن ثم توزيع كامل حصة
+                    المجموعة في شركة المراعي البالغة 34,52% إلى مساهمي صافولا
+                    المستحقين.
+                    <br /><br />● ستخضع الثلاث مراحل لموافقة الجهات النظامية والجمعية العامة غير
+                    العادية لمساهمي صافولا.
+                    <br /><br />● سيتم الإفصاح عن أي تفاصيل جوهرية فور توفرها.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 2">
+                <h4>ما هو التأثير المتوقع على الهيكل الرأسمالي لصافولا؟</h4>
+                <p>● تهدف صافولا إلى تعزيز مركزها المالي وسداد ديونها ومواصلة
+                    الاستثمار في محفظتها.
+                    <br /><br />● إن الهدف يتمثل في تحقيق نسب مالية أكثر تحفظاً بالإضافة إلى مركز
+                    مالي قوي ومستدام.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 4">
+                <h4>ما هو الدافع/الهدف من هذه العملية؟</h4>
+                <p>● إن الدافع لهذه العملية هو تعظيم القيمة الاستثمارية للمساهمين،
+                    حيث إن القيمة السوقية (رسملة السوق) لشركة صافولا خلال السنوات
+                    الماضية كانت مساوية تقريبا للقيمة السوقية لحصتها في أسهم شركة
+                    المراعي.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 5">
+                <h4>لماذا توجهت صافولا إلى إصدار حقوق الأولوية؟</h4>
+                <p>● سيتم استخدام المتحصلات من هذه العملية في تعزيز مركز صافولا
+                    المالي، وسداد ديونها، ومواصلة الاستثمار في تنمية محفظة شركاتها
+                    الاستثمارية. <br /><br />● كما سيمكن صافولا من توزيع كامل حصتها في شركة المراعي على
+                    مساهميها المستحقين وذلك بعد عملية تخفيض رأس المال المخطط لها.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 6">
+                <h4>على أي تقييم سيتم إصدار حقوق الأولوية؟</h4>
+                <p>● لم يتم بعد تحديد التقييم المتعلق بحقوق الأولوية وسيتم الإفصاح عن
+                    ذلك للمساهمين بعد أخذ الموافقات اللازمة من الجهات النظامية.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 7">
+                <h4>ما هو تأثير إصدار حقوق الاولوية على مساهمي صافولا؟</h4>
+                <p>● لن يحدث تخفيض في نسبة الملكية لمساهمي صافولا الذين يشاركون في
+                    عملية حقوق الأولوية.
+                    <br /><br />● أما المساهمون الذين لن يشاركوا في عملية حقوق الأولوية ستنخفض نسب
+                    ملكيتهم في صافولا.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 8">
+                <h4>هل صافولا غير قادرة على تلبية التزاماتها المالية الحالية من خلال
+                    التدفقات النقدية المتوفرة لديها؟.
+                </h4>
+                <p>● تمتلك صافولا تدفقات نقدية كافية من عملياتها التشغيلية لتلبية
+                    التزاماتها المالية القائمة بما في ذلك تعهدات وشروط الديون المحددة
+                    من قبل المقرضين.
+                    <br /><br />● ستمكن عملية اصدار حقوق الأولية صافولا من تعزيز مركزها المالي،
+                    وسداد ديونها، والاستمرار في الاستثمار في نمو محفظتها الاستثمارية
+                    بالإضافة إلى تمكين توزيع أسهم صافولا في شركة المراعي.
+                    <br /><br />● إن الهدف من توزيع أسهم صافولا في شركة المراعي هو تعظيم القيمة
+                    الاستثمارية لمساهمي صافولا، الذين سيستفيدون من خلال ملكيتهم
+                    المباشرة من فرص النمو وتوزيعات الأرباح المستقبلية لإحدى أكبر شركات
+                    الأغذية الرائدة في المنطقة، وفي ذات الوقت سيستمرون في الاستفادة من
+                    فرص النمو وتعظيم القيمة المستقبلية لمحفظة صافولا الاستثمارية.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 9">
+                <h4>بالنسبة للمساهمين الذين لن يشاركوا في حقوق الأولوية، كم ستبلغ نسبة
+                    التخفيض في ملكيتهم؟
+                </h4>
+                <p>● بالنسبة للمساهمين الذين لن يشاركوا في عملية حقوق الأولوية:
+                    <br /><br />- سيكون هناك انخفاض في نسبة ملكيتهم في صافولا. <br />- سيحصلون على عدد أقل من أسهم المراعي مقارنة بالمساهمين
+                    المشاركين.<br />- سيستفيدون من فرصة بيع الحقوق الخاصة بهم، وسيتم تحديد قيمة هذه
+                    الحقوق مع تقدم مراحل التنفيذ.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 10">
+                <h4>بالنسبة للمساهمين الذين لن يشاركوا في حقوق الأولوية، هل سيحصلون
+                    كذلك على أسهم في شركة المراعي؟
+                </h4>
+                <p>● نعم، سيحصلون على أسهم في المراعي، ولكن عدم مشاركتهم في حقوق
+                    الأولوية سيؤدي إلى حصولهم على عدد أقل من أسهم المراعي مقارنة
+                    بالمساهمين المشاركين.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 11">
+                <h4>كيف ومتى يمكننا الاشتراك في حقوق الأولوية؟</h4>
+                <p>● ستقوم صافولا بالإفصاح عن كافة التفاصيل فور الحصول على الموافقات
+                    اللازمة.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 12">
+                <h4>نظراً لأن المراعي تُعد من الأصول الرئيسية في محفظة صافولا
+                    الاستثمارية، يرجى شرح الأسباب وراء عملية التوزيع؟
+                </h4>
+                <p>● يُعد استثمار صافولا في شركة المراعي من أنجح استثماراتها حتى
+                    تاريخه، حيث تضاعفت قيمة استثمار صافولا في المراعي أكثر من 100 مرة
+                    منذ الاستثمار الأول في عام 1991.
+                    <br /><br />● إن القيمة السوقية لصافولا (رسملة السوق) خلال السنوات الماضية
+                    كانت تتبع طرديا لقيمة الحصة التي تملكها صافولا في المراعي.
+                    <br /><br />● وستركز صافولا مستقبلاً على الاستثمار في تنمية شركاتها الرئيسية
+                    الرائدة في قطاعي الأغذية والتجزئة، وسيستمر المساهمون أيضاً في
+                    الاستفادة من هذا النمو بشكل مباشر.
+                    <br /><br />● وستستمر صافولا في دراسة الخيارات الاستراتيجية لتحقيق وتعظيم
+                    القيمة الاستثمارية لشركات المجموعة التي تتمتع بفرص جاذبة لتحقيق
+                    قيمة استثمارية وعوائد إضافية.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 13">
+                <h4>كيف يتم تسجيل استثمار المراعي في حسابات صافولا؟</h4>
+                <p>● يتم تسجيل استثمار المراعي في القوائم المالية لصافولا كاستثمار في
+                    شركة زميلة. كما تسجل التدفقات من المراعي ضمن الدخل التشغيلي
+                    لصافولا.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 14">
+                <h4>كم سيحصل المساهمون من أسهم المراعي لكل سهم من أسهم صافولا؟</h4>
+                <p>● سيتم تحديد والإفصاح عن ذلك لاحقاً بعد أخذ الموافقات الازمة من
+                    الجهات النظامية.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 15">
+                <h4>متى وكيف سيحصل المساهمون على أسهم المراعي؟</h4>
+                <p>● تخضع هذه العملية للموافقات النظامية وموافقة الجمعية العامة غير
+                    العادية للمساهمين وسيتم توزيع أسهم المراعي. بعد إصدار حقوق
+                    الأولوية.
+                    <br /><br />● سيتم الإفصاح عن المزيد من المعلومات بعد الحصول على الموافقات
+                    المطلوبة.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 16">
+                <h4>ما هو تخفيض رأس المال؟</h4>
+                <p>● إن عملية تخفيض رأس المال هي عبارة عن تقليل لرأسمال الشركة من
+                    خلال إلغاء عدد من الأسهم الحالية.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 3">
+                <h4>لماذا تخططون لتخفيض رأس المال؟</h4>
+                <p>● بعد إصدار حقوق الأولوية، ستقوم صافولا بعملية تخفيض لرأس المال
+                    بالقيمة الاسمية، مما يقلل من عدد الأسهم المصدرة، والتي تحسن هيكل
+                    رأس المال وستمكن صافولا من عملية توزيع كامل حصتها في شركة المراعي
+                    على مساهميها.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 17">
+                <h4>ما هي الرؤية الاستثمارية لصافولا بعد العملية؟</h4>
+                <p>● بعد إتمام العملية، ستستمر صافولا في العمل كشركة قابضة استثمارية
+                    استراتيجية في قطاعي الأغذية والتجزئة في منطقة الشرق الأوسط وشمال
+                    أفريقيا وتركيا.
+                    <br /><br />● كما تتضمن الرؤية الاستثمارية المستقبلية الفريدة لصافولا ما يلي:
+                    <br /><br />- أن تكون الشركة الرائدة في سوق السلع الاستهلاكية (FMCG) المتنوعة
+                    في المملكة ومنطقة الشرق الأوسط وشمال أفريقيا وتركيا. <br />- نموذج أعمال مرن قائم على تخصيص أولويات الموارد للتركيز على
+                    الأعمال التشغيلية الأساسية والتي تتمتع بفرص للنمو. <br />- تقوية التدفقات النقدية بهدف تعزيز هيكل رأس المال وتحقيق توزيعات
+                    أرباح للمساهمين. <br />- دعم الاستراتيجية المستقبلية للاندماج والاستحواذ وتوفير السيولة
+                    الضرورية لتمويل الاستحواذات.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 18">
+                <h4>ما رؤية صافولا المستقبلية فيما يخص شركة بنده للتجزئة في ضوء هذه
+                    العملية؟
+                </h4>
+                <p>● تواصل مجموعة صافولا - كشركة استثمارية استراتيجية قابضة - تقييم
+                    فرص تعظيم القيمة للمساهمين من خلال خيارات النمو المختلفة لتحقيق
+                    عوائد من شركاتها وعملياتها، حيث إن بنده تعتبر جزءا هاماً من محفظة
+                    صافولا الاستثمارية، عليه، فإن تسليط الضوء على التوجه الاستراتيجي
+                    للمجموعة بخصوص بنده يُعد ذا أهمية لتقديم رؤية مستقبلية شاملة في
+                    ضوء هذه العملية، ولذلك فإن صافولا تدرس إمكانية إدراج بنده في
+                    المستقبل.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+        </div>
+        <h4 style="margin-top:50px;"><a id="disclaimer_trigger" href="javascript:void" style="text-decoration:none;font-size:18px;font-weight:500;color:#000;text-decoration:underline;" data-sf-ec-immutable="">إخلاء مسؤولية</a>
+        </h4>
+    </div>
+</section>

@@ -289,37 +289,37 @@ $(document).ready(function () {
           if ($("#news-holder").hasClass("without-images")) {
             $("#news-holder").append(
               '<li class="news-row" id="' +
-                e.Id +
-                '"><h4>' +
-                e.DateStr +
-                ", " +
-                e.CategoriesStr +
-                "</h4>" +
-                '<h2><a target="_blank" href="' +
-                e.Url +
-                '">' +
-                e.Title +
-                "</a></h2></li>"
+              e.Id +
+              '"><h4>' +
+              e.DateStr +
+              ", " +
+              e.CategoriesStr +
+              "</h4>" +
+              '<h2><a target="_blank" href="' +
+              e.Url +
+              '">' +
+              e.Title +
+              "</a></h2></li>"
             );
           } else {
             $("#news-holder .news-row:last").append(
               '<div class="col-sm-3" id="' +
-                e.Id +
-                '"><div class="body-small"><ul class="list-span"><li><date>' +
-                e.DateStr +
-                "</date>" +
-                '</li><li class="text-right">' +
-                e.CategoriesStr +
-                '</li></ul><img src="' +
-                e.Image +
-                '" class="img-responsive margin-xs-bottom"><p><strong>' +
-                e.Title +
-                "</strong></p>" +
-                "<p>" +
-                e.Summary +
-                '</p><div class="text-right"><a href="' +
-                e.Url +
-                '" class="link-green">read <span class="icon-doc-text"></span></a></div></div>'
+              e.Id +
+              '"><div class="body-small"><ul class="list-span"><li><date>' +
+              e.DateStr +
+              "</date>" +
+              '</li><li class="text-right">' +
+              e.CategoriesStr +
+              '</li></ul><img src="' +
+              e.Image +
+              '" class="img-responsive margin-xs-bottom"><p><strong>' +
+              e.Title +
+              "</strong></p>" +
+              "<p>" +
+              e.Summary +
+              '</p><div class="text-right"><a href="' +
+              e.Url +
+              '" class="link-green">read <span class="icon-doc-text"></span></a></div></div>'
             );
           }
         });
@@ -351,4 +351,23 @@ $(document).ready(function () {
     }
   );
   //news filter function
+
+
+  $("#new__custom__accordian__parent .new__custom__accordian--item .new__custom__accordian--item--header").click(function () {
+    let wasActive = $(this).closest(".new__custom__accordian--item").hasClass("new__custom__accordian--item--active");
+    $("#new__custom__accordian__parent .new__custom__accordian--item").removeClass("new__custom__accordian--item--active");
+    if (!wasActive) {
+      $(this).closest(".new__custom__accordian--item").addClass("new__custom__accordian--item--active");
+      setTimeout(() => {
+        $("html, body").animate({
+          scrollTop: $(this).closest(".new__custom__accordian--item").offset().top - 150
+        }, 400);
+      }, 500);
+    }
+  });
+
+  setTimeout(() => {
+    $("#new__custom__accordian__parent .new__custom__accordian--item:first-child").addClass("new__custom__accordian--item--active");
+  }, 200);
+
 });

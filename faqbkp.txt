@@ -1,0 +1,276 @@
+<div class="page__title">
+    <h2 class="from-h1">Rights Issue and Distribution</h2>
+    <ul class="bread__crumbs">
+        <li><a href="/en/home" sfref="[f669d9a7-009d-4d83-ddaa-000000000002%7Clng%3Aen]F6222336-1A0C-63EE-A6D0-FF0000BB930F" data-sf-ec-immutable="">Home</a></li>
+        <li><a href="/en/right-issue-and-distribution/overview" sfref="[f669d9a7-009d-4d83-ddaa-000000000002%7Clng%3Aen]D559B436-1A0C-63EE-A6D0-FF0000BB930F" data-sf-ec-immutable="">Rights Issue and Distribution</a></li>
+        <li>Faq's</li>
+    </ul>
+</div>
+<div class="quick__navigation__links__outer">
+    <hr class="dash" />
+    <div class="container">
+        <div class="quick__navigation__links__wrap"><a class="quick__navigation__link" href="/en/right-issue-and-distribution/overview" sfref="[f669d9a7-009d-4d83-ddaa-000000000002%7Clng%3Aen]D559B436-1A0C-63EE-A6D0-FF0000BB930F">
+                <div class="quick__navigation__link__icon"><img src="https://savola.blob.core.windows.net/website/images/default-source/default-album/1763147537.png" alt="" data-sf-ec-immutable="" /></div><span>OVERVIEW</span>
+            </a>
+            <span></span><a class="quick__navigation__link" href="/en/right-issue-and-distribution/downloads" sfref="[f669d9a7-009d-4d83-ddaa-000000000002%7Clng%3Aen]925AB436-1A0C-63EE-A6D0-FF0000BB930F">
+                <div class="quick__navigation__link__icon"><img src="https://savola.blob.core.windows.net/website/images/default-source/default-album/2-995966696.png" alt="" data-sf-ec-immutable="" /></div><span>DOWNLOADS</span>
+            </a>
+            <span></span><a class="quick__navigation__link active" href="/en/right-issue-and-distribution/faq" sfref="[f669d9a7-009d-4d83-ddaa-000000000002%7Clng%3Aen]335BB436-1A0C-63EE-A6D0-FF0000BB930F">
+                <div class="quick__navigation__link__icon"><img src="https://savola.blob.core.windows.net/website/images/default-source/default-album/3.png" alt="" data-sf-ec-immutable="" /></div><span>FAQs</span>
+            </a>
+            <span></span><a class="quick__navigation__link" href="/en/right-issue-and-distribution/contact" sfref="[f669d9a7-009d-4d83-ddaa-000000000002%7Clng%3Aen]D05BB436-1A0C-63EE-A6D0-FF0000BB930F">
+                <div class="quick__navigation__link__icon"><img src="https://savola.blob.core.windows.net/website/images/default-source/default-album/41796496530.png" alt="" data-sf-ec-immutable="" /></div><span>CONTACT US</span>
+            </a>
+        </div>
+    </div>
+</div>
+<section class="frequentlty__asked__questions__block">
+    <div class="container">
+        <h2 class="from-h1 text-left no_decor" style="margin-bottom:20px;">Frequently Asked Questions
+        </h2>
+        <div class="row">
+            <div class="col-12 col-md-5"><!-- <p>
+              Lorem Ipsum generators on the Internet tend to repeat predefined
+              chunks as necessary.
+            </p> -->
+            </div>
+        </div>
+        <div class="frequentlty__asked__questions__row" id="frequentlty__asked__questions__row">
+            <div class="faq__wrap 1">
+                <h4>Can you elaborate on the transaction?</h4>
+                <p>● The transaction involves three stages consisting of a rights
+                    issue of SR 6 billion, which is followed by a capital reduction,
+                    and the distribution of Savola's entire stake of 34.52% in Almarai
+                    to eligible Savola shareholders.
+                    <br /><br />● All three stages will require EGM and regulatory approvals.
+                    <br /><br />● Further material details shall be disclosed once
+                    available.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 2">
+                <h4>What will be the impact on Savola&rsquo;s capital structure?</h4>
+                <p>● Savola aims to strengthen its financial position, pay down its
+                    debt, and continue to invest in the growth of its portfolio.
+                    <br /><br />● The aim is to achieve a more conservative leverage
+                    ratio along with a strong and sustainable financial position.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 3">
+                <h4>What is the rationale of this transaction?</h4>
+                <p>● The rationale is to unlock value. Over the past years, Savola&rsquo;s
+                    market capitalization is approximately equal to the market value
+                    of its stake in Almarai.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 4">
+                <h4>Why is Savola opting for a rights issue?</h4>
+                <p>● The proceeds will be used to strengthen Savola&rsquo;s financial
+                    position, pay down its debt, and invest in the growth of its
+                    portfolio companies.
+                    <br /><br />● It also enables Savola to distribute its entire stake in Almarai
+                    to its eligible shareholders after the planned capital reduction.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 5">
+                <h4>At what valuation will the rights issue be conducted?</h4>
+                <p>● The exact valuation has not yet been determined and will be
+                    communicated to shareholders after securing regulatory approvals.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 6">
+                <h4>What will be the impact of the rights issue on Savola&rsquo;s
+                    shareholders?
+                </h4>
+                <p>● Participating shareholders in the rights issue will have no
+                    dilution in their percentage ownership in Savola.
+                    <br /><br />● Non-participating shareholders in the rights issue will have
+                    dilution in their percentage ownership in Savola.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 7">
+                <h4>Can Savola not meet its current debt obligations through existing
+                    cashflows?
+                </h4>
+                <p>● Savola has sufficient cash flows from operations to meet its
+                    existing debt obligation and is well within any debt covenants
+                    stipulated by its lenders.
+                    <br /><br />● The rights issue will enable Savola to strengthen its financial
+                    position, pay down its debt, and continue to invest in the growth
+                    of its portfolio in addition to enabling the distribution of
+                    Savola&rsquo;s stake in Almarai to eligible Savola shareholders.
+                    <br /><br />● The objective of the distribution of Savola&rsquo;s stake in Almarai
+                    to eligible Savola shareholders is to unlock value for Savola&rsquo;s
+                    shareholders, who will benefit from direct exposure to the growth
+                    potential and future dividend capacity of one of the region&rsquo;s
+                    leading food manufacturers while continuing to participate in the
+                    future growth and value creation of the Savola portfolio.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 8">
+                <h4>For shareholders not participating in the rights issue, how much
+                    will their holdings be diluted?
+                </h4>
+                <p>● For shareholders not participating in rights issue: <br />- There will be a dilution in the percentage of their ownership in
+                    Savola. <br />- They will receive fewer Almarai shares compared to participating
+                    shareholders. <br />- They will benefit from the opportunity to sell their letter of
+                    rights. The value of which will be determined as the transaction
+                    progresses.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 9">
+                <h4>For shareholders not participating in the rights issue, will they
+                    still receive Almarai shares?
+                </h4>
+                <p>● Yes, they will receive Almarai shares but non-participation will
+                    result in the receipt of fewer Almarai shares compared to
+                    participating shareholders.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 10">
+                <h4>How and when can we subscribe to the Rights issue?</h4>
+                <p>● Savola will communicate the full details once it receives the
+                    required approvals.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 11">
+                <h4>Given that Almarai has been a key asset in Savola&rsquo;s portfolio,
+                    please explain the rationale for the distribution.
+                </h4>
+                <p>● Almarai has been the most successful investment for Savola Group
+                    to date, with the value of Savola&rsquo;s investment in the company
+                    increasing more than 100-fold since the initial investment in
+                    1991.
+                    <br /><br />● Historically, the market capitalization of Savola has closely
+                    tracked the market value of the stake held by Savola in Almarai.
+                    <br /><br />● Going forward, Savola will focus on investing in the growth of
+                    its core food and retail businesses and shareholders will continue
+                    to benefit from direct exposure to this growth too.
+                    <br /><br />● Savola will also continue to review strategic options to realize
+                    value from portfolio companies that demonstrate attractive
+                    distribution and monetization potential.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 12">
+                <h4>How is Almarai accounted for in Savola&rsquo;s books?</h4>
+                <p>● Almarai is accounted as an investment in associate. Income from
+                    Almarai flows within Savola&rsquo;s operating income.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 13">
+                <h4>How many Almarai shares per Savola share will Shareholders
+                    receive?
+                </h4>
+                <p>● This will be determined and communicated following the receipt
+                    of the relevant regulatory approvals.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 14">
+                <h4>When and how will shareholders receive the Almarai shares?</h4>
+                <p>● This is subject to the relevant regulatory and EGM approvals and
+                    will take place following the rights issue.
+                    <br /><br />● Further information will be communicated following the required
+                    approvals.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 15">
+                <h4>What is capital reduction?</h4>
+                <p>● A capital reduction is the process of reducing a company&rsquo;s share
+                    capital through the cancellation of a certain number of the
+                    existing shares.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 16">
+                <h4>Why are you planning a capital reduction?</h4>
+                <p>● Following the rights issue, Savola will perform a capital
+                    reduction at par value, reducing the number of issued shares,
+                    which will optimize Savola&rsquo;s capital structure and enable the
+                    distribution of Savola&rsquo;s stake in Almarai to its shareholders.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 17">
+                <h4>What is the investment proposition of Savola following the
+                    transaction?
+                </h4>
+                <p>● Post transaction, Savola will continue to operate as a strategic
+                    investment holding company, operating in the food and retail
+                    sectors in the MENAT region.
+                    <br /><br />● Savola&rsquo;s future unique Investment proposition includes:
+                    <br /><br />- Market-leading diversified FMCG player across the Kingdom and
+                    MENAT region. <br />- Resilient business model prioritizing resources to focus on core
+                    operating business with growth potential. <br />- Strong cash flow generation supporting optimized capital
+                    structure and shareholder distributions. <br />- Support future M&amp;A strategy, to provide for the necessary
+                    liquidity to fund acquisitions. <br />
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="faq__wrap 18">
+                <h4>What is Savola's future vision for Panda in light of this
+                    transaction?
+                </h4>
+                <p>● As a strategic investment holding, Savola continues to assess
+                    value creation opportunities through organic and inorganic growth
+                    avenues and monetization of assets. Panda is a significant part of
+                    the Group portfolio. Shedding light on the strategic direction of
+                    Panda is relevant to provide a comprehensive view in the light of
+                    this transaction. Savola is considering listing of Panda in the
+                    future.
+                </p><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+        </div>
+        <h4 style="margin-top:50px;"><a id="disclaimer_trigger" href="javascript:void" style="text-decoration:none;font-size:18px;font-weight:500;color:#000;text-decoration:underline;" data-sf-ec-immutable="">Disclaimer</a>
+        </h4>
+    </div>
+</section>
