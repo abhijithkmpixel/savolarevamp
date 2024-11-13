@@ -487,7 +487,7 @@ input.form-control {
     padding: 7px 15px;
   }
   span {
-    font-size: 16px;
+    font-size: 15px;
     width: max-content;
     display: block;
     @media (max-width: 1300px) {
@@ -495,10 +495,11 @@ input.form-control {
     }
   }
   .quick__navigation__link__icon {
-    width: 40px;
-    height: 40px;
-    flex: 0 0 40px;
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
     padding: 10px;
+    margin-right: 15px;
   }
 }
 .quick__navigation__links__wrap {
