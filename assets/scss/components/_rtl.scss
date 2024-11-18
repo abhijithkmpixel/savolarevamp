@@ -301,7 +301,8 @@
     text-align: right;
   }
   @media (min-width: 720px) {
-    .share__calculator__form button {
+    .share__calculator__form button,
+    .share__calculator__form input[type="button"] {
       margin-right: 35px;
       margin-left: 0;
     }
