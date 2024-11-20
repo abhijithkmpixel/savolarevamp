@@ -69,6 +69,27 @@
   font-style: normal;
   font-display: swap; }
 
+@font-face {
+  font-family: 'Bahij TheSansArabic';
+  src: url("../fonts/sansarabic/BahijTheSansArabic-Bold.woff2") format("woff2"), url("../fonts/sansarabic/BahijTheSansArabic-Bold.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Bahij TheSansArabic Plain';
+  src: url("../fonts/sansarabic/BahijTheSansArabic-Plain.woff2") format("woff2"), url("../fonts/sansarabic/BahijTheSansArabic-Plain.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Bahij TheSansArabic';
+  src: url("../fonts/sansarabic/BahijTheSansArabic-SemiBold.woff2") format("woff2"), url("../fonts/sansarabic/BahijTheSansArabic-SemiBold.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap; }
+
 body {
   font-family: "Poppins",sans-serif !important; }
 
@@ -2211,8 +2232,6 @@ section:not(.section-carousel) h2.primary__title,
     @media (max-width: 990px) {
       .share__calculator__block__header .share__calculator__block__header--right {
         display: none; } }
-    .share__calculator__block__header .share__calculator__block__header--right img {
-      filter: grayscale(1); }
 
 .share__calculator__form {
   padding: 60px 50px;
@@ -2278,8 +2297,8 @@ section:not(.section-carousel) h2.primary__title,
     .share__calculator__block__details table + table {
       margin-top: 50px; }
     .share__calculator__block__details table th {
-      padding: 22px 18px;
-      font-size: 28px;
+      padding: 12px 18px;
+      font-size: 20px;
       font-weight: 700;
       line-height: 1.3;
       font-family: "Avenir Black", sans-serif;
@@ -2305,11 +2324,11 @@ section:not(.section-carousel) h2.primary__title,
             min-width: 90px;
             width: auto; } }
     .share__calculator__block__details table.capital__reduction th {
-      border: 1px solid #63c5b7;
-      background-color: #63c5b7;
+      border: 1px solid #e2de4e;
+      background-color: #e2de4e;
       color: #45555f; }
     .share__calculator__block__details table.capital__reduction td {
-      border: 1px solid #63c5b7; }
+      border: 1px solid #e2de4e; }
     .share__calculator__block__details table.distribution th {
       border: 1px solid #4d4d4d;
       background-color: #4d4d4d;
@@ -2409,7 +2428,7 @@ h1,
 [dir="rtl"] .carousel-slide h1.color-blue,
 [dir="rtl"] .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem,
 [dir="rtl"] .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem a {
-  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+  font-family: "Bahij TheSansArabic Plain" !important; }
 
 [dir="rtl"] header
 .header__top
@@ -2677,7 +2696,7 @@ li:not(:last-child) {
 
 [dir="rtl"] .page__title h1,
 [dir="rtl"] .page__title h2.from-h1 {
-  font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+  font-family: "Bahij TheSansArabic" !important; }
 
 [dir="rtl"] .accessibility-menu-col:first-child {
   border-left: 1px solid #d8d8d8;

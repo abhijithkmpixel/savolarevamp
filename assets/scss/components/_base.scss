@@ -88,6 +88,37 @@
 }
 
 
+// arabic fonts 
+@font-face {
+    font-family: 'Bahij TheSansArabic';
+    src: url('../fonts/sansarabic/BahijTheSansArabic-Bold.woff2') format('woff2'),
+        url('../fonts/sansarabic/BahijTheSansArabic-Bold.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bahij TheSansArabic Plain';
+    src: url('../fonts/sansarabic/BahijTheSansArabic-Plain.woff2') format('woff2'),
+        url('../fonts/sansarabic/BahijTheSansArabic-Plain.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bahij TheSansArabic';
+    src: url('../fonts/sansarabic/BahijTheSansArabic-SemiBold.woff2') format('woff2'),
+        url('../fonts/sansarabic/BahijTheSansArabic-SemiBold.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+// arabic fonts end
+
 body{
     font-family: "Poppins",sans-serif !important;
 }

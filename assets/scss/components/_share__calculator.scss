@@ -33,7 +33,7 @@
       display: none;
     }
     img {
-      filter: grayscale(1);
+      // filter: grayscale(1);
     }
   }
 }
@@ -104,8 +104,8 @@
       margin-top: 50px;
     }
     th {
-      padding: 22px 18px;
-      font-size: 28px;
+      padding: 12px 18px;
+      font-size: 20px;
       font-weight: 700;
       line-height: 1.3;
       font-family: "Avenir Black", sans-serif;
@@ -135,12 +135,12 @@
     }
     &.capital__reduction {
       th {
-        border: 1px solid #63c5b7;
-        background-color: #63c5b7;
+        border: 1px solid #e2de4e;
+        background-color: #e2de4e;
         color: #45555f;
       }
       td {
-        border: 1px solid #63c5b7;
+        border: 1px solid #e2de4e;
       }
     }
     &.distribution {

@@ -21,7 +21,8 @@
   .carousel-slide h1.color-blue,
   .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem,
   .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem a {
-    font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    // font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif !important; 
+    font-family: "Bahij TheSansArabic Plain" !important; 
   }
   header
     .header__top
@@ -291,7 +292,8 @@
   }
   .page__title h1,
   .page__title h2.from-h1 {
-    font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    // font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-family: "Bahij TheSansArabic" !important;
   }
   .accessibility-menu-col:first-child {
     border-left: 1px solid #d8d8d8;
@@ -313,4 +315,5 @@
     margin-left: 15px;
     margin-right: 0;
   }
+
 }
