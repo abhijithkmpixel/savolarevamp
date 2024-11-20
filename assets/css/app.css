@@ -2204,7 +2204,8 @@ section:not(.section-carousel) h2.primary__title,
 
 /** @format */
 .share__calculator__block {
-  padding: 90px 0; }
+  padding: 90px 0;
+  overflow: hidden; }
   @media (max-width: 990px) {
     .share__calculator__block {
       padding: 40px 0; } }
