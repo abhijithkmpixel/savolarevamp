@@ -75,7 +75,7 @@
       width: 430px;
       height: 430px;
       border-radius: 50%;
-      background-color: rgba($color: #63c5b7, $alpha: 0.15);
+      background-color: rgba($color:  var(--color-primary), $alpha: 0.15);
       position: absolute;
       top: 30%;
       left: -20%;
@@ -123,7 +123,7 @@
   font-size: 16px;
   font-weight: 700;
   line-height: 1;
-  color: #63c5b7;
+  color:  var(--color-primary);
   position: relative;
   width: max-content;
   margin-bottom: 18px;
@@ -136,7 +136,7 @@
     content: "";
     width: 50px;
     height: 1px;
-    background-color: #63c5b7;
+    background-color:  var(--color-primary);
     display: block;
     top: 50%;
     left: calc(100% + 14px);

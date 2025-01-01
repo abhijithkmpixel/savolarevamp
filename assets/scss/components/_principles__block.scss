@@ -57,7 +57,7 @@
     }
     &:hover {
       @media (min-width: 1200px) {
-        background-color: #63c5b7;
+        background-color:  var(--color-primary);
         // padding-top: 36px;
         h4,
         p {

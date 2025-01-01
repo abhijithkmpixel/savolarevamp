@@ -3,7 +3,7 @@
 .top__footer {
   width: 100%;
   padding: 40px 15px;
-  background: url(../images/footerbg.png), #63c5b7;
+  background: url(../images/footerbg.png),  var(--color-primary);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -56,7 +56,7 @@
     }
   }
   &.cta__primary--dark {
-    background-color: #63c5b7;
+    background-color:  var(--color-primary);
     color: #fff;
     transition: 0.2s all ease-in-out;
     &:hover {
@@ -72,7 +72,7 @@
   font-size: 13px;
   font-weight: 700;
   line-height: 1;
-  color: #63c5b7 !important;
+  color:  var(--color-primary) !important;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -88,7 +88,7 @@
     }
   }
   &:hover {
-    color: #63c5b7 !important;
+    color:  var(--color-primary) !important;
     @media (min-width: 1200px) {
       color: #255574 !important;
       svg path {

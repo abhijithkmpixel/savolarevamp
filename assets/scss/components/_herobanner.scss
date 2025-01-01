@@ -55,7 +55,7 @@
           button {
             width: 8px;
             height: 8px;
-            background-color: #63c5b7;
+            background-color:  var(--color-primary);
             @media (max-width: 1500px) {
               width: 5px;
               height: 5px;
@@ -172,7 +172,7 @@
           span {
             font-size: inherit;
             font-weight: inherit;
-            color: #63c5b7;
+            color:  var(--color-primary);
           }
         }
         @media (max-width: 1500px) {
@@ -190,7 +190,7 @@
         span {
           font-size: inherit;
           font-weight: inherit;
-          color: #63c5b7;
+          color:  var(--color-primary);
         }
       }
       p {
@@ -218,7 +218,7 @@
           span {
             font-size: inherit;
             font-weight: inherit;
-            color: #63c5b7;
+            color:  var(--color-primary);
           }
         }
       }

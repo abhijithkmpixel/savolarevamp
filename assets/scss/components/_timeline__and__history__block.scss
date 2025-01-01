@@ -60,7 +60,7 @@
     //   left: 0;
     //   top: 0;
     //   z-index: 5;
-    //   background-color: rgba($color: #63c5b7, $alpha: 0.3);
+    //   background-color: rgba($color:  var(--color-primary), $alpha: 0.3);
     //   backdrop-filter: blur(20px);
     //   @media (max-width: 990px) {
     //     width: 100%;
@@ -160,7 +160,7 @@
               span {
                 font-size: inherit;
                 font-weight: inherit;
-                color: #63c5b7;
+                color:  var(--color-primary);
                 display: inline-block;
               }
               svg {
@@ -222,7 +222,7 @@
         }
         .timeline__and__history__primary__slide__item__year__wrap__inner {
           padding: 30px 50px;
-          background-color: #63c5b7;
+          background-color:  var(--color-primary);
           margin-top: 20px;
           position: relative;
           font-size: 16px;
@@ -303,7 +303,7 @@
           font-size: 130px;
           font-weight: 700;
           line-height: 1;
-          color: #63c5b7;
+          color:  var(--color-primary);
           margin: 0;
           @media (max-width: 1200px) {
             font-size: 110px;
@@ -413,7 +413,7 @@
     }
     &:hover {
       @media (min-width: 1200px) {
-        background-color: #63c5b7;
+        background-color:  var(--color-primary);
         svg {
           path {
             fill: #fff;
@@ -473,22 +473,22 @@
     }
     &:hover {
       @media (min-width: 1200px) {
-        background-color: #63c5b7;
-        border-color: #63c5b7;
+        background-color:  var(--color-primary);
+        border-color:  var(--color-primary);
       }
     }
   }
   .slick-current .timeline__year__slide__item {
-    background-color: #63c5b7;
-    border-color: #63c5b7;
+    background-color:  var(--color-primary);
+    border-color:  var(--color-primary);
     span {
       color: #fff;
     }
     &::after {
       width: 14px;
       height: 14px;
-      background-color: #63c5b7;
-      border-color: #63c5b7;
+      background-color:  var(--color-primary);
+      border-color:  var(--color-primary);
       top: calc(100% + 13px);
     }
   }

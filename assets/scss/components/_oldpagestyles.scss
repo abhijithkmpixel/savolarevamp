@@ -55,7 +55,7 @@
     font-weight: 800;
 }
 .quick__navigation__links__wrap .quick__navigation__link.active{
-    background-color: #63C5B7;
+    background-color: var(--color-primary);
 }
 .quick__navigation__links__wrap .quick__navigation__link.active .quick__navigation__link__icon img{
     filter: invert(1);
@@ -421,7 +421,7 @@ transform: rotate(45deg);
         color: #fff;
     }
     .quick__navigation__links__wrap .quick__navigation__link:hover{
-        background-color: #63C5B7;
+        background-color: var(--color-primary);
     }
     .quick__navigation__links__wrap .quick__navigation__link:hover .quick__navigation__link__icon{
         background-color: #fff;
@@ -505,7 +505,7 @@ color: #105678;
 }
 .disclaimer__popup__outer .disclaimer__popup__contentbox button{
     padding: 10px 25px;
-    background-color: #63C5B7;
+    background-color: var(--color-primary);
     font-size: 20px;
     font-weight: 500;
     color: #fff;

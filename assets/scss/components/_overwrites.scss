@@ -140,7 +140,7 @@ h5,
       color: #fff;
     }
     @media (min-width: 1200px) {
-      background: #63c5b7;
+      background:  var(--color-primary);
       h2 {
         color: #fff;
       }
@@ -241,7 +241,7 @@ h5,
 .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem:hover,
 .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem:active,
 .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem:focus {
-  background-color: #63c5b7;
+  background-color:  var(--color-primary);
 }
 .leadershipCard {
   padding: 0;
@@ -273,7 +273,7 @@ h5,
     color: #fff;
     background-color: #616161;
     @media (min-width: 1200px) {
-      background-color: #63c5b7;
+      background-color:  var(--color-primary);
       color: #fff;
     }
   }
@@ -283,7 +283,7 @@ a.link-green:active {
   color: #255574;
 }
 .documentCard .documentCard-cta:hover {
-  background-color: #63c5b7;
+  background-color:  var(--color-primary);
 }
 .shareholderCard:before {
   content: none !important;
@@ -319,7 +319,7 @@ a.link-green:active {
     color: #fff;
     background-color: #616161;
     @media (min-width: 1200px) {
-      background-color: #63c5b7;
+      background-color:  var(--color-primary);
       color: #fff;
     }
   }
@@ -344,7 +344,7 @@ a.link-green:active {
   &:hover {
     background-color: #616161;
     @media (min-width: 1200px) {
-      background-color: #63c5b7;
+      background-color:  var(--color-primary);
       .quick__navigation__link__icon {
         background-color: #fff;
         img {
@@ -354,7 +354,7 @@ a.link-green:active {
     }
   }
   &.active {
-    background-color: #63c5b7;
+    background-color:  var(--color-primary);
     .quick__navigation__link__icon {
       background-color: #fff;
       img {
@@ -412,14 +412,14 @@ input.form-control {
   &:hover {
     background-color: #616161;
     @media (min-width: 1200px) {
-      background-color: #63c5b7;
+      background-color:  var(--color-primary);
     }
   }
 }
 .active,
 .nav-tabs li.active {
   .btn-secondary-rev {
-    background-color: #63c5b7;
+    background-color:  var(--color-primary);
   }
 }
 .fancy-select .options {

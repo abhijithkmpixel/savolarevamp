@@ -1,5 +1,10 @@
 /** @format */
-
+:root {
+  --color-primary: #63c5b7; /* Default color */
+}
+.greenColorContrast {
+  --color-primary: #2e6158; /* Override the color */
+}
 @import "./components/base";
 
 @import "./components/header";
