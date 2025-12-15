@@ -94,21 +94,21 @@ $(document).ready(function () {
 
   const isRtl = $("html").attr("dir") === "rtl";
 
-  $(".hero__banner__homepage__slider").slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnFocus: false,
-    pauseOnHover: false,
-    pauseOnDotsHover: false,
-    swipeToSlide: false, // Disable swipe-to-slide
-    rtl: isRtl,
-    initialSlide: 0,
-  });
+  // $(".hero__banner__homepage__slider").slick({
+  //   infinite: true,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   arrows: false,
+  //   dots: true,
+  //   // autoplay: true,
+  //   autoplaySpeed: 3000,
+  //   pauseOnFocus: false,
+  //   pauseOnHover: false,
+  //   pauseOnDotsHover: false,
+  //   swipeToSlide: false, // Disable swipe-to-slide
+  //   rtl: isRtl,
+  //   initialSlide: 0,
+  // });
 
   $(".timeline__and__history__primary__slider").slick({
     infinite: true,
@@ -122,6 +122,40 @@ $(document).ready(function () {
     swipeToSlide: true,
     asNavFor: ".timeline__year__slider",
     rtl: $("html").attr("dir") == "ltr" ? false : true,
+  });
+  $(".latest__news__slider").slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    infinite: true,
+    pauseOnFocus: false,
+    prevArrow: `<button type="button" class="latest__news__nav latest__news__nav--prev"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17" fill="none">
+<path d="M8.25 0.75L0.75 8.25M0.75 8.25L8.25 15.75M0.75 8.25H18.75" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></button>`,
+    nextArrow: `<button type="button" class="latest__news__nav latest__news__nav--next"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17" fill="none">
+<path d="M11.25 0.75L18.75 8.25M18.75 8.25L11.25 15.75M18.75 8.25H0.75" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></button>`,
+    appendArrows: ".latest__news__section__actions .latest__news__slider__nav",
+    // fade:true,
+    pauseOnHover: false,
+    swipeToSlide: true,
+    rtl: $("html").attr("dir") == "ltr" ? false : true,
+    responsive: [
+
+      {
+        breakpoint: 990,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 580,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   });
   $(".timeline__year__slide__item").each(function () {
     $(this).wrap('<div class="timeline__year__slide__wrapper"></div>');
@@ -174,34 +208,34 @@ $(document).ready(function () {
     rtl: $("html").attr("dir") == "ltr" ? false : true,
   });
 
-  setTimeout(() => {
-    $(".hero__banner__homepage__slider .slick-dots li.slick-active")
-      .append(`    <div class="circle-container">
-        <svg>
-            <circle class="circle" cx="12" cy="12" r="10"></circle>
-        </svg>
-    </div>`);
-  }, 500);
+  // setTimeout(() => {
+  //   $(".hero__banner__homepage__slider .slick-dots li.slick-active")
+  //     .append(`    <div class="circle-container">
+  //       <svg>
+  //           <circle class="circle" cx="12" cy="12" r="10"></circle>
+  //       </svg>
+  //   </div>`);
+  // }, 500);
 
-  $(".hero__banner__homepage__slider").on(
-    "afterChange",
-    function (event, slick, currentSlide, nextSlide) {
-      $(".hero__banner__homepage__slider .slick-dots li.slick-active")
-        .append(`    <div class="circle-container">
-        <svg>
-            <circle class="circle" cx="12" cy="12" r="10"></circle>
-        </svg>
-    </div>`);
-    }
-  );
-  $(".hero__banner__homepage__slider").on(
-    "beforeChange",
-    function (event, slick, currentSlide, nextSlide) {
-      $(
-        ".hero__banner__homepage__slider .slick-dots li.slick-active .circle-container"
-      ).remove();
-    }
-  );
+  // $(".hero__banner__homepage__slider").on(
+  //   "afterChange",
+  //   function (event, slick, currentSlide, nextSlide) {
+  //     $(".hero__banner__homepage__slider .slick-dots li.slick-active")
+  //       .append(`    <div class="circle-container">
+  //       <svg>
+  //           <circle class="circle" cx="12" cy="12" r="10"></circle>
+  //       </svg>
+  //   </div>`);
+  //   }
+  // );
+  // $(".hero__banner__homepage__slider").on(
+  //   "beforeChange",
+  //   function (event, slick, currentSlide, nextSlide) {
+  //     $(
+  //       ".hero__banner__homepage__slider .slick-dots li.slick-active .circle-container"
+  //     ).remove();
+  //   }
+  // );
   // var video = $('#myVideo')[0];
   // var playButton = $('#playButton');
   // var videoOverlay = $('#overlay__blade');
@@ -350,6 +384,95 @@ $(document).ready(function () {
       UpdateNews();
     }
   );
+
+
+
+  // const $slider = $(".hero__banner__homepage__slider");
+
+  // $slider.slick({
+  //   infinite: true,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   arrows: false,
+  //   dots: true,
+  //   autoplaySpeed: 3000,
+  //   pauseOnFocus: false,
+  //   pauseOnHover: false,
+  //   pauseOnDotsHover: false,
+  //   swipeToSlide: false,
+  //   rtl: isRtl,
+  //   initialSlide: 0,
+
+  //   customPaging: function (slider, i) {
+  //     const title = $(slider.$slides[i]).find("h1").text();
+  //     return `<span class="progress"></span><span class="dot-label">${title}</span>`;
+  //   },
+  // });
+  const $slider = $(".hero__banner__homepage__slider");
+  const $counter = $(".hero__banner__homepage__navigation__count");
+
+  $slider.slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+
+    arrows: true,
+    appendArrows: ".hero__banner__homepage__navigation",
+
+    prevArrow: `
+    <button type="button" class="slider-arrow slider-arrow--prev" aria-label="Previous slide">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17" fill="none">
+        <path d="M8.25 0.75L0.75 8.25M0.75 8.25L8.25 15.75M0.75 8.25H18.75"
+          stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  `,
+
+    nextArrow: `
+    <button type="button" class="slider-arrow slider-arrow--next" aria-label="Next slide">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17" fill="none">
+        <path d="M11.25 0.75L18.75 8.25M18.75 8.25L11.25 15.75M18.75 8.25H0.75"
+          stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  `,
+
+    dots: true,
+    autoplaySpeed: 3000,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    pauseOnDotsHover: false,
+    swipeToSlide: false,
+    rtl: isRtl,
+    initialSlide: 0,
+
+    customPaging: function (slider, i) {
+      const title = $(slider.$slides[i]).find("h1").text();
+      return `
+      <span class="progress"></span>
+      <span class="dot-label">${title}</span>
+    `;
+    },
+  });
+
+  /* ==============================
+     Slide counter (updates BEFORE slide moves)
+  =============================== */
+  function updateCounter(slideIndex, total) {
+    const currentFormatted = String(slideIndex + 1).padStart(2, "0");
+    const totalFormatted = String(total).padStart(2, "0");
+
+    $counter.html(`<span>${currentFormatted}</span>/${totalFormatted}`);
+  }
+
+  // BEFORE slide changes: update counter to next slide
+  $slider.on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+    updateCounter(nextSlide, slick.slideCount);
+  });
+
+  // Manually update counter **immediately after slick() initialization**
+  updateCounter(0, $slider.slick("getSlick").slideCount);
+
   //news filter function
 
 
@@ -370,4 +493,102 @@ $(document).ready(function () {
     $("#new__custom__accordian__parent .new__custom__accordian--item:first-child").addClass("new__custom__accordian--item--active");
   }, 200);
 
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  /* =====================================
+     1️⃣ Equal height for all titles (h4)
+  ====================================== */
+
+  const titles = document.querySelectorAll(".principles__card h4");
+  let maxTitleHeight = 0;
+
+  titles.forEach(title => {
+    title.style.height = "auto"; // reset
+    maxTitleHeight = Math.max(maxTitleHeight, title.offsetHeight);
+  });
+
+  titles.forEach(title => {
+    title.style.height = `${maxTitleHeight}px`;
+  });
+
+  /* =====================================
+     2️⃣ Clamp paragraphs + Read more / less
+  ====================================== */
+
+  const MAX_LINES = 6;
+
+  document.querySelectorAll(".principles__card p").forEach(p => {
+    const fullText = p.textContent.trim();
+    const lineHeight = parseFloat(getComputedStyle(p).lineHeight);
+    const maxHeight = lineHeight * MAX_LINES;
+
+    const isRTL = document.documentElement.dir === "rtl";
+
+    // Labels
+    const LABELS = {
+      more: isRTL ? "اقرأ المزيد" : "Read more",
+      less: isRTL ? "اقرأ أقل" : "Read less",
+    };
+
+    // Suffixes
+    const suffixMore = isRTL
+      ? `... <span class="read-more" dir="rtl">${LABELS.more}</span>`
+      : `... <span class="read-more">${LABELS.more}</span>`;
+
+    const suffixLess = `<span class="read-more">${LABELS.less}</span>`;
+
+    // Reset
+    p.textContent = fullText;
+    p.classList.add("is-clamped");
+
+    // If it doesn't overflow, stop here
+    if (p.scrollHeight <= maxHeight) {
+      p.classList.remove("is-clamped");
+      return;
+    }
+
+    // Find the maximum text length that fits WITH "... Read more"
+    let low = 0;
+    let high = fullText.length;
+    let clampedText = fullText;
+
+    while (low <= high) {
+      const mid = Math.floor((low + high) / 2);
+      p.innerHTML = fullText.slice(0, mid) + suffixMore;
+
+      if (p.scrollHeight > maxHeight) {
+        high = mid - 1;
+      } else {
+        clampedText = fullText.slice(0, mid);
+        low = mid + 1;
+      }
+    }
+
+    // Store clamped text for later reuse
+    p.dataset.clampedText = clampedText;
+
+    // Apply final clamped version
+    p.innerHTML = clampedText + suffixMore;
+
+    /* ===== Toggle logic ===== */
+
+    p.addEventListener("click", e => {
+      const btn = e.target.closest(".read-more");
+      if (!btn) return;
+
+      const isClamped = p.classList.contains("is-clamped");
+
+      if (isClamped) {
+        // Expand
+        p.classList.remove("is-clamped");
+        p.innerHTML = `${fullText} ${suffixLess}`;
+      } else {
+        // Collapse
+        p.classList.add("is-clamped");
+        p.innerHTML = `${p.dataset.clampedText}${suffixMore}`;
+      }
+    });
+  });
 });

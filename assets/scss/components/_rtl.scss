@@ -21,8 +21,8 @@
   .carousel-slide h1.color-blue,
   .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem,
   .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem a {
-    // font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif !important; 
-    font-family: "Bahij TheSansArabic Plain" !important; 
+    // font-family: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-family: "Bahij TheSansArabic Plain" !important;
   }
   header
     .header__top
@@ -59,7 +59,7 @@
     margin-left: 12px;
     margin-right: 0;
     @media (max-width: 720px) {
-      margin-left: 40px;
+      // margin-left: 40px;
     }
   }
   .timeline__and__history__primary__slider
@@ -71,7 +71,7 @@
     margin-left: 10px;
   }
   .principles__row .principles__card img {
-    margin-right: -24px;
+    // margin-right: -24px;
     margin-left: 0;
   }
   header .header__search,
@@ -315,5 +315,105 @@
     margin-left: 15px;
     margin-right: 0;
   }
-
+  .hero__banner__homepage
+    .hero__banner__homepage__slide
+    .hero__banner__homepage__slide__content
+    h1 {
+    text-align: right !important;
+  }
+  .hero__banner__homepage
+    .hero__banner__homepage__slide
+    .hero__banner__homepage__slide__content
+    .btn.btn-default {
+    margin-right: 0;
+    margin-left: auto;
+  }
+  .hero__banner__homepage .hero__banner__homepage__slider .slick-dots li {
+    text-align: right;
+  }
+  .hero__banner__homepage
+    .hero__banner__homepage__actions
+    .hero__banner__homepage__actions__inner
+    .hero__banner__homepage__navigation__count {
+    margin-left: 30px;
+    margin-right: 0;
+  }
+  .hero__banner__homepage
+    .hero__banner__homepage__actions
+    .hero__banner__homepage__actions__inner
+    .hero__banner__homepage__navigation
+    .slider-arrow
+    + .slider-arrow {
+    margin-right: 20px;
+    margin-left: 0;
+  }
+  .hero__banner__homepage
+    .hero__banner__homepage__actions
+    .hero__banner__homepage__actions__inner
+    .hero__banner__homepage__navigation
+    .slider-arrow {
+    svg {
+      transform: scaleX(-1);
+    }
+  }
+  .primary__title.primary__title--md,
+  section:not(.section-carousel) h2.primary__title.primary__title--md,
+  .from-h1.primary__title--md {
+    text-align: right;
+  }
+  .brand__introduction p,
+  .brand__introduction
+    .brand__introduction__featured__image
+    .brand__introduction__featured__image__content,
+  .principles__row .principles__card h4,
+  .principles__row .principles__card p,
+  .strategic__investment__row .strategic__investment__card p {
+    text-align: right;
+  }
+  .btn.btn-default svg,
+  .btn.btn-default img {
+    margin-right: 10px;
+    margin-left: 0 !important;
+  }
+  .latest__news__section
+    .latest__news__section__actions
+    .latest__news__slider__nav
+    .latest__news__nav
+    svg,
+  .latest__news__section
+    .latest__news__section__actions
+    .latest__news__slider__nav
+    .latest__news__nav
+    img {
+    transform: scaleX(-1);
+  }
+  .latest__news__section
+    .latest__news__section__actions
+    .latest__news__slider__nav {
+    margin-left: 20px;
+    margin-right: 0;
+  }
+  .latest__news__section
+    .latest__news__section__actions
+    .latest__news__slider__nav
+    .latest__news__nav
+    + .latest__news__nav {
+    margin-right: 20px;
+    margin-left: 0;
+  }
+  .social__media__links__row li:not(:last-child) {
+    margin-right: 0;
+    margin-left: 30px;
+  }
+  .header__actions__wrap {
+    @media (max-width: 720px) {
+      margin-left: 40px;
+      margin-right: 0;
+    }
+  }
+  .header__actions__wrap .accessibility__menu__toggle {
+    @media (max-width: 720px) {
+      margin-left: 0;
+    }
+  }
 }

@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "css": "node-sass assets/scss/app.scss -o assets/css",
-    "watchscss": "npm run css && node-sass assets/scss/app.scss -wo assets/css"
+   "css": "sass assets/scss/app.scss assets/css/app.css",
+    "watchscss": "sass --watch assets/scss/app.scss:assets/css/app.css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^9.0.0"
+    "sass": "^1.96.0"
   }
 }
