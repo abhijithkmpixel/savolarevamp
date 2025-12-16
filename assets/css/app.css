@@ -751,7 +751,7 @@ header .navigationSearch-toggleButton svg path {
 }
 
 .page__title {
-  background: radial-gradient(110.91% 134.09% at -3.05% 27.15%, rgba(169, 194, 63, 0.3) 28.74%, rgba(239, 209, 159, 0.3) 91.49%), linear-gradient(225deg, rgba(238, 243, 218, 0) 69.95%, #a9c23f 100%);
+  background: radial-gradient(97.91% 292.09% at 5.95% 82.15%, rgba(169, 194, 63, 0.3) 28.74%, rgba(239, 209, 159, 0.3) 91.49%), linear-gradient(225deg, rgba(238, 243, 218, 0) 69.95%, #a9c23f 100%);
   padding: 67px 0 80px;
 }
 @media (max-width: 720px) {
@@ -2236,6 +2236,7 @@ section:not(.section-carousel) h2.primary__title.primary__title--md,
 .principles__row .principles__card p .read-more {
   cursor: pointer;
   font-weight: 600;
+  font-family: "Avenir Black";
   white-space: nowrap;
 }
 .principles__row .principles__card p.is-clamped {
@@ -2902,7 +2903,7 @@ section:not(.section-carousel) h2.primary__title.primary__title--md,
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.7);
+  color: white;
 }
 @media (max-width: 1200px) {
   .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__year__wrap .timeline__and__history__primary__slide__item__year__wrap__inner {
@@ -3540,12 +3541,15 @@ section:not(.section-carousel) h2.primary__title.primary__title--md,
 }
 [dir=rtl] header .language__btn,
 [dir=rtl] header .link.lang-link {
-  margin-left: 24px;
+  margin-left: 10px;
   margin-right: 0;
 }
 [dir=rtl] .header__actions__wrap {
   margin-left: 15px;
   margin-right: 0;
+}
+[dir=rtl] .principles__row .principles__card p.is-clamped {
+  max-height: 9.6em;
 }
 [dir=rtl] .timeline__and__history__primary__slider .timeline__and__history__primary__slide__item .timeline__and__history__primary__slide__item__wrap .timeline__and__history__primary__slide__item__content p::before {
   margin-right: 0;
@@ -3825,6 +3829,10 @@ section:not(.section-carousel) h2.primary__title.primary__title--md,
 [dir=rtl] .leadershipCard .leadershipCard-body .leadershipCard-content .leadershipCard-description {
   text-align: right;
 }
+[dir=rtl] .hero__banner__homepage .hero__banner__homepage__slider svg,
+[dir=rtl] .strategic__investment__row .strategic__investment__card a svg {
+  transform: scaleX(-1);
+}
 
 /** @format */
 .page-section-title,
@@ -4027,7 +4035,7 @@ h5 b,
 
 .bg-green,
 .btn.btn-default {
-  background: #616161;
+  background: #5b6770;
   color: #fff;
 }
 .bg-green h2,
@@ -4036,7 +4044,7 @@ h5 b,
 }
 .bg-green:hover,
 .btn.btn-default:hover {
-  background: #616161;
+  background: #a9c23f;
 }
 .bg-green:hover h2,
 .btn.btn-default:hover h2 {
@@ -4054,7 +4062,11 @@ h5 b,
 }
 
 .new__contact__card .new__contact__card__header {
-  background-color: #e0e0e0;
+  background: radial-gradient(123.91% 242.09% at 23.95% 82.15%, rgba(169, 194, 63, 0.3) 28.74%, rgba(239, 209, 159, 0.3) 91.49%), linear-gradient(225deg, rgba(238, 243, 218, 0) 69.95%, #a9c23f 100%);
+}
+
+.new__contact__card {
+  border-bottom: 2px solid #a9c23f !important;
 }
 
 .carousel-slide h1:not(.color-blue) {
@@ -4544,6 +4556,10 @@ input.form-control:focus {
   color: #5b6770;
 }
 
+h2[style*="color:#105678"] {
+  color: #5b6770 !important;
+}
+
 a[style*="color:#63c5b7"] {
   color: #a9c23f !important;
 }
@@ -4557,6 +4573,28 @@ a[style*="color:#63c5b7"] {
 .overview__slider__block .overview__slider__block__row .overview__slider .slick__btn svg path,
 .overview__slider__block .overview__slider__block__row .overview__slider .slick__btn svg line {
   stroke: #fff;
+}
+
+a.link-green {
+  color: #a9c23f !important;
+  text-transform: capitalize;
+}
+
+section.page-section:has(.timeline__and__history__primary__slider) {
+  padding-top: 0;
+}
+
+.container.text-center.margin-l-top {
+  width: 100%;
+}
+
+.fancy-select .trigger:after,
+.food-brands .foods_wrap .brand_info button {
+  background-color: #5b6770 !important;
+}
+
+.initial__title::after {
+  background-color: #a9c23f !important;
 }
 
 [dir=rtl] .page-section-title,

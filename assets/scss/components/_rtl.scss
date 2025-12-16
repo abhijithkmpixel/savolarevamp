@@ -52,12 +52,15 @@
   }
   header .language__btn,
   header .link.lang-link {
-    margin-left: 24px;
+    margin-left: 10px;
     margin-right: 0;
   }
   .header__actions__wrap {
     margin-left: 15px;
     margin-right: 0;
+  }
+  .principles__row .principles__card p.is-clamped {
+    max-height: 9.6em;
   }
   header .accessibility__menu__toggle {
     // margin-left: 12px;
@@ -426,5 +429,9 @@
     .leadershipCard-content
     .leadershipCard-description {
     text-align: right;
+  }
+  .hero__banner__homepage .hero__banner__homepage__slider svg,
+  .strategic__investment__row .strategic__investment__card a svg {
+    transform: scaleX(-1);
   }
 }

@@ -509,8 +509,14 @@ header {
   }
 }
 .page__title {
+  // background: radial-gradient(
+  //     110.91% 134.09% at -3.05% 27.15%,
+  //     rgba(169, 194, 63, 0.3) 28.74%,
+  //     rgba(239, 209, 159, 0.3) 91.49%
+  //   ),
+  //   linear-gradient(225deg, rgba(238, 243, 218, 0) 69.95%, #a9c23f 100%);
   background: radial-gradient(
-      110.91% 134.09% at -3.05% 27.15%,
+      97.91% 292.09% at 5.95% 82.15%,
       rgba(169, 194, 63, 0.3) 28.74%,
       rgba(239, 209, 159, 0.3) 91.49%
     ),
@@ -539,6 +545,14 @@ header {
     }
   }
 }
+// [dir="rtl"] .page__title {
+//   background: radial-gradient(
+//       97.91% 292.09% at 94.05% 82.15%,
+//       rgba(169, 194, 63, 0.3) 28.74%,
+//       rgba(239, 209, 159, 0.3) 91.49%
+//     ),
+//     linear-gradient(135deg, rgba(238, 243, 218, 0) 69.95%, #a9c23f 100%);
+// }
 .justify-content-start {
   justify-content: flex-start !important;
 }
