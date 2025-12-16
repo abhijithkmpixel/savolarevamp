@@ -165,3 +165,33 @@ body {
     }
   }
 }
+.leadershipTabs .leadershipTabs-tabList,
+.documentTabs .documentTabs-tabsList {
+  justify-content: flex-start;
+  padding: 6px 8px;
+  background-color: #ececec;
+  width: max-content;
+  max-width: 100%;
+  .leadershipTabs-tabListItem,
+  .documentTabs-tabListItem {
+    margin: 0;
+    background-color: #ececec !important;
+    min-width: 200px;
+
+    a.leadershipTabs-tabItemLink,
+    a.documentTabs-tabItemLink {
+      font-size: 16px;
+      min-width: unset;
+      padding: 18px 28px;
+      background-color: transparent;
+      font-weight: 800;
+      color: #5b6770 !important;
+    }
+    &.active {
+      background-color: var(--color-primary) !important;
+    }
+    &.padding-bottom {
+      padding-bottom: 0 !important;
+    }
+  }
+}

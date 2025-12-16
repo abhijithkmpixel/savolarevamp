@@ -55,9 +55,13 @@
     margin-left: 24px;
     margin-right: 0;
   }
-  header .accessibility__menu__toggle {
-    margin-left: 12px;
+  .header__actions__wrap {
+    margin-left: 15px;
     margin-right: 0;
+  }
+  header .accessibility__menu__toggle {
+    // margin-left: 12px;
+    // margin-right: 0;
     @media (max-width: 720px) {
       // margin-left: 40px;
     }
@@ -415,5 +419,12 @@
     @media (max-width: 720px) {
       margin-left: 0;
     }
+  }
+  .leadershipCard .leadershipCard-body .leadershipCard-content,
+  .leadershipCard
+    .leadershipCard-body
+    .leadershipCard-content
+    .leadershipCard-description {
+    text-align: right;
   }
 }
