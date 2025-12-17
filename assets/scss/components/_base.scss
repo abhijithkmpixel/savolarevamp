@@ -176,12 +176,13 @@ body {
   .documentTabs-tabListItem {
     margin: 0;
     background-color: #ececec !important;
-    min-width: 200px;
 
     a.leadershipTabs-tabItemLink,
     a.documentTabs-tabItemLink {
+      min-width: 240px !important;
       font-size: 16px;
       min-width: unset;
+      text-align: center;
       padding: 18px 28px;
       background-color: transparent;
       font-weight: 800;

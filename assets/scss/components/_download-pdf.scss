@@ -28,6 +28,9 @@
     }
     .download__card__grid__item__overview {
       padding: 20px;
+      .documentCard-description {
+        margin-bottom: 5px;
+      }
       h5 {
         font-weight: 800;
         font-size: 16px;

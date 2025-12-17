@@ -159,7 +159,6 @@ body {
 .documentTabs .documentTabs-tabsList .documentTabs-tabListItem {
   margin: 0;
   background-color: #ececec !important;
-  min-width: 200px;
 }
 .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem a.leadershipTabs-tabItemLink,
 .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem a.documentTabs-tabItemLink,
@@ -169,8 +168,10 @@ body {
 .documentTabs .documentTabs-tabsList .leadershipTabs-tabListItem a.documentTabs-tabItemLink,
 .documentTabs .documentTabs-tabsList .documentTabs-tabListItem a.leadershipTabs-tabItemLink,
 .documentTabs .documentTabs-tabsList .documentTabs-tabListItem a.documentTabs-tabItemLink {
+  min-width: 240px !important;
   font-size: 16px;
   min-width: unset;
+  text-align: center;
   padding: 18px 28px;
   background-color: transparent;
   font-weight: 800;
@@ -219,7 +220,7 @@ header .hamburger {
   }
 }
 header .header__top {
-  background-color: #a9c23f;
+  background-color: var(--color-primary);
   padding: 12.5px 0;
 }
 @media (max-width: 1500px) {
@@ -356,6 +357,7 @@ header .header__bottom .header__bottom__inner nav ul:not(.hamburger__menu__toggl
 @media (max-width: 580px) {
   header .header__bottom .header__bottom__inner nav ul:not(.hamburger__menu__toggle):not(.sub__menu):not(.mobile__header__footer__list) {
     height: calc(100svh - 109px);
+    justify-content: flex-start;
   }
 }
 header .header__bottom .header__bottom__inner nav ul:not(.hamburger__menu__toggle):not(.sub__menu):not(.mobile__header__footer__list) li {
@@ -751,7 +753,7 @@ header .navigationSearch-toggleButton svg path {
 }
 
 .page__title {
-  background: radial-gradient(97.91% 292.09% at 5.95% 82.15%, rgba(169, 194, 63, 0.3) 28.74%, rgba(239, 209, 159, 0.3) 91.49%), linear-gradient(225deg, rgba(238, 243, 218, 0) 69.95%, #a9c23f 100%);
+  background: radial-gradient(97.91% 292.09% at 5.95% 82.15%, rgba(169, 194, 63, 0.3) 28.74%, rgba(239, 209, 159, 0.3) 91.49%), linear-gradient(225deg, rgba(238, 243, 218, 0) 69.95%, var(--color-primary) 100%);
   padding: 67px 0 80px;
 }
 @media (max-width: 720px) {
@@ -2178,7 +2180,7 @@ section:not(.section-carousel) h2.primary__title.primary__title--md,
   transition: 0.3s all ease-in-out;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(0deg, #eef3da 0%, #eef3da 100%), linear-gradient(323.93deg, rgba(238, 243, 218, 0) 71.22%, #a9c23f 99.94%);
+  background: linear-gradient(0deg, #eef3da 0%, #eef3da 100%), linear-gradient(323.93deg, rgba(238, 243, 218, 0) 71.22%, var(--color-primary) 99.94%);
 }
 .principles__row .principles__card::before {
   content: "";
@@ -3480,6 +3482,9 @@ section:not(.section-carousel) h2.primary__title.primary__title--md,
 .download__cards__grid .download__card__grid__item .download__card__grid__item__overview {
   padding: 20px;
 }
+.download__cards__grid .download__card__grid__item .download__card__grid__item__overview .documentCard-description {
+  margin-bottom: 5px;
+}
 .download__cards__grid .download__card__grid__item .download__card__grid__item__overview h5 {
   font-weight: 800;
   font-size: 16px;
@@ -3896,7 +3901,7 @@ section:not(.section-carousel) h2.from-h1::after {
   background: #fff !important;
 }
 .navigationSearch .navigationSearch-formContainer input {
-  height: 30px;
+  height: 37px;
   color: #5b6770;
 }
 .navigationSearch .navigationSearch-formContainer input::placeholder {
@@ -4044,7 +4049,7 @@ h5 b,
 }
 .bg-green:hover,
 .btn.btn-default:hover {
-  background: #a9c23f;
+  background: var(--color-primary);
 }
 .bg-green:hover h2,
 .btn.btn-default:hover h2 {
@@ -4062,11 +4067,11 @@ h5 b,
 }
 
 .new__contact__card .new__contact__card__header {
-  background: radial-gradient(123.91% 242.09% at 23.95% 82.15%, rgba(169, 194, 63, 0.3) 28.74%, rgba(239, 209, 159, 0.3) 91.49%), linear-gradient(225deg, rgba(238, 243, 218, 0) 69.95%, #a9c23f 100%);
+  background: radial-gradient(123.91% 242.09% at 23.95% 82.15%, rgba(169, 194, 63, 0.3) 28.74%, rgba(239, 209, 159, 0.3) 91.49%), linear-gradient(225deg, rgba(238, 243, 218, 0) 69.95%, var(--color-primary) 100%);
 }
 
 .new__contact__card {
-  border-bottom: 2px solid #a9c23f !important;
+  border-bottom: 2px solid var(--color-primary) !important;
 }
 
 .carousel-slide h1:not(.color-blue) {
@@ -4561,7 +4566,7 @@ h2[style*="color:#105678"] {
 }
 
 a[style*="color:#63c5b7"] {
-  color: #a9c23f !important;
+  color: var(--color-primary) !important;
 }
 
 .overview__slider__block .overview__slider__block__row .overview__slider__mutli .slick__btn,
@@ -4576,7 +4581,7 @@ a[style*="color:#63c5b7"] {
 }
 
 a.link-green {
-  color: #a9c23f !important;
+  color: var(--color-primary) !important;
   text-transform: capitalize;
 }
 
@@ -4594,7 +4599,12 @@ section.page-section:has(.timeline__and__history__primary__slider) {
 }
 
 .initial__title::after {
-  background-color: #a9c23f !important;
+  background-color: var(--color-primary) !important;
+}
+
+.search-results .result > p span,
+.search-results .result .search-result-group li h2 a:hover {
+  color: var(--color-primary);
 }
 
 [dir=rtl] .page-section-title,

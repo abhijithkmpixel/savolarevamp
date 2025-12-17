@@ -30,6 +30,10 @@ section:not(.section-carousel) h2.from-h1 {
     background-color: #fff;
   }
 }
+.accessibility-menu {
+  // background: var(--color-primary) !important;
+}
+
 .accessibility-menu input:checked + .slider {
   background-color: #266aaa;
 }
@@ -42,7 +46,7 @@ section:not(.section-carousel) h2.from-h1 {
 .navigationSearch .navigationSearch-formContainer {
   background: #fff !important;
   input {
-    height: 30px;
+    height: 37px;
     color: #5b6770;
     &::placeholder {
       color: #5b6770;
@@ -148,7 +152,7 @@ h5,
     color: #fff;
   }
   &:hover {
-    background: #a9c23f;
+    background:  var(--color-primary);
     h2 {
       color: #fff;
     }
@@ -167,10 +171,10 @@ h5,
       rgba(169, 194, 63, 0.3) 28.74%,
       rgba(239, 209, 159, 0.3) 91.49%
     ),
-    linear-gradient(225deg, rgba(238, 243, 218, 0) 69.95%, #a9c23f 100%);
+    linear-gradient(225deg, rgba(238, 243, 218, 0) 69.95%,  var(--color-primary) 100%);
 }
 .new__contact__card {
-  border-bottom: 2px solid #a9c23f !important;
+  border-bottom: 2px solid  var(--color-primary) !important;
 }
 .carousel-slide h1:not(.color-blue) {
   font-size: 84px;
@@ -616,7 +620,7 @@ h2[style*="color:#105678"] {
   color: #5b6770 !important;
 }
 a[style*="color:#63c5b7"] {
-  color: #a9c23f !important;
+  color:  var(--color-primary) !important;
 }
 .overview__slider__block
   .overview__slider__block__row
@@ -635,7 +639,7 @@ a[style*="color:#63c5b7"] {
   }
 }
 a.link-green {
-  color: #a9c23f !important;
+  color:  var(--color-primary) !important;
   text-transform: capitalize;
 }
 section.page-section:has(.timeline__and__history__primary__slider) {
@@ -649,7 +653,19 @@ section.page-section:has(.timeline__and__history__primary__slider) {
   background-color: #5b6770 !important;
 }
 .initial__title::after {
-  background-color: #a9c23f !important;
+  background-color:  var(--color-primary) !important;
+}
+// .accessibility-menu-text-btn {
+//   border: 2px solid #fff;
+//   color: #fff;
+//   &.active {
+//     background: #fff;
+//     color: #000;
+//   }
+// }
+.search-results .result > p span,
+.search-results .result .search-result-group li h2 a:hover {
+  color: var(--color-primary);
 }
 // arabic styles
 [dir="rtl"] {

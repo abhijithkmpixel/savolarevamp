@@ -26,7 +26,7 @@ header {
   }
   .header__top {
     // background-color: #212122;
-    background-color: #a9c23f;
+    background-color: var(--color-primary);
 
     padding: 12.5px 0;
     @media (max-width: 1500px) {
@@ -158,6 +158,8 @@ header {
           }
           @media (max-width: 580px) {
             height: calc(100svh - 109px);
+          justify-content: flex-start;
+
           }
           li {
             position: relative;
@@ -514,13 +516,17 @@ header {
   //     rgba(169, 194, 63, 0.3) 28.74%,
   //     rgba(239, 209, 159, 0.3) 91.49%
   //   ),
-  //   linear-gradient(225deg, rgba(238, 243, 218, 0) 69.95%, #a9c23f 100%);
+  //   linear-gradient(225deg, rgba(238, 243, 218, 0) 69.95%,  var(--color-primary) 100%);
   background: radial-gradient(
       97.91% 292.09% at 5.95% 82.15%,
       rgba(169, 194, 63, 0.3) 28.74%,
       rgba(239, 209, 159, 0.3) 91.49%
     ),
-    linear-gradient(225deg, rgba(238, 243, 218, 0) 69.95%, #a9c23f 100%);
+    linear-gradient(
+      225deg,
+      rgba(238, 243, 218, 0) 69.95%,
+      var(--color-primary) 100%
+    );
 
   padding: 67px 0 80px;
   @media (max-width: 720px) {
@@ -551,7 +557,7 @@ header {
 //       rgba(169, 194, 63, 0.3) 28.74%,
 //       rgba(239, 209, 159, 0.3) 91.49%
 //     ),
-//     linear-gradient(135deg, rgba(238, 243, 218, 0) 69.95%, #a9c23f 100%);
+//     linear-gradient(135deg, rgba(238, 243, 218, 0) 69.95%,  var(--color-primary) 100%);
 // }
 .justify-content-start {
   justify-content: flex-start !important;

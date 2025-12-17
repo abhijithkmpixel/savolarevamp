@@ -30,7 +30,7 @@
     overflow: hidden;
     position: relative;
     background: linear-gradient(0deg, #eef3da 0%, #eef3da 100%),
-      linear-gradient(323.93deg, rgba(238, 243, 218, 0) 71.22%, #a9c23f 99.94%);
+      linear-gradient(323.93deg, rgba(238, 243, 218, 0) 71.22%,  var(--color-primary) 99.94%);
 
     &::before {
       content: "";
