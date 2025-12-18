@@ -6886,7 +6886,7 @@ html[dir="rtl"] .history-timeline .history-timeline-image-l {
 }
 
 footer {
-  background-color: #255574;
+  background-color: var(--color-gray);
   color: #fff;
   display: flex;
   flex-flow: column nowrap;
@@ -7287,7 +7287,7 @@ footer .footer-social .sfContentBlock p {
 }
 
 .mainNav {
-  background-color: #255574;
+  background-color: var(--color-gray);
   height: 54px;
   color: #fff;
 }
@@ -7736,7 +7736,7 @@ body .mobileMenu {
 .mobileMenu .mobileMenu-footer {
   flex: 0 0 auto;
   color: #fff;
-  background: #255574;
+  background: var(--color-gray);
   padding: 0 20px;
 }
 .mobileMenu .mobileMenu-footerQuotation {
@@ -8254,7 +8254,7 @@ body.home nav.breadcrumb {
   --color: #54b8b0;
 }
 .shareholders .shareholders-listItem:nth-child(4n + 2) {
-  --color: #255574;
+  --color: var(--color-gray);
 }
 .shareholders .shareholders-listItem:nth-child(4n + 3) {
   --color: #e2de4e;
@@ -9152,7 +9152,7 @@ html[dir="rtl"] .newsletter-box span:before {
   height: inherit;
   text-align: center;
   padding: 16px;
-  color: #5b6770;
+  color: var(--color-gray);
   border-right: 1px solid rgba(92, 102, 111, 0.26);
 }
 .media-filter-item[activeFilter="true"] {
@@ -9212,7 +9212,7 @@ html[dir="rtl"] .newsletter-box span:before {
   font-family: Avenir Heavy;
   padding: 15px 0px 15px 0px;
   width: 100%;
-  color: #5b6770;
+  color: var(--color-gray);
 }
 .media-filter-body {
   z-index: 1;
@@ -9269,7 +9269,7 @@ html[dir="rtl"] .newsletter-box span:before {
   overflow: auto;
 }
 .media-filter-body-mobile .category-title {
-  color: #5b6770;
+  color: var(--color-gray);
   font-family: Avenir Medium;
   font-size: 25px;
   font-weight: 500;
@@ -9386,7 +9386,7 @@ html[dir="rtl"] .newsletter-box span:before {
 .media-list-title {
   padding-bottom: 57px;
   padding-top: 52px;
-  color: #5b6770;
+  color: var(--color-gray);
   font-family: Avenir;
   font-size: 35px;
   font-weight: 900;
@@ -9450,7 +9450,7 @@ html[dir="rtl"] .newsletter-box span:before {
   background-color: #6bcaba;
 }
 .media-list .card .card-title-newsletter {
-  background-color: #5b6770;
+  background-color: var(--color-gray);
 }
 .media-list .card .card-title-awards {
   background-color: #ff0000;
@@ -10127,7 +10127,7 @@ html[dir="rtl"] .sf-backend-wrp .col-xs-9 {
 .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem:hover,
 .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem:active,
 .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem:focus {
-  background-color: #255574;
+  background-color: var(--color-gray);
 }
 .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabItemLink {
   font-weight: 500;
@@ -10822,7 +10822,7 @@ transform: rotate(45deg);
     width: 62px;
     height: 62px;
     border-radius: 50%;
-    background-color: #255574;
+    background-color: var(--color-gray);
     display: flex;
     justify-content: center;
     align-items: center;

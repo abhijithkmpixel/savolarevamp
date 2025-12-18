@@ -186,7 +186,7 @@ body {
       padding: 18px 28px;
       background-color: transparent;
       font-weight: 800;
-      color: #5b6770 !important;
+      color: var(--color-gray) !important;
     }
     &.active {
       background-color: var(--color-primary) !important;

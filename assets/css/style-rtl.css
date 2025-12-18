@@ -6615,7 +6615,7 @@ html[dir=rtl] .history-timeline .history-timeline-image-l {
 }
 
 footer {
-  background-color: #255574;
+  background-color: var(--color-gray);
   color: #fff;
   display: flex;
   flex-flow: column nowrap;
@@ -6990,7 +6990,7 @@ footer .footer-social .sfContentBlock p {
 }
 
 .mainNav {
-  background-color: #255574;
+  background-color: var(--color-gray);
   height: 54px;
   color: #fff;
 }
@@ -7431,7 +7431,7 @@ body .mobileMenu {
 .mobileMenu .mobileMenu-footer {
   flex: 0 0 auto;
   color: #fff;
-  background: #255574;
+  background: var(--color-gray);
   padding: 0 20px;
 }
 .mobileMenu .mobileMenu-footerQuotation {
@@ -7935,7 +7935,7 @@ body.home nav.breadcrumb {
   --color: #54B8B0;
 }
 .shareholders .shareholders-listItem:nth-child(4n+2) {
-  --color: #255574;
+  --color: var(--color-gray);
 }
 .shareholders .shareholders-listItem:nth-child(4n+3) {
   --color: #E2DE4E;
@@ -9755,7 +9755,7 @@ html[dir=rtl] .sf-backend-wrp .col-lg-1, html[dir=rtl] .sf-backend-wrp .col-lg-1
   }
 }
 .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem.active, .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem:hover, .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem:active, .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem:focus {
-  background-color: #255574;
+  background-color: var(--color-gray);
 }
 .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabItemLink {
   font-weight: 500;
@@ -10466,7 +10466,7 @@ transform: rotate(45deg);
     width: 62px;
     height: 62px;
     border-radius: 50%;
-    background-color: #255574;
+    background-color: var(--color-gray);
     display: flex;
     justify-content: center;
     align-items: center;

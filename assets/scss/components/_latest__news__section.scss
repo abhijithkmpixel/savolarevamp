@@ -176,15 +176,15 @@
     &:hover {
       @media (min-width: 1200px) {
         .latest__news__card__header .latest__news__card__header__date {
-          background-color: #255574;
+          background-color: var(--color-gray);
           &::after {
-            background-color: #255574;
+            background-color: var(--color-gray);
           }
         }
         .cta__link {
-          color: #255574 !important;
+          color: var(--color-gray) !important;
           svg path {
-            fill: #255574 !important;
+            stroke: var(--color-gray) !important;
           }
           // text-decoration: underline;
         }
@@ -225,7 +225,7 @@
         font-weight: 500;
         font-size: 14px;
         line-height: 24px;
-        color: #5b6770;
+        color: var(--color-gray);
         display: -webkit-box;
         -webkit-box-orient: vertical;
         overflow: hidden;
@@ -247,7 +247,7 @@
           font-size: 15px;
           line-height: 1.45;
           padding-left: 18px;
-          color: #5b6770;
+          color: var(--color-gray);
           span {
             color: #ef9600;
             display: block;
@@ -265,7 +265,7 @@
       }
       .btn.btn-default {
         margin-left: 0;
-        background-color: #5b6770;
+        background-color: var(--color-gray);
         color: #fff;
         width: max-content;
         display: flex;

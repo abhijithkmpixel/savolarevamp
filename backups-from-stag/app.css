@@ -1022,9 +1022,9 @@ ul:not(.hamburger__menu__toggle):not(.sub__menu):not(
     color: #63c5b7 !important; }
     @media (min-width: 1200px) {
       .cta__link:hover {
-        color: #255574 !important; }
+        color: var(--color-gray) !important; }
         .cta__link:hover svg path {
-          fill: #255574; } }
+          fill: var(--color-gray); } }
 
 footer {
   background-color: #212121;
@@ -1710,7 +1710,7 @@ section:not(.section-carousel) h2.primary__title,
         .strategic__investment__row .strategic__investment__card:hover img {
           filter: brightness(0) invert(1); }
         .strategic__investment__row .strategic__investment__card:hover a {
-          color: #255574 !important; } }
+          color: var(--color-gray) !important; } }
 
 .share__price__and__details, section:not(.section-carousel).share__price__and__details {
   padding: 50px 0 60px;
@@ -1835,13 +1835,13 @@ section:not(.section-carousel) h2.primary__title,
           min-height: unset; } }
     @media (min-width: 1200px) {
       .latest__news__section__row .latest__news__card:hover .latest__news__card__header .latest__news__card__header__date {
-        background-color: #255574; }
+        background-color: var(--color-gray); }
         .latest__news__section__row .latest__news__card:hover .latest__news__card__header .latest__news__card__header__date::after {
-          background-color: #255574; }
+          background-color: var(--color-gray); }
       .latest__news__section__row .latest__news__card:hover .cta__link {
-        color: #255574 !important; }
+        color: var(--color-gray) !important; }
         .latest__news__section__row .latest__news__card:hover .cta__link svg path {
-          fill: #255574 !important; } }
+          fill: var(--color-gray) !important; } }
 
 /** @format */
 .timeline__and__history__block {
@@ -2844,7 +2844,7 @@ p,
   color: #212121; }
 
 .color-blue {
-  color: #255574; }
+  color: var(--color-gray); }
 
 .h3,
 h3 {
@@ -2949,7 +2949,7 @@ h5,
   font-size: 84px;
   font-weight: 700;
   line-height: 1.4;
-  color: #255574;
+  color: var(--color-gray);
   font-family: "Avenir", sans-serif;
   margin-bottom: 10px; }
   @media (max-width: 1500px) {
@@ -3039,7 +3039,7 @@ h5,
 
 a.link-green:hover,
 a.link-green:active {
-  color: #255574; }
+  color: var(--color-gray); }
 
 .documentCard .documentCard-cta:hover {
   background-color: #63c5b7; }
@@ -3078,7 +3078,7 @@ a.link-green:active {
         color: #fff; } }
 
 .fancy-select .options li:hover {
-  background-color: #255574; }
+  background-color: var(--color-gray); }
 
 .search-process.padding-xl-bottom .btn.btn-default {
   margin: 0 10px; }
