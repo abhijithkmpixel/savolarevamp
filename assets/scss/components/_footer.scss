@@ -151,6 +151,16 @@
           object-fit: contain;
           path {
             fill: var(--color-gray);
+            transition: 0.2s all ease-in-out;
+          }
+        }
+        &:hover {
+          @media (min-width: 1200px) {
+            svg {
+              path {
+                fill: var(--color-primary) !important;
+              }
+            }
           }
         }
       }

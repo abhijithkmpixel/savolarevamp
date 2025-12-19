@@ -536,7 +536,7 @@ header {
       var(--color-primary) 100%
     );
 
-  padding: 67px 0 80px;
+  padding: 40px 0 30px;
   @media (max-width: 720px) {
     padding: 40px 0 40px;
   }
@@ -558,10 +558,15 @@ header {
       color: var(--color-primary);
     }
   }
-  .bread__crumbs li {
-    color: var(--color-gray) !important;
-    a {
+  .bread__crumbs {
+    li {
       color: var(--color-gray) !important;
+      a {
+        color: var(--color-gray) !important;
+      }
+      &::after {
+        background-color: var(--color-gray) !important;
+      }
     }
   }
 }
@@ -601,8 +606,9 @@ header {
     &:not(:last-child) {
       &::after {
         content: "";
-        width: 12px;
-        height: 1px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
         background-color: #fff;
         margin: 0 12px;
         display: inline-block;

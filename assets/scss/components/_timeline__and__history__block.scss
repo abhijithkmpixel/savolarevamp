@@ -160,7 +160,7 @@
               span {
                 font-size: inherit;
                 font-weight: inherit;
-                color:  var(--color-primary);
+                color: var(--color-primary);
                 display: inline-block;
               }
               svg {
@@ -222,7 +222,7 @@
         }
         .timeline__and__history__primary__slide__item__year__wrap__inner {
           padding: 30px 50px;
-          background-color:  var(--color-primary);
+          background-color: var(--color-primary);
           margin-top: 20px;
           position: relative;
           font-size: 16px;
@@ -303,7 +303,7 @@
           font-size: 130px;
           font-weight: 700;
           line-height: 1;
-          color:  var(--color-primary);
+          color: var(--color-primary);
           margin: 0;
           @media (max-width: 1200px) {
             font-size: 110px;
@@ -408,12 +408,12 @@
       height: auto;
       flex: 0 0 11px;
       path {
-        fill: #212121;
+        fill: var(--color-gray);
       }
     }
     &:hover {
       @media (min-width: 1200px) {
-        background-color:  var(--color-primary);
+        background-color: var(--color-primary);
         svg {
           path {
             fill: #fff;
@@ -473,22 +473,22 @@
     }
     &:hover {
       @media (min-width: 1200px) {
-        background-color:  var(--color-primary);
-        border-color:  var(--color-primary);
+        background-color: var(--color-primary);
+        border-color: var(--color-primary);
       }
     }
   }
   .slick-current .timeline__year__slide__item {
-    background-color:  var(--color-primary);
-    border-color:  var(--color-primary);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
     span {
       color: #fff;
     }
     &::after {
       width: 14px;
       height: 14px;
-      background-color:  var(--color-primary);
-      border-color:  var(--color-primary);
+      background-color: var(--color-primary);
+      border-color: var(--color-primary);
       top: calc(100% + 13px);
     }
   }

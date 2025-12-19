@@ -439,10 +439,12 @@ $(document).ready(function () {
 
     dots: true,
     autoplaySpeed: 3000,
+    speed:800,
     pauseOnFocus: false,
     pauseOnHover: false,
     pauseOnDotsHover: false,
     swipeToSlide: false,
+    autoplay:true,
     rtl: isRtl,
     initialSlide: 0,
 

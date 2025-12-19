@@ -144,6 +144,11 @@ h5,
     color: var(--color-gray);
   }
 }
+.sf-Long-text a:not(.link-white) {
+  &:hover {
+    color: var(--color-orange);
+  }
+}
 .bg-green,
 .btn.btn-default {
   background: var(--color-gray);
@@ -600,6 +605,7 @@ input.form-control {
     }
   }
 }
+.page__title + .brand__introduction.pt-0,
 .page__title + .page-section:not(.bg-grey-light),
 .page-section.page-section-no-padding.section-carousel + .page-section.pt-0 {
   padding-top: 70px !important;
@@ -732,6 +738,37 @@ section.page-section:has(.timeline__and__history__primary__slider) {
 }
 .new__contact__card p a:hover {
   color: var(--color-primary);
+}
+.accessibility-menu-text-btn {
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+.accessibility-menu-text-btn.active {
+  background-color: var(--color-primary);
+}
+.greenColorContrast {
+  header .header__links,
+  header
+    .header__top
+    .header__top__inner
+    .header__top__inner__right
+    .header__quick__links
+    li
+    a,
+  footer h5 a,
+  footer h5,
+  footer ul li a {
+    color: #fff;
+  }
+  header .navigationSearch-toggleButton svg path {
+    stroke: #fff;
+  }
+}
+.btn {
+  text-transform: capitalize;
+}
+.pb-0{
+  padding-bottom: 0 !important;
 }
 // arabic styles
 [dir="rtl"] {
