@@ -2261,7 +2261,7 @@ section:not(.section-carousel) h2.primary__title.primary__title--md,
   font-size: 14px;
   font-weight: 400;
   line-height: 1.6;
-  color: #333333;
+  color: var(--color-gray);
   transition: 0.3s all ease-in-out;
   position: relative;
   overflow: hidden;
