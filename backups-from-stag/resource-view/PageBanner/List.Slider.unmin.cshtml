@@ -1,0 +1,52 @@
+﻿@model Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models.DynamicContentListViewModel
+@using Prototype.Sitefinity.SitefinityControllers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Web
+@{
+    var isEmpty = Model.Items == null || !Model.Items.Any();
+    var isMoreThanOne = Model.Items != null && Model.Items.Count(i => i.Fields.Image != null) != 1 && !SitefinityContext.IsBackend;
+}
+<div class="carousel @CultureController.Direction @Model.CssClass">
+    <div class="@(isMoreThanOne ? "js-carousel" : "")">
+        @if (!isEmpty)
+        {
+            if (isMoreThanOne)
+            {
+                foreach (var item in Model.Items.OrderByDescending(i => i.Fields.SortOrder).ToList())
+                {
+                    if (item.Fields.Image != null)
+                    {
+                        //var navigateUrl = HyperLinkHelpers.GetDetailPageUrl(item, ViewBag.DetailsPageId, ViewBag.OpenInSamePage, Model.UrlKeyPrefix);
+
+                        <div class="carousel-slide" style="background-image: url(@item.Fields.Image.Fields.MediaUrl.Split('?')[0]);">
+                            <div class="container">
+                                <h1 class="text-black color-white @(CultureController.Language == "ar" ? " text-right" :"")">
+                                    @(SiteMapBase.GetActualCurrentNode().IsHomePage() ? item.Fields.Text : SiteMapBase.GetActualCurrentNode().Title)
+                                </h1>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+            else
+            {
+                var item = Model.Items.First(i => i.Fields.Image != null);
+                <div class="carousel-slide" style="background-image: url(@item.Fields.Image.Fields.MediaUrl.Split('?')[0]);">
+                    <div class="container">
+                        <h1 class="text-black color-white @(CultureController.Language == "ar" ? " text-right" :"")">
+                            @(SiteMapBase.GetActualCurrentNode().IsHomePage() ? item.Fields.Text : SiteMapBase.GetActualCurrentNode().Title)
+                        </h1>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+    @if (isMoreThanOne)
+    {
+        <div class="carousel-nav h2 color-white align-right">
+            <div class="carousel-nav-container container js-carousel-nav"></div>
+        </div>
+    }
+    <a class="carousel-scroll" data-scroll="" href="#scroll" id="scroll"></a>
+</div>

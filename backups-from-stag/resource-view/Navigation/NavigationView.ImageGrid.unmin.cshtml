@@ -1,0 +1,29 @@
+﻿@using Telerik.Sitefinity.Web
+@using System.Linq;
+@using Telerik.Sitefinity.Modules.Libraries
+@model Telerik.Sitefinity.Frontend.Navigation.Mvc.Models.INavigationModel
+@{
+    var nodes = Model.Nodes
+                .Select((x, i) => new { Index = i, Value = x })
+                .GroupBy(x => x.Index / 6)
+                .Select(x => x.Select(v => v.Value).ToList())
+                .ToList();
+    
+}
+<div class="text-center food-brands">
+    @foreach (var nodeBlock in nodes)
+    {
+        <div class="row">
+            @foreach (var node in nodeBlock)
+            {
+                PageSiteNode pageNode = node.OriginalSiteMapNode as PageSiteNode;
+                var thumbnail = ((Telerik.Sitefinity.Libraries.Model.Image) pageNode.GetCustomFieldValue("Image"));
+                <div class="col-xs-4 col-sm-4 col-md-2">
+                    
+                    <a target="@node.LinkTarget" href="@node.Url"><img src="@(thumbnail != null ? thumbnail.ResolveThumbnailUrl("thumb200",true).Split('?')[0] : "")" class="img-responsive"></a>
+                </div>
+
+            }
+        </div>
+    }
+</div>

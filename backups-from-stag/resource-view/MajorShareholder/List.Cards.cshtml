@@ -1,0 +1,21 @@
+@model Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models.DynamicContentListViewModel
+
+<div class="shareholders">
+    <ul class="shareholders-list">
+        @foreach (var item in Model.Items.OrderByDescending(i => i.Fields.Percent))
+        {
+            <li class="shareholders-listItem">
+                <div class="shareholderCard">
+                    <div class="shareholderCard-container">
+                        <h3 class="shareholderCard-heading">
+                            @(item.Fields.Percent.ToString("#.##"))%
+                        </h3>
+                        <div class="shareholderCard-progress" style="--progress: @item.Fields.Percent">&nbsp;</div>
+                        <div class="shareholderCard-description">@item.Fields.Title</div>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+</div>
+

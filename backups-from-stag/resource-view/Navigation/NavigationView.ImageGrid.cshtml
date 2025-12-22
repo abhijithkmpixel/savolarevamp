@@ -1,0 +1,37 @@
+@using Telerik.Sitefinity.Web
+@using System.Linq;
+@using Telerik.Sitefinity.Modules.Libraries
+@model Telerik.Sitefinity.Frontend.Navigation.Mvc.Models.INavigationModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@{
+    var nodes = Model.Nodes
+                .Select((x, i) => new { Index = i, Value = x })
+                .GroupBy(x => x.Index / 6)
+                .Select(x => x.Select(v => v.Value).ToList())
+                .ToList();
+
+}
+<div class="text-center food-brands">
+    @foreach (var nodeBlock in nodes)
+    {
+        <div class="row">
+            @foreach (var node in nodeBlock)
+            {
+                PageSiteNode pageNode = node.OriginalSiteMapNode as PageSiteNode;
+                var thumbnail = ((Telerik.Sitefinity.Libraries.Model.Image)pageNode.GetCustomFieldValue("Image"));
+                <div class="col-xs-6 col-sm-4 col-md-2 col-6">
+                    <a target="@node.LinkTarget" @Html.Raw(node.LinkTarget == "_blank" ? "rel='noopener' title='Opens in a new window'" : "") href="@node.Url">
+                        <div class="foods_wrap">
+                            <img src="@(thumbnail != null ? thumbnail.ResolveThumbnailUrl("thumb200",true).Split('?')[0] : "")" class="img-responsive" alt="@node.Title"/>
+                            <div class="brand_info">
+                                <span>@node.Title</span>
+                                <button>@Html.Resource("LearnMore")</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            }
+        </div>
+    }
+</div>

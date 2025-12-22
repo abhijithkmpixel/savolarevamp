@@ -1,0 +1,94 @@
+@using Telerik.OpenAccess
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using Telerik.Sitefinity.Web
+@using Telerik.Sitefinity.Modules.Libraries
+@using Telerik.Sitefinity.Publishing
+@using Telerik.Sitefinity.Services
+@using Telerik.Sitefinity.Taxonomies
+@using Telerik.Sitefinity.Taxonomies.Model
+<script id="investments-tags" type="text/x-handlebars-template">
+    {{#each tags}}
+    <li><div class="select-tag js-filter-tag" data-tag-name="{{this.key}}">{{this.value}}<a href="#" class="icon-icon-x"></a></div></li>{{/each}}
+</script>
+
+@model Telerik.Sitefinity.Frontend.Navigation.Mvc.Models.INavigationModel
+@{
+    var odd = false;
+    TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+    FlatTaxonomy countries = taxonomyManager.GetTaxonomies<FlatTaxonomy>().SingleOrDefault(t => t.Name == "countries");
+    FlatTaxonomy investmentSectors = taxonomyManager.GetTaxonomies<FlatTaxonomy>().SingleOrDefault(t => t.Name == "investment-sectors");
+
+    var listOfCountries = new Dictionary<Guid, string>();
+    var listOfInvestmentSectors = new Dictionary<Guid, string>();
+
+    foreach (var node in Model.Nodes)
+    {
+
+        PageSiteNode pageNode = node.OriginalSiteMapNode as PageSiteNode;
+        var pageInvestorSectors = pageNode.GetPropertyValue<TrackedList<Guid>>("investmentsectors");
+        var pageCountries = pageNode.GetPropertyValue<TrackedList<Guid>>("countries");
+
+        foreach (var inv in investmentSectors.Taxa.Where(x => pageInvestorSectors.Contains(x.Id)))
+        {
+            Taxon tag = investmentSectors.Taxa.SingleOrDefault(x => x.Id == inv.Id);
+            if (!listOfInvestmentSectors.ContainsKey(tag.Id))
+            {
+                listOfInvestmentSectors.Add(tag.Id, tag.Title);
+            }
+        }
+        foreach (var country in countries.Taxa.Where(x => pageCountries.Contains(x.Id)))
+        {
+            Taxon tag = countries.Taxa.SingleOrDefault(x => x.Id == country.Id);
+            if (!listOfCountries.ContainsKey(tag.Id))
+            {
+                listOfCountries.Add(tag.Id, tag.Title);
+            }
+        }
+    }
+
+    bool isBackendDesignMode = SystemManager.IsDesignMode && !SystemManager.IsPreviewMode;
+}
+<div>
+    @if (!isBackendDesignMode)
+    {
+        <div class="row"><div class="col-md-12 js-geography"><label class="visually-hidden" for="by-geography">@Html.Resource("ByGeography")</label><select class="margin-right js-filter-geography" id="by-geography" title="@Html.Resource("ByGeography")" data-class="select-white float-left margin-l-right margin-xs-bottom"><option value="">@Html.Resource("ByGeography")</option>
+                    @foreach (var country in listOfCountries)
+                    {
+                        <option value="@country.Key">@country.Value</option>
+                    }
+                </select><ul class="list-tags list-inline list-small js-filter-tags"></ul></div></div><div class="row margin-bottom"><div class="col-md-12 js-sector"><label class="visually-hidden" for="by-sector">@Html.Resource("BySector")</label><select id="by-sector" title="@Html.Resource("BySector")" class="margin-right js-filter-sector" data-class="select-white float-left margin-l-right margin-xs-bottom"><option value="">@Html.Resource("BySector")</option>
+                    @foreach (var inv in listOfInvestmentSectors)
+                    {
+                        <option value="@inv.Key">@inv.Value</option>
+                    }
+                </select><ul class="list-tags list-inline list-small js-filter-sector-tags"></ul></div></div><div class="carousel-investments"><div class="js-carousel-investments">
+                @foreach (var node in Model.Nodes)
+                {
+
+                    PageSiteNode pageNode = node.OriginalSiteMapNode as PageSiteNode;
+                    var thumbnail = ((Telerik.Sitefinity.Libraries.Model.Image) pageNode.GetCustomFieldValue("Image"));
+                    var capital = pageNode.GetCustomFieldValue("Capital").ToString();
+                    var ownership = pageNode.GetCustomFieldValue("Ownership").ToString();
+                    var pageInvestorSectors = pageNode.GetPropertyValue<TrackedList<Guid>>("investmentsectors");
+                    var pageCountries = pageNode.GetPropertyValue<TrackedList<Guid>>("countries");
+                    var investmentSectorsString = string.Join(", ", listOfInvestmentSectors.Where(x => pageInvestorSectors.Contains(x.Key)).Select(i => i.Value));
+                    var investmentSectorsStringKeys = string.Join(", ", listOfInvestmentSectors.Where(x => pageInvestorSectors.Contains(x.Key)).Select(i => i.Key));
+                    var countriesString = string.Join(", ", listOfCountries.Where(x => pageCountries.Contains(x.Key)).Select(i => i.Value));
+                    var countriesStringKeys = string.Join(", ", listOfCountries.Where(x => pageCountries.Contains(x.Key)).Select(i => i.Key));
+                    <div class="margin-right js-carousel-investments-slide" data-filter-geography="@countriesStringKeys" data-filter-sector="@investmentSectorsStringKeys"><a target="@node.LinkTarget" href="@node.Url"><table class="investments-table @(odd ? "blue" : "") text-center color-white"><tr><th><img src="@(thumbnail != null ? thumbnail.ResolveThumbnailUrl("330x211", true).Split('?')[0] : "")" alt="@node.Title" class="img-responsive"></th></tr><tr><td data-mh="brands-titles">
+                                        @node.Title
+                                    </td></tr><tr><td><div data-mh="brands-countries">
+                                            @countriesString
+                                        </div></td></tr><tr><td><div data-mh="brands-investment-sector">
+                                            @investmentSectorsString
+                                        </div></td></tr></table></a></div>
+
+
+                    odd = !odd;
+                }
+            </div><div class="h2 align-right margin-s-top"><div class="carousel-nav-container container js-carousel-investments-nav"></div></div></div>
+    }
+    else
+    {<text>Not available in design mode</text>
+    }
+</div>

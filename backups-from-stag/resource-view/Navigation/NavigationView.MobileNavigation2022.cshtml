@@ -1,0 +1,65 @@
+﻿@model INavigationModel
+
+@using Prototype.Sitefinity.SitefinityControllers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using Telerik.Sitefinity.Frontend.Navigation.Mvc.Models;
+@using Telerik.Sitefinity.Modules.Libraries
+@using Telerik.Sitefinity.Pages.Model
+@using Telerik.Sitefinity.Web
+
+<nav>
+    <div class="mobileNav-header">
+        <button class="mobileNav-closeButton">
+            <svg class="mobileNav-closeButtonIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+                <path stroke="#45555F" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.717 5 3 12l6.717 7" />
+                <path stroke="#45555F" stroke-linecap="round" stroke-width="2" d="M4.268 12.032H20" />
+            </svg>
+            <span class="visually-hidden">Close</span>
+        </button>
+        <svg class="mobileNav-burgerIcon" xmlns="http://www.w3.org/2000/svg" width="28" height="22" fill="none">
+            <path fill="currentColor" fill-rule="evenodd" d="M.5 2A1.5 1.5 0 0 1 2 .5h24a1.5 1.5 0 0 1 0 3H2A1.5 1.5 0 0 1 .5 2ZM.5 11A1.5 1.5 0 0 1 2 9.5h24a1.5 1.5 0 0 1 0 3H2A1.5 1.5 0 0 1 .5 11ZM.5 20A1.5 1.5 0 0 1 2 18.5h24a1.5 1.5 0 0 1 0 3H2A1.5 1.5 0 0 1 .5 20Z" clip-rule="evenodd" />
+        </svg>
+    </div>
+  
+        <ul>
+            @foreach (var node in Model.Nodes)
+            {
+                @RenderLinks(node, 0)
+            }
+        </ul>
+ 
+</nav>
+
+@helper RenderLinks(NodeViewModel node, int level, bool insideDropdown = false)
+{
+    <li 
+        class="mobileNav-navigationItem @GetClass(node) @Html.Raw(node.ChildNodes.Any() ? "has__sub__menu" : "") @(node.HasChildOpen || node.IsCurrentlyOpened ? "has__sub__menu" : "")"
+    >
+        <a href="@node.Url"
+           target="@node.LinkTarget"
+           @Html.Raw(node.LinkTarget == "_blank" ? "rel='noopener' title='Opens in a new window'" : "")
+           class="mobileNav-navigationItemLink @GetClass(node)">
+            @node.Title
+        </a>
+        @if (node.ChildNodes.Count > 0)
+        {
+            PageSiteNode pageNode = node.OriginalSiteMapNode as PageSiteNode;
+            var thumbnail = ((Telerik.Sitefinity.Libraries.Model.Image)pageNode.GetCustomFieldValue("Image"));
+
+            <ul    class="sub__menu"   data-nav-level="@(level + 1)" >
+                @foreach (var childNode in node.ChildNodes)
+                {
+                    @RenderLinks(childNode, level + 1, true)
+                }
+            </ul>
+        }
+    </li>
+}
+
+@helper GetClass(NodeViewModel node)
+{
+    if (Model.CurrentSiteMapNode != null && node.OriginalSiteMapNode != null && Model.CurrentSiteMapNode.Key == node.OriginalSiteMapNode.Key)
+    {
+        @Html.Raw("active")
+    }
+}

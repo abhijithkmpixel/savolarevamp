@@ -1,0 +1,67 @@
+@model Telerik.Sitefinity.Frontend.Media.Mvc.Models.DocumentsList.DocumentsListViewModel
+
+@using SitefinityWebApp.Core.Extensions
+@using Telerik.OpenAccess
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using Telerik.Sitefinity.Publishing
+@using Telerik.Sitefinity.Taxonomies
+@using Telerik.Sitefinity.Taxonomies.Model
+
+@{
+
+    TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+    var rowId = 0;
+    var items = Model.Items.GroupBy(j =>
+                    j.DataItem.GetPropertyValue<TrackedList<Guid>>("Category") != null &&
+                    j.DataItem.GetPropertyValue<TrackedList<Guid>>("Category").Any() ?
+                        string.Format("{0}|{1}",
+                            taxonomyManager.GetTaxon(j.DataItem.GetPropertyValue<TrackedList<Guid>>("Category").First()).Title,
+                            taxonomyManager.GetTaxon(j.DataItem.GetPropertyValue<TrackedList<Guid>>("Category").First()).Id)
+                        : "Other|other")
+                .Select(j => new { Tag = j.Key.Split('|')[0], TagId= j.Key.Split('|')[1]+Guid.NewGuid(), Docs = j })
+        .ToList();
+
+
+}
+@if (items.Any())
+{
+    var isFirst = true;
+    <ul class="list-inline text-center nav nav-tabs @(items.Count() == 1 ? "hidden" : "")" role="tablist">
+        @foreach (var tag in items)
+        {
+            <li class="@(isFirst ? "active" : "") padding-bottom" role="presentation"><a href="#@tag.TagId" role="tab" data-toggle="tab" class="btn btn-secondary-rev" aria-label="Tab @tag.Tag">@tag.Tag</a></li>
+            isFirst = false;
+        }
+    </ul>
+}
+<div class="@Model.CssClass tab-content team-members-block">
+    @{
+        var isFirstTab = true;
+    }
+    @foreach (var itemsG in items)
+    {
+        <div role="tabpanel" class="tab-pane fade @(isFirstTab ? "active" : "")" id="@itemsG.TagId"><div class="row padding-bottom">
+                @if (itemsG.Docs.Count() == 2)
+                {
+                    <div class="col-md-3"></div>
+                }
+                @foreach (var item in itemsG.Docs.OrderByDescending(i => i.GetDateTimeGregorianCalendar("PublicationDate", "yyyyMM")).ThenByDescending(i => i.Fields.Title))
+                {
+
+                    <a href="@item.Fields.MediaUrl.ToString().Split('?')[0]" download="download" tabindex="0"  aria-label="@Html.Resource("Download", "Labels") @item.Fields.Title" class="col-md-3 quarterly-box padding-bottom color-white">
+                        <div class="bg-blue text-center padding-xs-top padding-xs-bottom" data-mh="doc-0">
+                            <h2 class="quarterly-box-subtitle body-large">@item.Fields.Title</h2>
+                        </div>
+                        <div class="bg-green body-small">
+                            <ul class="list-inline list-smaller align-right"><li>
+                                <span class="link link-white text-lowercase">@Html.Resource("Download", "Labels")<span class="icon-download"></span></span></li>
+                            </ul>
+                        </div>
+                    </a>
+
+                }
+            </div></div>
+        isFirstTab = false;
+    }
+
+</div>

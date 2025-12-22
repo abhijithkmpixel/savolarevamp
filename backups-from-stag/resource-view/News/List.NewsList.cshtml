@@ -1,0 +1,191 @@
+@model Telerik.Sitefinity.Frontend.Mvc.Models.ContentListViewModel
+@using Prototype.Sitefinity.SitefinityControllers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using SitefinityWebApp.Core.Extensions
+@using Newtonsoft.Json
+@using Telerik.Sitefinity.Web
+@using Telerik.Sitefinity.Taxonomies
+@using Telerik.Sitefinity.Taxonomies.Model
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using Telerik.Sitefinity.Frontend.Navigation.Mvc.Models.Breadcrumb;
+
+@{
+
+    var taxonomyManager = TaxonomyManager.GetManager();
+    var newstags = taxonomyManager.GetTaxa<FlatTaxon>().Where(t => t.Taxonomy.Name == "news-tags");
+    var breadcrumb = BreadcrumbModelCreate.GetModel();
+    string pageTitle = SiteMapBase.GetActualCurrentNode()?.Title ?? "";
+}
+
+<section class="page-section page-section-no-padding">
+
+    <div class="carousel">
+
+        <div class="js-carousel">
+            @foreach (var item in Model.Items)
+            {
+                var navigateUrl = HyperLinkHelpers.GetDetailPageUrl(item, ViewBag.DetailsPageId, ViewBag.OpenInSamePage, Model.UrlKeyPrefix);
+                var image = item.Fields.Banner;
+                var imageUrl = "";
+                if (image != null)
+                {
+                    imageUrl = image.Fields.MediaUrl;
+                }
+                <div class="carousel-slide carousel-slide-media carousel-slide-dark"
+                     style="background-image: url(@imageUrl);">
+                    <div class="container hero-header">
+                        <div class="row ">
+                            <div class="col-md-6 hero-header-text-wrapper">
+
+                                @foreach (var nt in item.Fields.newstags)
+                                {
+                                    var ntId = (Guid)nt;
+                                    var newsTag = newstags.First(i => i.Id == ntId);
+                                    <div class=" small-header-title" style="background-color:@newsTag.Description">
+                                        <span>
+                                            @newsTag.Title
+                                        </span>
+                                    </div>
+
+                                }
+                                <div class="main-header-title">
+                                    @item.Fields.Title
+                                </div>
+                                <div class="header-date">
+                                    @item.GetDateTimeGregorianCalendar("PublicationDate", "dd/MM/yy")
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a href="@navigateUrl" class="btn btn-default">@Html.Resource("ReadMore", "Labels")</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="carousel-nav h2 color-white text-right">
+            <div class="carousel-nav-container container js-carousel-nav"></div>
+        </div>
+
+
+    </div>
+</section>
+
+
+<section class="page-section page-section-no-padding media-filter">
+    <div class='media-filter-desktop'>
+        <div class="media-filter-desktop-nav">
+            <div class="container">
+                <ul class="filter-container">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class='media-filter-mobile'>
+        <div class="container">
+            <a><i class="icon-sliders"></i>@Html.Resource("FilterBy", "Labels")</a>
+        </div>
+    </div>
+    <div class="media-filter-body-mobile ">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 filter-header">
+                    <i class="icon-cancel-1"></i>
+                    <span>@Html.Resource("FilterBy", "Labels")</span>
+                    <i class="icon-ccw reset-filter"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <input class="search-filter" type="text" placeholder="@Html.Resource("SearchByKeyword", "Labels")">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="category-title">@Html.Resource("Category", "Labels")</div>
+                </div>
+                <div class="col-xs-12 NewsTags">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="category-title">@Html.Resource("Year", "Labels")</div>
+                </div>
+                <div class="col-xs-12 Years">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="category-title">@Html.Resource("Month", "Labels")</div>
+                </div>
+                <div class="col-xs-12 Months">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-default filter-apply">@Html.Resource("Apply", "Labels")</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="media-filter-body">
+        <div class="container">
+            <div class="col-md-11 btn-container">
+            </div>
+            <div class="col-md-1">
+                <button type="button" class="media-filter-close"><i class="icon-cancel-circled"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="container link-list">
+        <nav>
+            <ul class="list-inline list-no-padding color-blue body-small" itemscope itemtype="http://schema.org/BreadcrumbList">
+                @for (int i = 0; i < breadcrumb.SiteMapNodes.Count; i++)
+                {
+                    var node = breadcrumb.SiteMapNodes[i];
+                    var current = i == breadcrumb.SiteMapNodes.Count - 1 && breadcrumb.ShowCurrentPageInTheEnd;
+                    var className = current ? "active" : "";
+                    var ariaLabel = node.Title;
+                    for (int j = 0; j < breadcrumb.SiteMapNodes.Count; j++)
+                    {
+                        ariaLabel = breadcrumb.SiteMapNodes[j] + " / ";
+                        if (breadcrumb.SiteMapNodes[j] == node)
+                        {
+                            break;
+                        }
+                    }
+                    <li class="@className" itemprop="itemListElement" itemscope
+                        itemtype="http://schema.org/ListItem">
+                        @if (current)
+                        {
+                            <span itemprop="name">@node.Title</span>
+                        }
+                        else
+                        {
+                            <a href="@node.Url" class="link link-blue" aria-label="@ariaLabel"><span itemprop="name">@node.Title</span></a>
+                        }
+                        <meta itemprop="position" content="@(i + 1)" />
+                    </li>
+                    if (i != breadcrumb.SiteMapNodes.Count - 1)
+                    {
+                        <li><span class="icon-angle-@(CultureController.IsRtl ? "left" : "right")"></span></li>
+                    }
+
+                }
+            </ul>
+        </nav>
+        <h2 class="from-h1 media-list-title text-left">@pageTitle</h2>
+        <div class="media-list">
+            <div class="row media-list-item  text-center">
+            </div>
+            <div class="row">
+                <div class="col-md-12 load-more-container">
+                    <a class="load-more">@Html.Resource("LoadMore", "Labels")</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

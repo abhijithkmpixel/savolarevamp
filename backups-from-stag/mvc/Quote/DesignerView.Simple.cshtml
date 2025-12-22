@@ -1,0 +1,66 @@
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Mvc;
+
+<h4>@Html.Resource("BreadcrumbIncludeOptions")</h4>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-xs-6">
+            <label for="navTemplateName">@Html.Resource("Template")</label>
+
+            <select id="navTemplateName" ng-model="properties.TemplateName.PropertyValue" class="form-control">
+                @foreach (var viewName in Html.GetViewNames(((Telerik.Sitefinity.Mvc.Proxy.MvcProxyBase)Model).GetController(), @"Template\.(?<viewName>\w*)$"))
+                {
+    <option value="@viewName"> @viewName.SplitCamelCase()</option>}
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="form-group" ng-show="properties.TemplateName.PropertyValue=='Vertical'">
+    <label for="text">Title</label>
+    <input type="text" id="text" ng-model="properties.Title.PropertyValue" class="form-control" />
+</div>
+<div class="form-group">
+    <label for="text">Text</label>
+    <input type="text" id="text" ng-model="properties.Text.PropertyValue" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label for="quotedText">Quoted Text</label>
+    <input type="text" id="quotedText" ng-model="properties.QuotedText.PropertyValue" class="form-control" />
+</div>
+<div class="form-group">
+    <label for="author">Author</label>
+    <input type="text" id="author" ng-model="properties.Author.PropertyValue" class="form-control" />
+</div>
+<div class="form-group">
+    <label for="image-field" class="m-top-sm">@Html.Resource("Image")</label>
+    <sf-image-field class="sf-Media--info modal-settings modal-settings-space"
+                    sf-model="properties.ImageId.PropertyValue"
+                    sf-image="selectedImage"
+                    sf-media-settings="@SettingsHelpers.GetMediaSettings("Image")"
+                    sf-provider=""
+                    id="image-field"></sf-image-field>
+</div>
+<div class="form-group">
+    <label for="image-field" class="m-top-sm">Video .mp4 (Safari / iOS, IE9)</label>
+    <sf-media-field class="sf-Media--info modal-settings modal-settings-space"
+                    sf-model="properties.VideoMp4Id.PropertyValue"
+                    sf-media-type="videos"
+                    sf-provider=""></sf-media-field>
+</div>
+<div class="form-group">
+    <label for="image-field" class="m-top-sm">Video .webm (Chrome10+, Ffx4+, Opera10.6+)</label>
+    <sf-media-field class="sf-Media--info modal-settings modal-settings-space"
+                    sf-model="properties.VideoWebmId.PropertyValue"
+                    sf-media-type="videos"
+                    sf-provider=""></sf-media-field>
+</div>
+<div class="form-group">
+    <label for="image-field" class="m-top-sm">Video .ogv (Firefox3.6+ / Opera 10.5+)</label>
+    <sf-media-field class="sf-Media--info modal-settings modal-settings-space"
+                    sf-model="properties.VideoOgvId.PropertyValue"
+                    sf-media-type="videos"
+                    sf-provider=""></sf-media-field>
+</div>

@@ -1,0 +1,123 @@
+@using System.Globalization
+@using Prototype.Sitefinity.SitefinityControllers
+@using SitefinityWebApp.Core.Extensions
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@model Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models.DynamicContentListViewModel
+@{
+    // Get the current culture (language) of the page
+    var currentCulture = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+
+    // Check if the current language is Arabic (ar) or English (en)
+    var isArabic = currentCulture == "ar";
+    var isEnglish = currentCulture == "en";
+}
+
+<div class="timeline__and__history__primary__slider">
+
+    @{
+        var firstItem = Model.Items.OrderBy(i => i.Fields.Date).FirstOrDefault();
+        var firstContent = "";
+        var firstYear = "";
+        if (null != firstItem)
+        {
+            var timeCorrection = 4;
+            var date = (DateTime)firstItem.Fields.GetMemberValue("Date");
+            date = date.AddHours(timeCorrection);
+            firstYear = date.ToStringGregorianCalendar("yyyy");
+            firstContent = firstItem.Fields.Description;
+        }
+    }
+    <!--  <div class="timeline__and__history__primary__slide__item">
+                <div class="timeline__and__history__primary__slide__item__bg">
+                    <img src="/resourcepackages/theme/uploads/1.png" alt="" />
+                </div>
+                <div class="timeline__and__history__primary__slide__item__wrap">
+                    <div class="container">
+                        <div class="timeline__and__history__primary__slide__item__content">
+    @Html.Raw(firstContent)
+                        </div>
+
+                        <div class="timeline__and__history__primary__slide__item__year__wrap">
+                            <h3>@firstYear</h3>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+    @foreach (var item in Model.Items.OrderBy(i => i.Fields.Date))
+    {
+        var timeCorrection = 4;
+        var date = (DateTime)item.Fields.GetMemberValue("Date");
+        date = date.AddHours(timeCorrection);
+
+        var year = date.ToStringGregorianCalendar("yyyy");
+        var title = string.IsNullOrEmpty(item.Fields.Title) ? null : item.Fields.Title.ToString().Replace("<p>",
+        "").Replace("</p>", "").Replace("&nbsp;", "").Trim();
+        var description = item.Fields.Description;
+
+
+        <div class="timeline__and__history__primary__slide__item">
+            <div class="timeline__and__history__primary__slide__item__bg">
+             <picture>
+                <source srcset="/resourcepackages/theme/uploads/mobilebg.jpg" media="(max-width:990px)" />
+              
+           @{
+           if(isArabic == true){
+                <img src="/resourcepackages/theme/uploads/ar.png" alt="" />
+                }else{
+                 <img src="/resourcepackages/theme/uploads/en.png" alt=""  />
+
+                }
+            } 
+              
+              </picture>
+
+            
+            
+            </div>
+            <div class="timeline__and__history__primary__slide__item__wrap">
+                <div class="container">
+                    <div class="timeline__and__history__primary__slide__item__content">
+                        <div class="timeline__and__history__primary__slide__item__year__wrap">
+                            <fieldset>
+                                <legend>@Html.Raw(date.ToStringGregorianCalendar("yyyy"))</legend>
+                                @* @if (item.Fields.Image != null)
+                            {
+                            <fieldset>
+                            <legend>@Html.Raw(date.ToStringGregorianCalendar("yyyy"))</legend>
+                            <img src="@item.Fields.Image.Fields.MediaUrl" alt="" width="120" height="120" />
+                            </fieldset>
+                            }
+                            else
+                            {
+                            <h3>@Html.Raw(date.ToStringGregorianCalendar("yyyy"))</h3>
+                            } *@
+                                <div class="timeline__and__history__primary__slide__item__year__wrap__inner">
+                                    @Html.Raw(description)
+                                </div>
+                            </fieldset>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    }
+
+</div>
+<div class="container">
+    <div class="timeline__year__slider">
+        @foreach (var item in Model.Items.OrderBy(i => i.Fields.Date))
+        {
+            var timeCorrection = 4;
+            var date = (DateTime)item.Fields.GetMemberValue("Date");
+            date = date.AddHours(timeCorrection);
+            <div class="timeline__year__slide__item">
+                <span>@date.ToStringGregorianCalendar("yyyy")</span>
+            </div>
+        }
+    </div>
+</div>

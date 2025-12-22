@@ -1,0 +1,84 @@
+@model Telerik.Sitefinity.Frontend.Media.Mvc.Models.DocumentsList.DocumentsListViewModel
+
+@using SitefinityWebApp.Core.Extensions
+@using Telerik.OpenAccess
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using Telerik.Sitefinity.Publishing
+@using Telerik.Sitefinity.Taxonomies
+@using Telerik.Sitefinity.Taxonomies.Model
+@using Prototype.Sitefinity.SitefinityControllers
+
+@{
+
+    TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+    var rowId = 0;
+    var items = Model.Items.GroupBy(j =>
+                    j.DataItem.GetPropertyValue<TrackedList<Guid>>("Category") != null &&
+                    j.DataItem.GetPropertyValue<TrackedList<Guid>>("Category").Any() ?
+                        string.Format("{0}|{1}",
+                            taxonomyManager.GetTaxon(j.DataItem.GetPropertyValue<TrackedList<Guid>>("Category").First()).Title,
+                            taxonomyManager.GetTaxon(j.DataItem.GetPropertyValue<TrackedList<Guid>>("Category").First()).Id)
+                        : "Other|other")
+                .Select(j => new { Tag = j.Key.Split('|')[0], TagId = j.Key.Split('|')[1] + Guid.NewGuid(), Docs = j })
+        .ToList();
+
+
+}
+<div class="documentTabs">
+    @if (items.Any())
+    {
+        var isFirst = true;
+
+        <ul class="documentTabs-tabsList nav nav-tabs @(items.Count() == 1 ? "hidden" : "")" role="tablist" style="display:none;">
+            @foreach (var tag in items)
+            {
+                <li class="documentTabs-tabListItem @(isFirst ? "active" : "") padding-bottom" role="presentation">
+                    <a href="#@tag.TagId" role="tab" data-toggle="tab" class="documentTabs-tabItemLink btn btn-secondary-rev" aria-label="Tab @tag.Tag">@tag.Tag</a>
+                </li>
+
+                isFirst = false;
+            }
+        </ul>
+    }
+    <div class="@Model.CssClass documentTabs-tabContent tab-content">
+        @{
+            var isFirstTab = true;
+        }
+        @foreach (var itemsG in items)
+        {
+            <div role="tabpanel" class="documentTabs-tabContentItem tab-pane fade @(isFirstTab ? "active" : "")" id="@itemsG.TagId">
+                <div class="documentsGrid">
+                    @foreach (var item in itemsG.Docs.OrderByDescending(i => (DateTime)i.Fields.GetMemberValue("PublicationDate")).ThenByDescending(i => i.Fields.Title))
+                    {
+                        <div class="documentsGrid-item">
+                            <div class="documentCard">
+                                <div class="documentCard-container">
+                                    <div class="documentCard-media">
+                                        @if (CultureController.IsRtl)
+                                        {
+                                            <img class="documentCard-image" src="/resourcepackages/theme/assets/images/document-ar.svg" width="114" height="134" />
+                                        }
+                                        else
+                                        {
+                                            <img class="documentCard-image" src="/resourcepackages/theme/assets/images/document.svg" width="114" height="134" />
+                                        }
+                                    </div>
+                                    <div class="documentCard-content">
+                                        <h2 class="documentCard-title">@item.Fields.Title</h2>
+                                        <p class="documentCard-description">@Html.Raw(item.Fields.Description)</p>
+                                        <a class="documentCard-cta" href="@item.Fields.MediaUrl.ToString().Split('?')[0]" download="download" tabindex="0" aria-label="@Html.Resource("Download", "Labels") @item.Fields.Title">
+                                            <img class="documentCard-ctaIcon" src="/resourcepackages/theme/assets/images/download.svg" width="13" height="14" />
+                                            <span class="documentCard-ctaLabel">@Html.Resource("Download", "Labels")</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            isFirstTab = false;
+        }
+
+    </div>
+</div>

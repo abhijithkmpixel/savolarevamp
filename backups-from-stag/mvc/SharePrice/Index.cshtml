@@ -1,0 +1,25 @@
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@model Quotes.Core.Models.Quote
+<h2 class="from-h1 page-section-title center h2">@Html.Resource("SharePrice")</h2><div class="row">
+    <div class="col-lg-6 table-price">
+        <div class="table_sep">
+            <div class="col-xs-5">
+                <dl class="in_tbl large down">
+                    <dt>@Html.Resource("Price")</dt>
+                    <dd class="price color-@(Model.ChangeAmount >= 0 ? "green":"red")">
+                        <span class="body-xlarge color-@(Model.ChangeAmount >= 0 ? "green":"red") icon-@(Model.ChangeAmount >= 0 ? "up":"down")-dir"></span>
+                        @Model.AskPrice.Value.ToString("F")
+                    </dd>
+                </dl>
+            </div><div class="col-xs-7">
+                <dl class="in_tbl large down">
+                    <dt>@Html.Resource("Change")</dt>
+                    <dd class="price color-@(Model.ChangeAmount >= 0 ? "green":"red")">
+                        <span class="body-xlarge color-@(Model.ChangeAmount >= 0 ? "green" : "red") icon-@(Model.ChangeAmount >= 0 ? "up" : "down")-dir"></span>
+                        @Model.ChangeAmount.Value.ToString("F") ( @Model.ChangePercentage.Value.ToString("F")% )
+                    </dd>
+                </dl>
+            </div>
+        </div><div class="table_sep"><div class="col-xs-6 col-sm-3"><dl class="in_tbl"><dt data-mh="share-price-line-1">@Html.Resource("PrevClose")</dt><dd>@Model.PrevClosePrice.Value.ToString("F")</dd></dl></div><div class="col-xs-6 col-sm-3"><dl class="in_tbl"><dt data-mh="share-price-line-1">@Html.Resource("Open")</dt><dd>@Model.Open.Value.ToString("F")</dd></dl></div><div class="col-xs-6 col-sm-3"><dl class="in_tbl"><dt>@Html.Resource("High")</dt><dd>@Model.HighPrice.Value.ToString("F")</dd></dl></div><div class="col-xs-6 col-sm-3"><dl class="in_tbl"><dt>@Html.Resource("Low")</dt><dd>@Model.LowPrice.Value.ToString("F")</dd></dl></div></div><div class="table_sep"><div class="col-xs-6 col-sm-3"><dl class="in_tbl"><dt data-mh="share-price-line-2">@Html.Resource("NoOfTrades")</dt><dd>@Model.NoOfTrades</dd></dl></div><div class="col-xs-6 col-sm-3"><dl class="in_tbl"><dt data-mh="share-price-line-2">@Html.Resource("AvgTradeSize")</dt><dd>@Model.AvgTradeSize.ToString("F")</dd></dl></div><div class="col-xs-6 col-sm-3"><dl class="in_tbl"><dt data-mh="share-price-line-2">@Html.Resource("VolTraded")</dt><dd>@Model.VolumeTraded</dd></dl></div><div class="col-xs-6 col-sm-3"><dl class="in_tbl"><dt data-mh="share-price-line-2">@Html.Resource("ValueTraded")</dt><dd>@Model.TurnOver.Value.ToString("N")</dd></dl></div></div><!-- start chart -->
+    </div><div class="col-lg-6"><canvas class="js-chart" id="share-price-chart"></canvas></div>
+</div>

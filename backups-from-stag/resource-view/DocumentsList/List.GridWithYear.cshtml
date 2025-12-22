@@ -1,0 +1,84 @@
+@model Telerik.Sitefinity.Frontend.Media.Mvc.Models.DocumentsList.DocumentsListViewModel
+
+@using SitefinityWebApp.Core.Extensions
+@using Telerik.OpenAccess
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using Telerik.Sitefinity.Publishing
+@using Telerik.Sitefinity.Taxonomies
+@using Telerik.Sitefinity.Taxonomies.Model
+@using Prototype.Sitefinity.SitefinityControllers
+
+@{
+
+    TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+    var rowId = 0;
+    var items = Model.Items.GroupBy(j =>
+                    j.DataItem.GetPropertyValue<TrackedList<Guid>>("Category") != null &&
+                    j.DataItem.GetPropertyValue<TrackedList<Guid>>("Category").Any() ?
+                        string.Format("{0}|{1}",
+                            taxonomyManager.GetTaxon(j.DataItem.GetPropertyValue<TrackedList<Guid>>("Category").First()).Title,
+                            taxonomyManager.GetTaxon(j.DataItem.GetPropertyValue<TrackedList<Guid>>("Category").First()).Id)
+                        : "Other|other")
+                .Select(j => new { Tag = j.Key.Split('|')[0], TagId = j.Key.Split('|')[1] + Guid.NewGuid(), Docs = j })
+        .ToList();
+
+
+}
+@functions {
+    public string FormatFileSize(long bytes)
+    {
+        return Math.Round(bytes / 1024d / 1024d, 2) + " MB";
+    }
+}
+
+<div class="documentTabs">
+    @if (items.Any())
+    {
+        var isFirst = true;
+
+        <ul class="documentTabs-tabsList nav nav-tabs @(items.Count() == 1 ? "hidden" : "")" role="tablist">
+            @foreach (var tag in items)
+            {
+                <li class="documentTabs-tabListItem @(isFirst ? "active" : "") padding-bottom" role="presentation">
+                    <a href="#@tag.TagId" role="tab" data-toggle="tab" class="documentTabs-tabItemLink btn btn-secondary-rev" aria-label="Tab @tag.Tag">@tag.Tag</a>
+                </li>
+
+                isFirst = false;
+            }
+        </ul>
+    }
+    <div class="@Model.CssClass documentTabs-tabContent tab-content">
+        @{
+            var isFirstTab = true;
+        }
+        @foreach (var itemsG in items)
+        {
+            <div role="tabpanel" class="documentTabs-tabContentItem tab-pane fade @(isFirstTab ? "active" : "")" id="@itemsG.TagId">
+               <div class="download__cards__grid">
+                    @foreach (var item in itemsG.Docs.OrderByDescending(i => (DateTime)i.Fields.GetMemberValue("PublicationDate")).ThenByDescending(i => i.Fields.Title))
+                    {
+                        <div class="download__card__grid__item">
+                           <figure>
+                                <img src="https://savola.blob.core.windows.net/website/docs/default-source/custom-azure-uploads/downloadcardimg.png?sfvrsn=ef0fdcd7_1&Status=Master" alt="" />
+                            </figure>
+                                 <div class="download__card__grid__item__overview">
+                                <h5>@item.Fields.Title</h5>
+                                <p>
+                               
+                                @item.Fields.Extension.ToUpper()
+                                @FormatFileSize(item.Fields.TotalSize)
+                                <a href="@item.Fields.MediaUrl.ToString().Split('?')[0]" target="_blank" 
+                                    ><img src="https://savola.blob.core.windows.net/website/docs/default-source/custom-azure-uploads/download-pdf-icon.svg?sfvrsn=d30fdcd7_1&Status=Master" alt=""
+                                /></a>
+                                </p>
+                            </div>
+                          
+                        </div>
+                    }
+                </div>
+            </div>
+            isFirstTab = false;
+        }
+
+    </div>
+</div>

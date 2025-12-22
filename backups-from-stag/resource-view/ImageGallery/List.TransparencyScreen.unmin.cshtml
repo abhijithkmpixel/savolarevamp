@@ -1,0 +1,38 @@
+@model Telerik.Sitefinity.Frontend.Mvc.Models.ContentListViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Frontend.Media.Mvc.Models.ImageGallery;
+
+
+@{
+    var items = Model.Items.Select((x, i) => new { Index = i, Value = x })
+        .GroupBy(x => x.Index / 3)
+        .Select(x => x.Select(v => v.Value).ToList())
+        .ToList();
+}
+<div class="sf-Gallery-thumbs-container">
+    <div class="sf-Gallery-thumbs clearfix @Model.CssClass">
+        @{int itemIndex = 0;}
+        @foreach (var itemGroup in items)
+        {
+            <div class="row margin-l-bottom">
+                @if (itemGroup.Count == 1)
+                {
+                    <div class="col-md-4"></div>
+                }
+                @foreach (var item in itemGroup)
+                {
+                    <div class="col-md-4">
+                        <a class="pull-left text-center image-link"
+                           href="@(((ThumbnailViewModel) item).MediaUrl)"
+                           title="@item.Fields.AlternativeText">
+                            <img class="img-responsive" src="@(((ThumbnailViewModel) item).ThumbnailUrl.Split('?')[0])" alt="@item.Fields.AlternativeText" />
+                        </a>
+                    </div>
+                    itemIndex++;
+                }
+            </div>
+
+        }
+    </div>
+</div>

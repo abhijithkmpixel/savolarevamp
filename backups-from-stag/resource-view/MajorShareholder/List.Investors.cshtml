@@ -1,0 +1,13 @@
+@model Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models.DynamicContentListViewModel
+
+@{
+    var isRight = true;
+}
+<ul class="timeline shareholder-timeline margin-l-bottom">
+    @foreach (var item in Model.Items.OrderByDescending(i => i.Fields.Percent))
+            {
+        <li class="timeline-elem timeline-elem-@(isRight ? "r" : "l")"><div class="timeline-inner"><h3 class="shareholder-timeline-title h2 color-green">@(item.Fields.Percent.ToString("#.##"))%</h3><p>@item.Fields.Title</p></div></li>
+        isRight = !isRight;
+    }
+</ul>
+

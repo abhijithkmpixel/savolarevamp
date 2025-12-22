@@ -1,0 +1,40 @@
+@model INavigationModel
+@using Telerik.Sitefinity.Frontend.Navigation.Mvc.Models;
+
+<div class="@Model.CssClass"><ul>
+        @foreach (var node in Model.Nodes)
+        {
+            @RenderRootLevelNode(node)
+        }
+    </ul></div>
+
+@helper RenderRootLevelNode(NodeViewModel node)
+{
+    <li><a href="@node.Url" target="@node.LinkTarget"><strong>@node.Title</strong></a>
+        @if (node.ChildNodes.Count > 0)
+        {
+            <ul>
+                @foreach (var childNode in node.ChildNodes)
+                {
+                    @RenderSubLevelsRecursive(childNode)
+                }
+            </ul>
+        }
+    </li>
+}
+
+
+@helper RenderSubLevelsRecursive(NodeViewModel node)
+{
+    <li><a href="@node.Url" target ="@node.LinkTarget">@node.Title</a>
+        @if (node.ChildNodes.Count > 0)
+        {
+            <ul>
+                @foreach (var childNode in node.ChildNodes)
+                {
+                    @RenderSubLevelsRecursive(childNode)
+                }
+            </ul>
+        }
+    </li>
+}

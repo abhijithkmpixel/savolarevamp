@@ -1,0 +1,13 @@
+﻿@using Telerik.Sitefinity.UI.MVC
+@using (Html.BeginFormSitefinity("exportshareholders", "exportshareholdersform", FormMethod.Post))
+{
+    <div class="sfFormDialog ">
+        <fieldset class="sfNewItemForm">
+            <h1>Export all unclaiment dividends</h1>
+            <div class="sfButtonArea sfMainFormBtns">
+
+                <a  class="sfLinkBtn sfSave" href="/Sitefinity/savola/unclaimed-dividends/ExportShareholders">Export</a>
+            </div>
+        </fieldset>
+    </div>
+}

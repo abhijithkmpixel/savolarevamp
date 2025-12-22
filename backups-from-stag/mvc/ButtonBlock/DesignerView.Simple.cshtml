@@ -1,0 +1,46 @@
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+
+<h4>@Html.Resource("BreadcrumbIncludeOptions")</h4>
+
+<div class="form-group">
+    <label for="text">Text</label>
+    <input type="text" id="text" ng-model="properties.Text.PropertyValue" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label for="percent">Alignment</label>
+    <select id="color" ng-model="properties.Align.PropertyValue" class="form-control">
+        <option value="left">Left</option>
+        <option value="center">Center</option>
+        <option value="right">Right</option>
+        <option value="full-width">Full width</option>
+    </select>
+</div>
+<div class="checkbox">
+    <label>
+        <input type="checkbox" 
+               ng-model="properties.MarginTop.PropertyValue"
+               ng-true-value="'True'" 
+               ng-false-value="'False'" 
+               ng-checked="properties.MarginTop.PropertyValue === 'True'" > Margin Top
+    </label>
+</div>
+<div class="checkbox">
+    <label>
+        <input type="checkbox" 
+               ng-model="properties.MarginBottom.PropertyValue"
+               ng-true-value="'True'" 
+               ng-false-value="'False'" 
+               ng-checked="properties.MarginBottom.PropertyValue === 'True'" > Margin Bottom
+    </label>
+</div>
+<div class="form-group">
+    <label for="percent">Page</label>
+
+    <sf-list-selector sf-page-selector
+                      sf-selected-item-id="properties.PageId.PropertyValue"></sf-list-selector>
+</div>
+<div class="form-group">
+    <label for="query">Query (after page url)</label>
+    <input type="text" id="query" ng-model="properties.Query.PropertyValue" class="form-control" />
+</div>

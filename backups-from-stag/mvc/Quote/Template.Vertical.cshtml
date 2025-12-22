@@ -1,0 +1,36 @@
+@model SitefinityWebApp.Mvc.Models.QuoteModel
+@using SitefinityWebApp.Core.Extensions
+@{ 
+    string imageAlt = Model.ImageAlternativeText;
+    if (string.IsNullOrEmpty(imageAlt))
+    {
+        imageAlt = Model.QuotedText;
+    }
+    if (string.IsNullOrEmpty(imageAlt))
+    {
+        imageAlt = Model.Text;
+    }
+    if (string.IsNullOrEmpty(imageAlt))
+    {
+        imageAlt = Model.ImageTitle;
+    }
+    imageAlt = imageAlt.Truncate(97);
+}
+<div class="content-box" data-mh="group"><img class="img-responsive" src="@Model.ImageUrl" alt="" role="presentation">
+    <div class="content-box-inner padding-bottom padding-left padding-right padding-top">
+        @if (!string.IsNullOrWhiteSpace(Model.Title))
+        {
+            <span class="content-box-title">@Model.Title</span>
+        }
+
+        <span class="content-box-quotes icon-quote"></span>
+        @if (!string.IsNullOrWhiteSpace(Model.QuotedText))
+        {
+            <div class="padding-bottom"><p><strong>"@Model.QuotedText"</strong></p></div>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model.Text))
+        {
+            <p>@Model.Text</p>
+        }
+    </div>
+</div>

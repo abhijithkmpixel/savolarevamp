@@ -1,0 +1,191 @@
+﻿@model INavigationModel
+
+@using Prototype.Sitefinity.SitefinityControllers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using Telerik.Sitefinity.Frontend.Navigation.Mvc.Models;
+@using Telerik.Sitefinity.Modules.Libraries
+@using Telerik.Sitefinity.Pages.Model
+@using Telerik.Sitefinity.Web
+
+<div class="header__bottom">
+    <div class="header__bottom__inner">
+        <a class="brand__logo" href="@(CultureController.IsRtl? " /" : "/en" )">
+            <img src="/ResourcePackages/Theme/assets/images/savola-logo.svg"  alt="Savola">
+            @*<span class="visually-hidden">@(CultureController.IsRtl ? "الصفحة الرئيسية" : "Home")</span>*@
+        </a>   
+    <nav>
+        <ul>
+            @foreach (var node in Model.Nodes)
+            {
+             @RenderLinks(node, 0)
+            }
+                <li class="mobile__header__footer">
+                <ul class="mobile__header__footer__list">
+                  <li class="en">
+                    <a
+                      href="/en/integrity-hotline"
+                      target="_blank"
+                      rel="noopener"
+                      title="Opens in a new window"
+                      class="secondaryNav-navigationItemLink">
+                      Integrity Hotline
+                    </a>
+                  </li>
+                  <li class="en">
+                    <a
+                      href="/en/investor-contacts"
+                      target="_blank"
+                      rel="noopener"
+                      title="Opens in a new window"
+                      class="secondaryNav-navigationItemLink">
+                      Contact us
+                    </a>
+                  </li>
+                  <li class="en">
+                    <a
+                      href="https://fa-ewxl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001"
+                      target="_blank"
+                      rel="noopener"
+                      title="Opens in a new window"
+                      class="secondaryNav-navigationItemLink">
+                      Careers
+                    </a>
+                  </li>
+                  <li class="ar">
+                    <a
+                      href="/integrity-hotline"
+                      target="_blank"
+                      rel="noopener"
+                      title="Opens in a new window"
+                      class="secondaryNav-navigationItemLink">
+                      برنامج الابلاغ عن المخالفات
+                    </a>
+                  </li>
+                  <li class="ar">
+                    <a
+                      href="/investor-contacts"
+                      target="_blank"
+                      rel="noopener"
+                      title="Opens in a new window"
+                      class="secondaryNav-navigationItemLink">
+                      اتصل بنا
+                    </a>
+                  </li>
+                  <li class="ar">
+                    <a
+                      href="https://fa-ewxl-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001"
+                      target="_blank"
+                      rel="noopener"
+                      title="Opens in a new window"
+                      class="secondaryNav-navigationItemLink">
+                      التوظيف
+                    </a>
+                  </li>
+                </ul>
+              </li>
+        </ul>
+
+          <button
+              class="hamburger hamburger--squeeze"
+              type="button"
+              id="hamburger__menu__toggle">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+        @*<button type="button" class="mainNav-menuToggleButton">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="22" fill="none">
+                <path fill="#fff" fill-rule="evenodd" d="M.5 2A1.5 1.5 0 0 1 2 .5h24a1.5 1.5 0 0 1 0 3H2A1.5 1.5 0 0 1 .5 2ZM.5 11A1.5 1.5 0 0 1 2 9.5h24a1.5 1.5 0 0 1 0 3H2A1.5 1.5 0 0 1 .5 11ZM.5 20A1.5 1.5 0 0 1 2 18.5h24a1.5 1.5 0 0 1 0 3H2A1.5 1.5 0 0 1 .5 20Z" clip-rule="evenodd" />
+            </svg>
+            <span class="visually-hidden">Toggle Menu</span>
+        </button>*@
+    </nav>
+</div>
+</div>
+<div class="accessibility-menu">
+    <div class="container">
+        <div class="accessibility-menu-col accessibility-menu-col-info">
+            <img src="/ResourcePackages/Theme/assets/images/speaker.svg" alt="readspeaker" />
+            <h3 class="accessibility-menu-title">@Html.Resource("Accessibility", "Labels")</h3>
+        </div>
+        <div class="accessibility-menu-col">
+            <div class="accessibility-menu-option">
+                <span class="accessibility-menu-label">@Html.Resource("ResizeText", "Labels")</span>
+                <button type="button" class="accessibility-menu-text-btn active accessibility-menu-text-btn-normal">A</button>
+                <button type="button" class="accessibility-menu-text-btn accessibility-menu-text-btn-increase">A</button>
+            </div>
+            <div class="accessibility-menu-option">
+                <span class="accessibility-menu-label">@Html.Raw(Html.Resource("HighContrastGreyScale", "Labels"))</span>
+                <label class="switch" for="inverse-color">
+                    <span class="visually-hidden">@Html.Raw(Html.Resource("HighContrastGreyScale", "Labels"))</span>
+                    <input type="checkbox" id="inverse-color" class="inverse-color">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="accessibility-menu-option">
+                <span class="accessibility-menu-label">@Html.Raw(Html.Resource("HighContrast", "Labels"))</span>
+                <label class="switch" for="contrast-green-color">
+                    <span class="visually-hidden">@Html.Raw(Html.Resource("HighContrast", "Labels"))</span>
+                    <input type="checkbox" id="contrast-green-color" class="contrast-green-color">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            @if (CultureController.Language == "ar")
+            {
+            <div class="accessibility-menu-option reverse">
+                <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve">
+                    <a rel="nofollow" class="rsbtn_play" accesskey="L" title="ReadSpeaker webReader إستمع إلى هذه الصفحةِ مستخدماً" href="//app-as.readspeaker.com/cgi-bin/rsent?customerid=11056&amp;lang=ar_ar&amp;readid=main-content&amp;url=@Request.Url.ToString()">
+                        <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>استمع</span></span></span>
+                        <span class="rsbtn_right rsimg rsplay rspart"></span>
+                    </a>
+                </div>
+                <span class="accessibility-menu-label">@Html.Resource("TextSpeaker", "Labels")</span>
+            </div>
+            }
+            else
+            {
+            <div class="accessibility-menu-option reverse">
+                <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve">
+                    <a rel="nofollow" class="rsbtn_play" accesskey="L" title="Listen to this page using ReadSpeaker webReader" href="//app-as.readspeaker.com/cgi-bin/rsent?customerid=11056&amp;lang=en_uk&amp;readid=main-content&amp;url=@Request.Url.ToString()">
+                        <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>Listen</span></span></span>
+                        <span class="rsbtn_right rsimg rsplay rspart"></span>
+                    </a>
+                </div>
+                <span class="accessibility-menu-label">@Html.Resource("TextSpeaker", "Labels")</span>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+
+@helper RenderLinks(NodeViewModel node, int level, bool insideDropdown = false)
+{
+<li class="@GetClass(node) @Html.Raw(node.ChildNodes.Any() ? "has__sub__menu" : "" ) @(node.HasChildOpen || node.IsCurrentlyOpened ? "active" : "" )">
+    <a href="@node.Url"
+       target="@node.LinkTarget"
+       @Html.Raw(node.LinkTarget=="_blank" ? "rel='noopener' title='Opens in a new window'" : "" )
+       class="@GetClass(node)">
+        @node.Title
+    </a>
+    @if (node.ChildNodes.Count > 0)
+    {
+    PageSiteNode pageNode = node.OriginalSiteMapNode as PageSiteNode;
+    var thumbnail = ((Telerik.Sitefinity.Libraries.Model.Image)pageNode.GetCustomFieldValue("Image"));
+
+    <ul class="sub__menu" data-nav-level="@(level + 1)">
+        @foreach (var childNode in node.ChildNodes)
+        {
+        @RenderLinks(childNode, level + 1, true)
+        }
+    </ul>
+    }
+</li>
+}
+
+@helper GetClass(NodeViewModel node)
+{
+    if (Model.CurrentSiteMapNode != null && node.OriginalSiteMapNode != null && Model.CurrentSiteMapNode.Key == node.OriginalSiteMapNode.Key)
+    {
+        @Html.Raw("active")
+    }
+}

@@ -1,0 +1,50 @@
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using Telerik.Sitefinity.UI.MVC
+@model SitefinityWebApp.Mvc.Models.NiewAndMediaViewModel
+<section class="page-section news-and-media">
+    <h2 class="from-h1 page-section-title h2 center">@Html.Resource("LatestPressReleases")</h2><div class="container">
+                                                                                           <div class="text-center padding-bottom">
+                                                                                               @using (Html.BeginFormSitefinity("", "news-and-media", FormMethod.Post, new { id = "news-and-media-form" }))
+                                                                                               {
+                                                                                                   <input type="hidden" name="Culture" value="@System.Threading.Thread.CurrentThread.CurrentCulture.Name" />
+                                                                                                   <input type="hidden" name="Api" value="/api/pressreleases" />
+                                                                                                   
+                                                                                                   <input type="hidden" name="page" id="news-and-media-page" value="1" /><ul class="list-inline list-small">
+                                                                                                       <li>
+                                                                                                           <label for="year-filter" class="visually-hidden">@Html.Resource("Year", "Labels")</label>
+                                                                                                           <select name="Year" id="year-filter">
+                                                                                                               <option value="">@Html.Resource("Year", "Labels")</option>
+                                                                                                               @foreach (var c in Model.Years)
+                                                                                                               {
+                                                                                                                   <option value="@c.Value">@c.Text</option>
+
+                                                                                                               }
+                                                                                                           </select>
+                                                                                                       </li>
+                                                                                                   </ul>
+
+                                                                                               }
+
+                                                                                           </div><div class="news-and-media-results">
+            <div class="result">
+                <ul class="search-result-group without-images" id="news-holder">
+                    @foreach (var newsBlock in Model.News)
+                    {
+
+                        foreach (var news in newsBlock)
+                        {
+
+                            <li class="news-row" id="@news.Id"><h4>@news.DateStr, @news.CategoriesStr</h4><h2><a href="@news.Url" class="link" target="_blank" rel="noopener" title="Opens in a new window">@news.Title</a></h2></li>
+                        }
+
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    @if (Model.Total > 8)
+    {
+        <div class="container text-center margin-l-top"><a href="#" class="btn btn-default" id="news-and-media-load-more-btn" data-total="@Model.Total">@Html.Resource("LoadMore")</a></div>
+    }
+
+</section>

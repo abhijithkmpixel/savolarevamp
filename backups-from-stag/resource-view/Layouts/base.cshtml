@@ -1,0 +1,136 @@
+﻿@using System.Threading
+@using Prototype.Sitefinity.SitefinityControllers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.Web
+@using System.Linq;
+@{
+    var dir = Thread.CurrentThread.CurrentUICulture.TextInfo.IsRightToLeft ? "rtl" : "ltr";
+    var bodyClass = Request.Url.AbsolutePath.Replace("/ar", "").Replace("/en", "").Trim('/').Replace("/", "-");
+    var htmlClass = "";
+    if (string.IsNullOrEmpty(bodyClass))
+    {
+        bodyClass = "home";
+    }
+    @*if (Request.Cookies["accessibility"] != null && Request.Cookies["accessibility"].Value != null)
+    {
+        if (Request.Cookies["accessibility"].Value.Contains("\"greencolor\":true"))
+        {
+            htmlClass += " greenColorContrast";
+        }
+        if (Request.Cookies["accessibility"].Value.Contains("\"color\":true"))
+        {
+            htmlClass += " colorInversion";
+        }
+        if (Request.Cookies["accessibility"].Value.Contains("\"font\":true"))
+        {
+            htmlClass += " textIncrease";
+        }
+    }*@
+    var node = SiteMapBase.GetActualCurrentNode();
+    var title = node != null ? node.Title : "";
+    var description = node != null ? node.Description : "";
+
+}
+<!doctype html>
+<html @Html.RenderLangAttribute() dir="@dir" class="no-js @htmlClass" prefix="og: http://ogp.me/ns#">
+<head>
+    <title>Savola</title>
+    <link rel="dns-prefetch" href="//savola-web.azureedge.net/">
+    <link rel="dns-prefetch" href="//savola.blob.core.windows.net/">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="@description">
+    <meta property="og:title" content="@title">
+    <meta property="og:image" content="/resourcepackages/theme/assets/images/logo.svg">
+    <meta property="og:description" content="@description">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="57x57" href="//savola-web.azureedge.net/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="//savola-web.azureedge.net/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="//savola-web.azureedge.net/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="//savola-web.azureedge.net/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="//savola-web.azureedge.net/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="//savola-web.azureedge.net/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="//savola-web.azureedge.net/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="//savola-web.azureedge.net/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="//savola-web.azureedge.net/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="//savola-web.azureedge.net/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="//savola-web.azureedge.net/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="//savola-web.azureedge.net/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="//savola-web.azureedge.net/icons/favicon-16x16.png">
+    <link rel="manifest" href="/resourcepackages/theme/assets/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="//savola-web.azureedge.net/icons/ms-icon-144x144.png">
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
+
+    <meta name="theme-color" content="#ffffff">
+    @*<link rel="stylesheet" href="/resourcepackages/theme/assets/css/style-@(dir).min.css?v5" />*@
+    <link rel="stylesheet" href="/resourcepackages/theme/assets/css/style-@(dir).css?v33" />
+    <link rel="stylesheet" href="/resourcepackages/theme/assets/css/slick-theme.css" />
+    <link rel="stylesheet" href="/resourcepackages/theme/assets/css/slick.css" />
+    @if (!SitefinityContext.IsBackend)
+    {
+        <link rel="stylesheet" href="/resourcepackages/theme/assets/css/app.css" />
+    }
+    <script type="text/javascript">var rtl='@CultureController.Direction';var left='@(CultureController.IsRtl ? "right" : "left")';var right='@(!CultureController.IsRtl ? "right" : "left")';</script>
+    @Html.Section("head")
+</head>
+<body>
+    @*@Html.Section("top")*@
+    @*@Html.SfPlaceHolder("top")*@
+    <header>
+        <div class="header__top">
+            <div class="header__top__inner">
+                <div class="header__top__inner__left">
+                    @Html.SfPlaceHolder("quote")
+                </div>
+                <div class="header__top__inner__right">
+                    @Html.SfPlaceHolder("quiklinks")
+
+                    @Html.SfPlaceHolder("langselector")
+                   
+                    @Html.SfPlaceHolder("accessibility")
+               
+                    @Html.SfPlaceHolder("search")
+
+                </div>
+            </div>
+        </div>
+        @Html.SfPlaceHolder("mainmenu")
+    </header>
+    <div class="page-content">
+        @Html.SfPlaceHolder("content")
+    </div>
+    @Html.SfPlaceHolder("footertop")
+    <footer>
+        <div class="footer__inner">
+            <div class="footer__inner__columns">
+                @Html.SfPlaceHolder("footerlogo")
+                @Html.SfPlaceHolder("footercontent")
+                @Html.SfPlaceHolder("footersocial")
+            </div>
+            
+            @Html.SfPlaceHolder("footernavigation")
+        </div>
+    </footer>
+
+    @if (!SitefinityContext.IsBackend)
+    {     
+        <script async src="/resourcepackages/theme/assets/js/scripts.js?v15"></script>
+        <script src="https://www.savola.com/resourcepackages/theme/investor-relations/assest/js/jquery.min.js"></script>
+        <script src="/resourcepackages/theme/assets/js/slick.min.js"></script>
+        <script src="/resourcepackages/theme/assets/js/customscripts.js"></script>
+        if (CultureController.IsRtl)
+        {
+            <script src="//cdn1.readspeaker.com/script/11056/webReader/webReader.js?pids=wr&skin=RS_RTL" type="text/javascript"></script>
+        }
+        else
+        {
+            <script src="//cdn1.readspeaker.com/script/11056/webReader/webReader.js?pids=wr" type="text/javascript"></script>
+
+        }
+    }
+    @Html.Section("bottom")
+</body>
+</html>

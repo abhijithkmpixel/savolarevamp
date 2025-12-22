@@ -1,0 +1,15 @@
+﻿@model Telerik.Sitefinity.Frontend.ContentBlock.Mvc.Models.IContentBlockModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@{
+    var content = Model != null && !string.IsNullOrEmpty(Model.Content) ? Model.Content : "";
+    content = content.Replace("<h1>", "<h2 class=\"from-h1\">");
+    content = content.Replace("<h1 class=\"", "<h2 class=\"from-h1 ");
+    content = content.Replace("<h1 class='", "<h2 class='from-h1 ");
+    content = content.Replace("<h1 style=\"", "<h2 class=\"from-h1\" style=\"");
+    content = content.Replace("</h1>", "</h2>");
+    content = content.Replace("<h1 align=\"center\" class=\"", "<h2 align=\"center\" class=\"from-h1 ");
+}
+<div class="@Model.WrapperCssClass" @Html.InlineEditingAttributes(Model.ProviderName, Model.ContentType, Model.SharedContentID)>
+    <div class="sfContentBlock sf-Long-text" @Html.InlineEditingFieldAttributes("Content", "LongText")>@Html.HtmlSanitize(content)</div>
+</div>

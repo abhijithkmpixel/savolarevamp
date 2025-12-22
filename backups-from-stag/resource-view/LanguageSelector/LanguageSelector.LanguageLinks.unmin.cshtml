@@ -1,0 +1,23 @@
+﻿@using Telerik.Sitefinity.Services
+@model Prototype.Sitefinity.Mvc.Models.LanguageSelector.LanguageSelectorViewModel
+@foreach (var language in Model.Languages)
+{
+    if (SystemManager.IsDesignMode)
+    {
+        <a href="" onclick="return false;" class="">@language.DisplayName</a>
+    }
+    else
+    {
+        <a href="@language.Url.Replace("/en/home","/en").Replace("/home","")" data-name="@language.DisplayName" class="link lang-link">
+            @if (language.Culture == "ar")
+            {
+                <img src="//savola-web.azureedge.net/images/lang-arabic.png" width="53" height="23"  alt="Arabic">
+            }
+            else
+            {
+                @language.DisplayName
+            }
+        </a>
+
+    }
+}

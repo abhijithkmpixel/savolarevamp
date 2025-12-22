@@ -1,0 +1,137 @@
+@model Control
+
+
+<uib-tabset class="nav-tabs-wrapper">
+    <uib-tab heading="Twitter">
+        <div class="form-group">
+            <label for="TwitterAccountName">Account Name</label>
+            <input type="text" id="TwitterAccountName" ng-model="properties.TwitterAccountName.PropertyValue" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="TwitterConsumerKey">Consumer Key</label>
+            <input type="text" id="TwitterConsumerKey" ng-model="properties.TwitterConsumerKey.PropertyValue" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="TwitterConsumerSecret">Consumer Secret</label>
+            <input type="text" id="TwitterConsumerSecret" ng-model="properties.TwitterConsumerSecret.PropertyValue" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="TwitterAccessToken">Access Token</label>
+            <input type="text" id="TwitterAccessToken" ng-model="properties.TwitterAccessToken.PropertyValue" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="TwitterAccessTokenSecret">Access Token Secret</label>
+            <input type="text" id="TwitterAccessTokenSecret" ng-model="properties.TwitterAccessTokenSecret.PropertyValue" class="form-control" />
+        </div>
+        <expander expander-title='How to'>
+            <style-dropdown selected-class="properties.DetailCssClass.PropertyValue" view-name="properties.DetailTemplateName.PropertyValue"></style-dropdown>
+            <div>
+                Instruction here
+            </div>
+        </expander>
+    </uib-tab>
+
+    <uib-tab heading="Facebook">
+        <div class="form-group">
+            <label for="FacebookPageAccessToken">Page Access Token</label>
+            <input type="text" id="FacebookPageAccessToken" ng-model="properties.FacebookPageAccessToken.PropertyValue" class="form-control" />
+        </div>
+        <expander expander-title='How to'>
+            <style-dropdown selected-class="properties.DetailCssClass.PropertyValue" view-name="properties.DetailTemplateName.PropertyValue"></style-dropdown>
+            <div class="post-text" itemprop="text">
+                <p>Use the <a href="https://developers.facebook.com/tools/explorer">Graph API Explorer</a> for all of these steps except where otherwise stated.</p>
+
+                <h3>0. Create Facebook App</h3>
+
+                <p><strong>If you already have an app</strong>, skip to step 1.</p>
+
+                <ol>
+                    <li>Go to <a href="https://developers.facebook.com/apps/">My Apps</a>.</li>
+                    <li>Click "+ Add a New App".</li>
+                    <li>Setup a website app.</li>
+                </ol>
+
+                <p>You don't need to change its permissions or anything. You just need an app that wont go away before you're done with your access token.</p>
+
+                <h3>1. Get User Short-Lived Access Token</h3>
+
+                <ol>
+                    <li>Go to the <a href="https://developers.facebook.com/tools/explorer">Graph API Explorer</a>.</li>
+                    <li>Select the application you want to get the access token for.</li>
+                    <li>Click "Get Access Token".</li>
+                    <li>In the pop-up, under the "Extended Permissions" tab, check "manage_pages".</li>
+                    <li>Click "Get Access Token".</li>
+                    <li>Grant access from a Facebook account that has access to manage the target page. Note that if this user loses access the final, never-expiring access token will likely stop working.</li>
+                </ol>
+
+                <p>Token that appears in the "Access Token" field is your short-lived access token.</p>
+
+                <h3>2. Generate Long-Lived Access Token</h3>
+
+                <p>Following <a href="https://developers.facebook.com/docs/facebook-login/access-tokens#extending">these instructions</a> from the Facebook docs, make a GET request to</p>
+
+                <blockquote>
+                    <p><a href="https://graph.facebook.com/v2.2/oauth/access_token?grant_type=fb_exchange_token&amp;client_id=">https://graph.facebook.com/v2.2/oauth/access_token?grant_type=fb_exchange_token&amp;client_id=</a><strong>{app_id}</strong>&amp;client_secret=<strong>{app_secret}</strong>&amp;fb_exchange_token=<strong>{short_lived_token}</strong></p>
+                </blockquote>
+
+                <p>entering in your app's ID and secret and the short-lived token generated in the previous step.</p>
+
+                <p>You <strong>cannot use the Graph API Explorer</strong>. For some reason it gets stuck on this request. I think it's because the response isn't JSON, but a query string. Since it's a GET request, you can just go to the URL in your browser.</p>
+
+                <p>The response should look like this:</p>
+
+                <blockquote>
+                    <p>access_token=<strong>ABC123</strong>&amp;expires=5182959</p>
+                </blockquote>
+
+                <p>"ABC123" will be your long-lived access token. You can put it into the <a href="https://developers.facebook.com/tools/debug/accesstoken">Access Token Debugger</a> to verify. Under "Expires" it should have something like "2 months".</p>
+
+                <h3>4. Get User ID</h3>
+
+                <p>Using the long-lived access token, make a GET request to </p>
+
+                <blockquote>
+                    <p><a href="https://graph.facebook.com/v2.2/me?access_token=">https://graph.facebook.com/v2.2/me?access_token=</a><strong>{long_lived_access_token}</strong></p>
+                </blockquote>
+
+                <p>The <code>id</code> field is your account ID. You'll need it for the next step.</p>
+
+                <h3>5. Get Permanent Page Access Token</h3>
+
+                <p>Make a GET request to</p>
+
+                <blockquote>
+                    <p><a href="https://graph.facebook.com/v2.2/">https://graph.facebook.com/v2.2/</a><strong>{account_id}</strong>/accounts?access_token=<strong>{long_lived_access_token}</strong></p>
+                </blockquote>
+
+                <p>The JSON response should have a <code>data</code> field under which is an array of items the user has access to. Find the item for the page you want the permanent access token from. The <code>access_token</code> field should have your permanent access token. Copy it and test it in the <a href="https://developers.facebook.com/tools/debug/accesstoken">Access Token Debugger</a>. Under "Expires" it should say "Never".</p>
+            </div>
+        </expander>
+    </uib-tab>
+
+    <uib-tab heading="Youtube">
+        <div class="form-group">
+            <label for="YoutubeApiKey">Api key</label>
+            <input type="text" id="YoutubeApiKey" ng-model="properties.YoutubeApiKey.PropertyValue" class="form-control" />
+        </div>
+        <expander expander-title='How to'>
+            <style-dropdown selected-class="properties.DetailCssClass.PropertyValue" view-name="properties.DetailTemplateName.PropertyValue"></style-dropdown>
+            <div class="entry-content">
+                <p>The official YouTube API v3 is at <a href="https://developers.google.com/youtube/v3/" target="_blank">https://developers.google.com/youtube/v3/</a></p>
+                <p>To apply for a YouTube API key:</p>
+                <ol>
+                    <li>
+                        Goto Google Developers Console and login with your YouTube/Google ID: <a href="https://console.developers.google.com/" target="_blank">https://console.developers.google.com/</a>
+                    </li>
+                    <li>
+                        Click the button Create Project, enter your project name in the New Project popup, Google will then create the project for you.
+                    </li>
+                    <li>
+                        On the left menu, goto APIs &amp; auth -&gt; APIs, click YouTube Data API, in the following screen, click Enable API.
+                    </li>
+                    <li>On the left menu, goto APIs &amp; auth -&gt; Credentials, click the button Create new Key under the Public API access. In the popup dialog, choose Browser Key, then click Create in the next dialog. Google will then create and display your API key.</li>
+                </ol>
+            </div>
+        </expander>
+    </uib-tab>
+</uib-tabset>

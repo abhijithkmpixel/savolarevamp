@@ -1,0 +1,30 @@
+@model Telerik.Sitefinity.Frontend.EmailCampaigns.Mvc.Models.SubscribeFormViewModel
+@using Telerik.Sitefinity.UI.MVC;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+<div class="@Model.CssClass subscribe-form"><div class="body-small color-white padding-xxs-bottom">@Html.Resource("SubscribeToOurNewsletter")</div>
+    @using (Html.BeginFormSitefinity())
+    {
+        <div class="alert alert-success color-white" style="display: none;">
+            @Html.Resource("ThankYou")
+        </div>
+        @Html.ValidationSummary(true)
+        if (!string.IsNullOrEmpty(ViewBag.Error))
+        {
+            <div class="alert alert-warning">
+                @ViewBag.Error
+            </div>
+        }
+        <div class="form-short">
+            @Html.TextBoxFor(m => m.Email, new
+       {
+           @class = "form-control form-short-input",
+           type = "email",
+           id= "SubscribeEmail",
+           placeholder = Html.Resource("Email"),
+           data_val_remote_url = "/api/validation/checkemail",
+           data_val_remote = "Email is invalid.",
+           data_val_remote_additionalfields = "*.Email"
+       })
+            <button class="btn btn-default form-short-submit" type="submit">@Html.Resource("Ok")</button></div>
+    }
+</div>

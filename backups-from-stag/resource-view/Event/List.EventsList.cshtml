@@ -1,0 +1,31 @@
+@model Telerik.Sitefinity.Frontend.Mvc.Models.ContentListViewModel
+
+@using Telerik.Sitefinity.Frontend.Events.Mvc.Helpers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+
+<div class="@Model.CssClass"><h2 class="from-h1 page-section-title h2 margin-xl-bottom">Upcoming Events</h2><div class="events">
+        @foreach (var item in Model.Items)
+        {
+            var navigateUrl = HyperLinkHelpers.GetDetailPageUrl(item, ViewBag.DetailsPageId, ViewBag.OpenInSamePage, Model.UrlKeyPrefix);
+            
+            <div class="events-item"><div class="margin-xs-bottom"><date class="events-date">@item.EventDates()</date><div class="events-title"><h2 class="body-large"><span class="text-uppercase">@item.Fields.Title</span>
+                            @if (!string.IsNullOrEmpty(item.Fields.City))
+                            {
+                                <text>| <span class="text-normal">@item.Fields.City</span></text>
+                            }
+                        </h2></div></div><ul class="list-inline list-smaller color-green align-right body-small">
+                <li><a href="@item.GenerateICalUrl()" class="link-green">add to calendar <span class="icon-calendar"></span></a></li><li>|</li><li><a href="@navigateUrl" class="link-green">more details <span class="icon-info-circled"></span></a></li></ul></div>
+        }
+        
+
+    </div>
+    @if (Model.ShowPager)
+    {
+        @Html.Action("Index", "ContentPager", new
+   {
+       currentPage = Model.CurrentPage,
+       totalPagesCount = Model.TotalPagesCount.Value,
+       redirectUrlTemplate = ViewBag.RedirectPageUrlTemplate
+   })
+    }
+</div>

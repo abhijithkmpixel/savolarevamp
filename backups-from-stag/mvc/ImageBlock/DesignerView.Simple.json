@@ -1,0 +1,4 @@
+﻿{
+	"priority": 1,
+	"components": [ "sf-image-field", "sf-style-dropdown","sf-video-field", "sf-html-field"]
+}

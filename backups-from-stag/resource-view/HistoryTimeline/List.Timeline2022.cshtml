@@ -1,0 +1,37 @@
+@using System.Globalization
+@using Prototype.Sitefinity.SitefinityControllers
+@using SitefinityWebApp.Core.Extensions
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@model Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models.DynamicContentListViewModel
+
+<div class="historyTimeline @Model.CssClass">
+    <ul class="historyTimeline-list">
+        @foreach (var item in Model.Items.OrderBy(i => i.Fields.Date))
+        {
+            var timeCorrection = 4;
+            var date = (DateTime)item.Fields.GetMemberValue("Date");
+            date = date.AddHours(timeCorrection);
+
+            var year = date.ToStringGregorianCalendar("yyyy");
+            var title = string.IsNullOrEmpty(item.Fields.Title) ? null : item.Fields.Title.ToString().Replace("<p>", "").Replace("</p>", "").Replace("&nbsp;", "").Trim();
+            var description = string.IsNullOrEmpty(item.Fields.Description) ? null : item.Fields.Description.ToString().Replace("<p>", "").Replace("</p>", "").Replace("&nbsp;", "").Trim();
+
+
+            <li class="historyTimeline-listItem">
+                <div class="historyTimeline-entry">
+                    <h3 class="historyTimeline-year">@date.ToStringGregorianCalendar("yyyy")</h3>
+                    <div class="historytimeline-content">
+                        @if (year != title)
+                        {
+                            <h4 class="historyTimeline-heading">@title</h4>
+                        }
+                        @if (description != title)
+                        {
+                            <p class="historyTimline-description">@Html.Raw(description)</p>
+                        }
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+</div>

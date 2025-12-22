@@ -1,0 +1,65 @@
+﻿@model Telerik.Sitefinity.Frontend.Mvc.Models.ContentListViewModel
+
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.Frontend.Lists.Mvc.Models;
+
+@Html.Script(ScriptRef.JQuery, "top", false)
+
+<div class="frequentlty__asked__questions__row" id="frequentlty__asked__questions__row">
+    @{ var counter = 0; }
+    @foreach (var item in Model.Items)
+    {
+    foreach (var listItem in ((ListViewModel)item).ListItemViewModel.Items)
+    {
+    counter += 1;
+    <div class="faq__wrap @counter">
+        <h4> @listItem.Fields.Title</h4>
+        @Html.HtmlSanitize((string)listItem.Fields.Content)
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 1V13" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path><path d="M13 7H1" stroke="#45555F" stroke-width="1.32353" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </div>
+    }
+
+    }
+</div>
+
+@Html.Script(Url.WidgetContent("Mvc/Scripts/Lists/lists.js"), "bottom", false)
+
+<script type="text/javascript">
+    $('[data-sf-role=toggleLink]').on('click', function () {
+        var link = $(this);
+
+        if (link.hasClass("expanded")) {
+            toggleIcons(link, false);
+        } else {
+            toggleIcons(link);
+        }
+    });
+
+    $('[data-sf-role=expandAll]').on('click', function () {
+        var wrapper = $(this).closest('[data-sf-role=lists]');
+        var links = wrapper.find('[data-sf-role=toggleLink]');
+
+        toggleIcons(links);
+    });
+
+    $('[data-sf-role=collapseAll]').on('click', function () {
+        var wrapper = $(this).closest('[data-sf-role=lists]');
+        var links = wrapper.find('[data-sf-role=toggleLink]');
+
+        toggleIcons(links, false);
+    });
+
+    function toggleIcons(links, isExpanded = true) {
+        var iconsRight = links.find('.sf-icon-right');
+        var iconsDown = links.find('.sf-icon-down');
+
+        if (isExpanded) {
+            iconsRight.hide();
+            iconsDown.show();
+        } else {
+            iconsRight.show();
+            iconsDown.hide();
+        }
+    }
+</script>

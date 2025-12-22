@@ -1,0 +1,50 @@
+@using System.Globalization
+@using Prototype.Sitefinity.SitefinityControllers
+@using SitefinityWebApp.Core.Extensions
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@model Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models.DynamicContentListViewModel
+
+@{ var isRight = true; }
+<div class="@Model.CssClass">
+    <ul class="timeline history-timeline margin-xl-bottom body-small">
+        @foreach (var item in Model.Items.OrderBy(i => i.Fields.Date))
+        {
+            var timeCorrection = 4;
+            var date = (DateTime)item.Fields.GetMemberValue("Date");
+            date = date.AddHours(timeCorrection);
+            var imgAlt = item.Fields.Image != null ? item.Fields.Image.Fields.AlternativeText : "";
+            if (string.IsNullOrEmpty(imgAlt))
+            {
+                imgAlt = item.Fields.Title;
+            }
+            if (string.IsNullOrEmpty(imgAlt))
+            {
+                imgAlt = item.Fields.Image != null ? item.Fields.Image.Fields.Title : "";
+            }
+<li class="history-timeline-elem timeline-elem timeline-elem-@(isRight ? "r" : "l")">
+    @if (item.Fields.Image != null)
+    {
+<div class="history-timeline-image-@(!isRight ? "r" : "l")">
+    <img src="@item.Fields.Image.Fields.MediaUrl"
+         alt="@imgAlt"
+         title="@(item.Fields.Image.Fields.Title)" />
+</div>}
+    <div class="history-timeline-inner timeline-inner">
+        <h3>
+            @date.ToStringGregorianCalendar("yyyy")
+        </h3>
+        @Html.Raw(item.Fields.Description ?? item.Fields.Title)
+        @if (item.Fields.Image != null)
+        {
+<img class="margin-bottom img-responsive hidden-sm hidden-md hidden-lg" src="@item.Fields.Image.Fields.MediaUrl"
+     alt="@imgAlt"
+     title="@(item.Fields.Image.Fields.Title)" />}
+        @if (!string.IsNullOrEmpty(item.Fields.Url))
+        {
+            <a class="history-timeline-learn-more" href="@item.Fields.Url">@Html.Resource("LearnMore", "Labels")</a>
+        }
+    </div>
+</li>                isRight = !isRight;
+            }
+    </ul>
+</div>

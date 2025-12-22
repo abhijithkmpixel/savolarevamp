@@ -1,0 +1,104 @@
+@model Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models.DynamicContentListViewModel
+@using System.Globalization
+@using System.Threading
+@using Prototype.Sitefinity.SitefinityControllers
+@using SitefinityWebApp.Core.Extensions
+@using Telerik.OpenAccess
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Publishing
+@using Telerik.Sitefinity.Taxonomies
+@using Telerik.Sitefinity.Taxonomies.Model
+@using SitefinityWebApp.Core.Extensions
+@using Telerik.Sitefinity.Frontend.Mvc.Models
+
+<section class="latest__news__section">
+    <div class="container">
+        <h6 class="decorated__title">@Html.Raw(Html.Resource("NewsAndMedia"))</h6>
+        <h2 class="primary__title">@Html.Resource("Announcements And Latest News", "Labels")</h2>
+        <p>
+            @Html.Resource("Announcements And Latest News Copy", "Labels")            
+        </p>
+        <div class="latest__news__section__row">
+            @foreach (var item in Model.Items)
+            {
+                var target = string.Empty;
+                var url = NewsAndMediaExtension.GetNewsAndMediaUrl(item, Model, ViewBag, out target);
+
+                var img = item.Fields.Image != null ? item.Fields.Image.Fields.ThumbnailUrl.Replace("tmb-.jpg", "tmb-348x296.jpg") : "";
+                var imgTitle = item.Fields.Image != null ? item.Fields.Image.Fields.Title : item.Fields.Title;
+                string imgAlt = item.Fields.Image != null ? item.Fields.Image.Fields.AlternativeText : "";
+                if (string.IsNullOrEmpty(imgAlt))
+                {
+                    imgAlt = item.Fields.Title;
+                }
+                if (string.IsNullOrEmpty(imgAlt))
+                {
+                    imgAlt = item.Fields.Image != null ? item.Fields.Image.Fields.Title : "";
+                }
+                FlatTaxonomy tagTaxonomy = TaxonomyManager.GetManager().GetTaxonomies<FlatTaxonomy>().SingleOrDefault(t => t.Name == "news-and-media-categories");
+                var tagName = "";
+                var tagTitle = "";
+
+                var tagId = item.DataItem.GetPropertyValue<TrackedList<Guid>>("newsandmediacategories").FirstOrDefault();
+                if (tagId != null)
+                {
+                    Taxon tag = tagTaxonomy.Taxa.SingleOrDefault(x => x.Id == tagId);
+                    tagName = tag.Name;
+                    tagTitle = tag.Title;
+
+                }
+                imgAlt = tagTitle + " " + imgAlt;
+                switch (tagName)
+                {
+                    case "newsletter":
+                        img = "//savola-web.azureedge.net/images/newsletters.png";
+                        break;
+
+                    case "announcement":
+                    case "press-release":
+                        img = "//savola-web.azureedge.net/images/graphic2-eng.png";
+                        if (Thread.CurrentThread.CurrentUICulture.Name == "ar")
+                        {
+                            img = "//savola-web.azureedge.net/images/annual-report.png";
+                        }
+                        break;
+                }
+                imgAlt = imgAlt.Truncate(97);
+                var timeCorrection = 4;
+                var date = (DateTime)item.Fields.GetMemberValue("Date");
+                date = date.AddHours(timeCorrection);
+                
+                <div class="latest__news__card">
+                    <div class="latest__news__card__header">
+                        <div class="latest__news__card__header__date">
+                            @if (Thread.CurrentThread.CurrentUICulture.Name == "ar")
+                            {
+                                <span>@date.ToStringGregorianCalendar("dd MMMM")</span>
+                            }
+                            else
+                            {
+                                <span>@date.ToString("dd MMMM", new CultureInfo("en"))</span>
+                            }
+                        </div>
+                        <h5 class="latest__news__card__header__category">@tagTitle</h5>
+                    </div>
+                    <a href="@(url)">
+                        @item.Fields.Title
+                    </a>
+                    <a class="cta__link" href="@(url)">
+                        @Html.Resource("Read More", "Labels")
+                        <svg width="14"
+                             height="12"
+                             viewBox="0 0 14 12"
+                             fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.4258 5.70117C13.5898 5.70117 13.7266 5.75586 13.8359 5.86523C13.9453 5.97461 14 6.11133 14 6.27539C14 6.43945 13.9453 6.57617 13.8359 6.68555C13.7266 6.79492 13.5898 6.84961 13.4258 6.84961H0.574219C0.464844 6.84961 0.369141 6.82227 0.287109 6.76758C0.205078 6.71289 0.136719 6.64453 0.0820312 6.5625C0.0273438 6.48047 0 6.38477 0 6.27539C0 6.11133 0.0546875 5.97461 0.164062 5.86523C0.273438 5.75586 0.410156 5.70117 0.574219 5.70117H13.4258ZM13.8359 5.86523C13.9453 5.97461 14 6.11133 14 6.27539C14 6.43945 13.9453 6.57617 13.8359 6.68555L8.99609 11.498C8.88672 11.6074 8.75456 11.6621 8.59961 11.6621C8.44466 11.6621 8.3125 11.6074 8.20312 11.498C8.09375 11.3887 8.03906 11.2565 8.03906 11.1016C8.03906 10.9466 8.09375 10.8145 8.20312 10.7051L12.6328 6.27539L8.20312 1.8457C8.09375 1.73633 8.03906 1.60417 8.03906 1.44922C8.03906 1.29427 8.09375 1.16211 8.20312 1.05273C8.3125 0.943359 8.44466 0.888672 8.59961 0.888672C8.75456 0.888672 8.88672 0.943359 8.99609 1.05273L13.8359 5.86523Z"
+                                  fill="#63C5B7" />
+                        </svg>
+                    </a>
+                </div>
+            }          
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,150 @@
+@model Telerik.Sitefinity.Frontend.Search.Mvc.Models.ISearchResultsModel
+
+@using System.Linq
+@using System.Threading
+@using Prototype.Sitefinity.SitefinityControllers
+@using SitefinityWebApp.Core.DynamicModulesModels.NewsAndMedia
+@using SitefinityWebApp.Core.Extensions
+@using SitefinityWebApp.Core.SitefinityControllers
+@using Telerik.Sitefinity.DynamicModules
+@using Telerik.Sitefinity.Events.Model
+@using Telerik.Sitefinity.Frontend.Events.Mvc.Helpers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Frontend.Mvc.Models
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.Modules.Events
+@using Telerik.Sitefinity.Modules.Events.Web.UI.Export
+@using Telerik.Sitefinity.Services.Search.Data
+@using Telerik.Sitefinity.Utilities.TypeConverters
+@using ListDisplayMode = Telerik.Sitefinity.Frontend.Search.Mvc.Models.ListDisplayMode
+@{
+    var searchUrl = (Thread.CurrentThread.CurrentUICulture.Name == "ar" ? "" : "/en")+ "/others/search?indexCatalogue={0}&searchQuery=" + Request.QueryString["searchQuery"] + "&wordsMode=" + Request.QueryString["wordsMode"];
+    var catalogueMapping = new Dictionary<string, string>()
+    {
+        {"full", Html.Resource("All")},
+        {"search-content", Html.Resource("Content")},
+        {"search-documents", Html.Resource("Documents")},
+        {"search-news-and-media", Html.Resource("NewsAndMedia")},
+       // {"search-events", Html.Resource("Events")}
+    };
+}
+<div class="container search-results"><div class="row"><div class="col-sm-3"><div class="left-sidebar"><h2 class="text-uppercase">@Html.Resource("FilterBy"):</h2><ul>
+                    @foreach (var filter in catalogueMapping)
+                    {
+                        <li class="@(Request.QueryString["indexCatalogue"] == filter.Key ? "active" : "")"><a href="@string.Format(searchUrl, filter.Key)" class="link">@filter.Value</a></li>
+
+                    }
+                </ul></div></div><div class="col-sm-9 result"><h2 class="text-uppercase">@Html.Resource("SearchResults")</h2><p>@Model.Results.TotalCount @Html.Resource("SearchResultsFor") <span>@catalogueMapping[Model.IndexCatalogue]</span></p><form method="get" >
+    <div class="input-group">
+    <label for="search-query-search-results" class="visually-hidden">Search query in search results</label>
+    <input type="text" id="search-query-search-results" name="searchQuery" data-val="true" data-val-required="Required" class="form-control" value="@Request.QueryString["searchQuery"]">
+    <span class="input-group-addon"><button type="submit"><span class="icon icon-search"></span></button></span><input type="hidden" name="indexCatalogue" value="@Request.QueryString["indexCatalogue"]" /><input type="hidden" name="wordsMode" value='@Request.QueryString["wordsMode"]' /></div></form><ul class="search-result-group margin-l-top">
+
+                @foreach (var item in Model.Results.Data)
+                {
+                    switch (item.GetDocumentTypeName())
+                    {
+                        case "Event": @EventResult(item)
+                            break;
+                        case "Document": @DocumentResult(item)
+                            break;
+                        case "NewsAndMedia": @NewsAndMediaResult(item)
+                            break;
+                        default: @CommonResult(item)
+                            break;
+                    }
+                }
+
+            </ul>
+
+            @if (Model.DisplayMode == ListDisplayMode.Paging && Model.TotalPagesCount != null && Model.TotalPagesCount > 1)
+            {
+                
+
+                <div class="pagination-holder">
+                    @Html.Action("Index", "ContentPager", new
+               {
+                   currentPage = Model.CurrentPage,
+                   totalPagesCount = Model.TotalPagesCount,
+                   redirectUrlTemplate = ViewBag.RedirectPageUrlTemplate
+               })
+                </div>
+
+            }
+
+        </div></div></div>
+
+@helper EventResult(IDocument item)
+{
+EventsManager eventsManager = EventsManager.GetManager();
+
+var eventId = new Guid((string)item.GetValue("Id"));
+Event eventItem = eventsManager.GetEvents().FirstOrDefault(ev => ev.Id == eventId);
+var icalurl = ICalEventExporter.GenerateICalUrl(eventItem);
+var datesStr = (new ItemViewModel(eventItem)).EventDates();
+var hasLink = item.GetValue("Link") != null && !String.IsNullOrEmpty(item.GetValue("Link").ToString());
+    <li><h4>@Html.Resource(item.GetDocumentTypeName())</h4><h2>
+            @if (hasLink)
+            {
+                <a href="@item.GetValue("Link")" class="link">@item.GetValue("Title")</a>
+            }
+            else
+            {
+                @item.GetValue("Title")
+            }
+        </h2><p>@Html.Raw(item.GetValue("HighLighterResult"))</p><p><a href="@icalurl" class="link-green">add to calendar <span class="icon-calendar"></span></a>&nbsp;@datesStr</p></li>
+}
+@helper CommonResult(IDocument item)
+{
+
+var hasLink = item.GetValue("Link") != null && !String.IsNullOrEmpty(item.GetValue("Link").ToString());
+    <li><h4>@Html.Resource(item.GetDocumentTypeName())</h4><h2>
+            @if (hasLink)
+            {
+                <a href="@item.GetValue("Link")" class="link">@item.GetValue("Title")</a>
+            }
+            else
+            {
+                @item.GetValue("Title")
+            }
+        </h2><p>@Html.Raw(item.GetValue("HighLighterResult"))</p></li>
+}
+@helper DocumentResult(IDocument item)
+{
+
+var hasLink = item.GetValue("Link") != null && !String.IsNullOrEmpty(item.GetValue("Link").ToString());
+    <li><h4>@Html.Resource(item.GetDocumentTypeName())</h4><h2>
+            @if (hasLink)
+            {
+                <a target="_blank" rel="noopener" href="@item.GetValue("Link")" title="Opens in a new window" class="link">@item.GetValue("Title")</a>
+            }
+            else
+            {
+                @item.GetValue("Title")
+            }
+        </h2>
+        @if (CultureController.Language != "ar")
+        {
+            <p>@Html.Raw(item.GetValue("HighLighterResult"))</p>
+        }
+    </li>
+}
+@helper NewsAndMediaResult(IDocument item)
+{
+var dynamicModuleManager = DynamicModuleManager.GetManager();
+var newsId = new Guid((string)item.GetValue("Id"));
+Type newsAndMediaType = TypeResolutionService.ResolveType(DynamicTypes.NewsAndMedia);
+var news = dynamicModuleManager.GetDataItem(newsAndMediaType, newsId);
+var newsModel = NewsAndMediaModel.Build(news);
+var hasLink = item.GetValue("Link") != null && !String.IsNullOrEmpty(item.GetValue("Link").ToString());
+    <li class="news-and-media-result"><h4>@Html.Resource(item.GetDocumentTypeName()) @(!string.IsNullOrEmpty(newsModel.CategoriesStr) ? ", "+newsModel.CategoriesStr : "")</h4><h2>
+            @if (hasLink)
+            {
+                <a href="@item.GetValue("Link")" class="link">@item.GetValue("Title")</a>
+            }
+            else
+            {
+                @item.GetValue("Title")
+            }
+        </h2><p>@Html.Raw(item.GetValue("HighLighterResult"))</p><img src="@newsModel.Image"/></li>
+}

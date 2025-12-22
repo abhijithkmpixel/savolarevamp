@@ -1,0 +1,59 @@
+﻿@model INavigationModel
+
+@using Telerik.Sitefinity.Frontend.Navigation.Mvc.Models;
+@using Telerik.Sitefinity.Pages.Model
+@using Telerik.Sitefinity.Web
+@{
+    var items = Model.Nodes.Where(i => i.Url != "/" && i.Url != "/ar" && i.Url != "/en").Select((x, i) => new { Index = i, Value = x })
+        .GroupBy(x => x.Index / 3)
+        .Select(x => x.Select(v => v.Value).ToList())
+        .ToList();
+}
+<div>
+    @foreach (var nodeGroup in items)
+    {
+        <div class="clearfix">
+            @foreach (var node in nodeGroup)
+            {
+                @RenderSubLevelsRecursive(node)
+            }
+        </div>
+    }
+</div>
+
+
+
+@helper RenderSubLevelsRecursive(NodeViewModel node, bool insideDropdown = false)
+{
+    <div class="main-footer-links-col @GetClass(node)">
+        <a href="@node.Url" target="@node.LinkTarget" class="@GetClass(node) body-large link link-white">@node.Title</a>
+        <ul class="list-unstyled visible-md visible-md visible-lg">
+            @foreach (var childNode in node.ChildNodes)
+            {
+                if ((childNode.OriginalSiteMapNode as PageSiteNode).NodeType != NodeType.Standard &&
+                    node.ChildNodes.All(i => (i.OriginalSiteMapNode as PageSiteNode).NodeType != NodeType.Standard))
+                {
+                    foreach (var childNode2 in childNode.ChildNodes)
+                    {
+                        <li><a class="@GetClass(childNode2) link link-grey-light" target="@childNode2.LinkTarget" href="@childNode2.Url">@childNode2.Title</a></li>
+                    }
+                }
+                else
+                {
+                    <li><a class="@GetClass(childNode) link link-grey-light" target="@childNode.LinkTarget" href="@childNode.Url">@childNode.Title</a></li>
+                }
+            }
+        </ul>
+
+
+
+    </div>
+}
+
+@helper GetClass(NodeViewModel node)
+{
+if (Model.CurrentSiteMapNode != null && node.OriginalSiteMapNode != null && Model.CurrentSiteMapNode.Key == node.OriginalSiteMapNode.Key)
+{
+        @Html.Raw("active")
+}
+}

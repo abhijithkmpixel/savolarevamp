@@ -1,0 +1,22 @@
+﻿@model SitefinityWebApp.Core.DynamicModulesModels.NewsAndMedia.NewsAndMediaModel
+
+<section class="page-section">
+    <div class="container">
+        <h2 class="from-h1">@Model.Title</h2>
+        @Html.Raw(Model.Description)
+        @Model.DateStr
+@if (!string.IsNullOrWhiteSpace(Model.Link))
+{
+    <p>
+        <a href="@Model.Link" target="_blank" rel="noopener" title="Opens in a new window" class="link">Link</a>
+    </p>
+}
+        @if (!string.IsNullOrWhiteSpace(Model.Document))
+        {
+            <p>
+                <a href="@Model.Document" class="link">Related document</a>
+            </p>
+
+        }
+    </div>
+</section>

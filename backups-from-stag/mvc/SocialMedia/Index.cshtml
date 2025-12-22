@@ -1,0 +1,52 @@
+@model SitefinityWebApp.Mvc.Models.SocialMediaModel
+<h2 class="from-h1 page-section-title h2 margin-xl-bottom">Social Media</h2><div class="tabs"><ul class="color-white h3">
+        @if (Model.Twitter != null)
+            {
+            <li class="js-tab"><span class="icon-twitter"></span></li>
+        }
+        @if (Model.Facebook != null)
+        {
+            <li class="js-tab"><span class="icon-facebook"></span></li>
+        }
+        @if (Model.Youtube != null)
+        {
+            <li class="js-tab is-active"><span class="icon-youtube-play"></span></li>
+        }
+    </ul><div class="tabs-contents">
+        @if (Model.Twitter != null)
+            {
+            <div class="tabs-content js-tab-content"><header class="tabs-title color-white"><p><strong>@string.Format("@{0}", Model.Twitter.TwitterLogin)</strong><br><span class="body-small">@Model.Twitter.TwitterDescription</span></p></header><div class="tabs-list body-small color-white">
+                    @foreach (var t in Model.Twitter.Tweets)
+                    {
+
+                        <div class="tabs-list-item"><date class="tabs-list-date">
+                                @t.Date
+                            </date><div class="tabs-list-content"><p>@t.Text</p><a href="#" class="color-yellow">http://google.com</a></div></div>
+                    }
+                </div></div>
+        }
+        @if (Model.Facebook != null)
+            {
+            <div class="tabs-content js-tab-content"><header class="tabs-title color-white"><p><strong>@Model.Facebook.Name</strong><br><span class="body-small">@Model.Facebook.Description</span></p></header><div class="tabs-list body-small color-white">
+                    @foreach (var post in Model.Facebook.Posts)
+                    {
+                        <div class="tabs-list-item"><date class="tabs-list-date">
+                                @post.Date
+                            </date><div class="tabs-list-content"><p>@post.Text</p><a href="#" class="color-yellow">http://google.com</a></div></div>
+
+                    }
+                </div></div>
+        }
+        @if (Model.Youtube != null)
+        {
+            <div class="tabs-content js-tab-content is-active"><header class="tabs-title color-white"><p><strong>@@Savola_HQ 3</strong><br><span class="body-small">Saudi Publicly Listed Company</span></p></header><div class="tabs-list body-small color-white">
+                    @foreach (var post in Model.Youtube.Videos)
+                    {
+                        <div class="tabs-list-item"><date class="tabs-list-date">
+                                @post.Date
+                            </date><div class="tabs-list-content"><p>@post.Text</p><a href="@post.Url" target="_blank" rel="noopener" title="Opens in a new window" class="color-yellow">watch</a></div></div>
+
+                    }
+                </div></div>
+        }
+    </div></div>

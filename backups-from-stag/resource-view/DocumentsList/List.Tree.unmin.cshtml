@@ -1,0 +1,72 @@
+@model Telerik.Sitefinity.Frontend.Media.Mvc.Models.DocumentsList.DocumentsListViewModel
+
+@using SitefinityWebApp.Core.Extensions
+@using Telerik.OpenAccess
+@using Telerik.Sitefinity.Publishing
+@using Telerik.Sitefinity.Taxonomies
+@using Telerik.Sitefinity.Taxonomies.Model
+@{
+
+    TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+    var rowId = 0;
+    var items = Model.Items.GroupBy(i=>i.GetDateTimeGregorianCalendar("PublicationDate", "yyyy"))
+        .Select(i=>new
+        {
+            Year = i.Key,
+            Categories = i
+
+                .GroupBy(j=> j.DataItem.GetPropertyValue<TrackedList<Guid>>("Category") != null ? string.Join(",",j.DataItem.GetPropertyValue<TrackedList<Guid>>("Category").Select(k=> taxonomyManager.GetTaxon(k).Title)) : "")
+                .Select(j=> new {Tags = j.Key, Docs = j})
+        })
+        .ToList();
+    /*
+    taxonomyManager.GetTaxon()
+    FlatTaxonomy tagTaxonomy = taxonomyManager.GetTaxonomies<FlatTaxonomy>().SingleOrDefault(t => t.Name == "Tags");
+    var listOfTags = new Dictionary<Guid, string>();
+    if (tagTaxonomy != null)
+    {
+        foreach (var doc in Model.Items)
+        {
+            var tagIds = doc.DataItem.GetPropertyValue<TrackedList<Guid>>("Tags");
+            foreach (var tagId in tagIds)
+            {
+
+                Taxon tag = tagTaxonomy.Taxa.SingleOrDefault(x => x.Id == tagId);
+                if (tag != null && !listOfTags.ContainsKey(tag.Id))
+                {
+                    listOfTags.Add(tag.Id, tag.Title);
+                }
+            }
+        }
+    }*/
+
+
+}
+<div class="@Model.CssClass">
+    <ul>
+        @foreach (var yearGroup in items.OrderByDescending(i=>i.Year))
+        {
+            <li class="">
+                <span>@yearGroup.Year</span>
+                <ul>
+                    @foreach (var item in yearGroup.Categories.OrderBy(i => i.Tags))
+                    {
+                        <li>
+                            @item.Tags
+                            <ul>
+                                @foreach (var doc in item.Docs.OrderBy(i => i.Fields.Title))
+                                {
+                                    <li>
+                                        <a href="@doc.Fields.MediaUrl.ToString()" target="_blank">
+                                            <strong>@doc.Fields.Title</strong></a>
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </li>
+        }
+    </ul>
+    
+</div>

@@ -1,0 +1,6 @@
+﻿@using Telerik.Sitefinity.UI.MVC
+<h2>Import press releases</h2>
+@using (Html.BeginFormSitefinity("UplaoadPressreleases", "UplaoadPressreleasesform", FormMethod.Post,new { enctype = "multipart/form-data" }))
+{
+    <input type="submit" value="Press releases import" />
+}

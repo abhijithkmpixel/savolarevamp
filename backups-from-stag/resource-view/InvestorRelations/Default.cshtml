@@ -1,0 +1,18 @@
+@using Prototype.Sitefinity.SitefinityControllers
+
+@{ 
+    var version = "?v6";
+    var appUrl = CultureController.IsRtl
+        ? "/ResourcePackages/Theme/investor-relations/app-ar.html" + version
+        : "/ResourcePackages/Theme/investor-relations/app.html" + version;
+    var appUrlWithHash = appUrl;
+
+    if (!string.IsNullOrWhiteSpace(ViewBag.Page))
+    {
+        appUrlWithHash = appUrl + "#p_" + ViewBag.Page;
+    }
+}
+
+<iframe id="InvestorRelationsApp" class="investorRelations" src="@appUrlWithHash" width="100" height="1000" data-app-css-class="@ViewBag.AppCssClass">
+    IFrame is not supported
+</iframe>

@@ -1,0 +1,27 @@
+﻿@model INavigationModel
+
+@using Prototype.Sitefinity.SitefinityControllers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using Telerik.Sitefinity.Frontend.Navigation.Mvc.Models;
+@using Telerik.Sitefinity.Modules.Libraries
+@using Telerik.Sitefinity.Pages.Model
+@using Telerik.Sitefinity.Web
+
+<ul class="header__quick__links">
+    @foreach (var node in Model.Nodes)
+    {
+        @RenderLinks(node)
+    }
+</ul>
+
+
+@helper RenderLinks(NodeViewModel node)
+{
+    <li>
+        <a href="@node.Url"
+           target="@node.LinkTarget"
+           @Html.Raw(node.LinkTarget == "_blank" ? "rel='noopener' title='Opens in a new window'" : "") >
+            @node.Title
+        </a>
+    </li>
+}

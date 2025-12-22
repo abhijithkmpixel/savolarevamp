@@ -1,0 +1,45 @@
+﻿@model List<string>
+@using Telerik.Sitefinity.UI.MVC
+@using (Html.BeginFormSitefinity("uplaoadshareholders", "uploadshareholdersform", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="sfFormDialog ">
+        <fieldset class="sfNewItemForm">
+            <h1>Update unclaiment dividends</h1>
+
+            <div class="sfMessage sfDialogMessage">
+
+            </div>
+
+            <div class="sfForm sfFirstForm">
+                <ol class="sfFormIn">
+                    <li class="sfTitleField">
+                        <div>
+                            <label class="sfTxtLbl sfInlineBlock">Result</label>
+
+                        </div>
+                        <div class="sfFieldWrp">
+                            @if (Model != null && Model.Any())
+                            {
+                                <p>System can't update this numbers:</p>
+                                <ul>
+                                    @foreach (var n in Model)
+                                    {
+                                        <li>@n</li>
+                                    }
+                                </ul>
+                            }
+                            else
+                            {
+                                <p>OK</p>
+                            }
+
+
+
+                        </div>
+
+                    </li>
+                </ol>
+            </div>
+        </fieldset>
+    </div>
+}

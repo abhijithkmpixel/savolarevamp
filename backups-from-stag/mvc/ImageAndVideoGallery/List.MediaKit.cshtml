@@ -1,0 +1,32 @@
+@model SitefinityWebApp.Mvc.Models.ImageAndVideoGalleryViewModel
+@using Telerik.Sitefinity.Frontend.Media.Mvc.Models.ImageGallery;
+@using Telerik.Sitefinity.Frontend.Media.Mvc.Models.VideoGallery
+@using Telerik.Sitefinity.Frontend.Media.MVC.Views.Image
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using Telerik.Sitefinity.Libraries.Model
+@{
+    var items = Model.Items.Select((x, i) => new { Index = i, Value = x })
+        .GroupBy(x => x.Index / 4)
+        .Select(x => x.Select(v => v.Value).ToList())
+        .ToList();
+}
+<div>
+    @foreach (var row in items)
+    {
+        <div class="row padding-bottom">
+            @foreach (var item in row)
+            {
+                <div class="col-md-3">
+                    @if (item.DataItem is Video)
+                    {
+                        <div class="media-post body-small"><img src="@(((VideoThumbnailViewModel) item).ThumbnailUrl)" /><h3 class="media-post-title">@item.Fields.Title</h3><p>@item.Fields.Description</p><ul class="list-span"><li class="align-left">@item.Fields.Author</li><li class="align-right"><a href="@item.Fields.MediaUrl" download="download" class="link link-green text-lowercase">@Html.Resource("Download","Labels") <span class="icon-download"></span></a></li></ul></div>
+                    }
+                    else
+                    {
+                        <div class="media-post body-small"><img src="@(((ThumbnailViewModel) item).ThumbnailUrl.Replace(".tmb-thumbnail.",".tmb-270x160."))" alt='@System.Text.RegularExpressions.Regex.Replace(item.Fields.AlternativeText, @"[^\w\d_-]", "").Replace("_","")'/><h3 class="media-post-title">@item.Fields.Title</h3><p>@item.Fields.Description</p><ul class="list-span"><li class="align-left">@item.Fields.Author</li><li class="align-right"><a href="@(((ThumbnailViewModel) item).MediaUrl)" download="download" class="link link-green text-lowercase">@Html.Resource("Download","Labels") <span class="icon-download"></span></a></li></ul></div>
+                    }
+                </div>
+            }
+        </div>
+    }
+</div>

@@ -1,0 +1,58 @@
+@model INavigationModel
+
+@using Prototype.Sitefinity.SitefinityControllers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using Telerik.Sitefinity.Frontend.Navigation.Mvc.Models;
+@using Telerik.Sitefinity.Modules.Libraries
+@using Telerik.Sitefinity.Pages.Model
+@using Telerik.Sitefinity.Web
+
+
+        @foreach (var node in Model.Nodes)
+        {
+<div class="footer__inner__columns">
+    <h5 class="footerLinks-navigationItem @GetClass(node) @Html.Raw(node.ChildNodes.Any() ? " footerLinks-navigationItem-dropdown" : "" ) @(node.HasChildOpen || node.IsCurrentlyOpened ? "footerLinks-navigationItem-active" : "" )">
+        <a href="@node.Url"
+           target="@node.LinkTarget"
+           @Html.Raw(node.LinkTarget=="_blank" ? "rel='noopener' title='Opens in a new window'" : "" )
+           class="footerLinks-navigationItemLink @GetClass(node)">
+            @node.Title
+        </a>
+    </h5>
+    @RenderLinks(node, 0)
+</div>
+    }
+
+
+    @helper RenderLinks(NodeViewModel node, int level, bool insideDropdown = false)
+    {
+      if(level > 0){
+    <li class="footerLinks-navigationItem @GetClass(node) @Html.Raw(node.ChildNodes.Any() ? " footerLinks-navigationItem-dropdown" : "" ) @(node.HasChildOpen || node.IsCurrentlyOpened ? "footerLinks-navigationItem-active" : "" )">
+        <a href="@node.Url"
+           target="@node.LinkTarget"
+           @Html.Raw(node.LinkTarget=="_blank" ? "rel='noopener' title='Opens in a new window'" : "" )
+           class="footerLinks-navigationItemLink @GetClass(node)">
+            @node.Title
+        </a>
+    </li>
+   }
+        if (node.ChildNodes.Count > 0)
+        {
+<ul class="footerLinks-navigationItemsList"
+    data-nav-level="@(level + 1)">
+    @foreach (var childNode in node.ChildNodes)
+    {
+    @RenderLinks(childNode, level + 1, true)
+    }
+</ul>
+        }
+
+    }
+
+    @helper GetClass(NodeViewModel node)
+    {
+    if (Model.CurrentSiteMapNode != null && node.OriginalSiteMapNode != null && Model.CurrentSiteMapNode.Key == node.OriginalSiteMapNode.Key)
+    {
+    @Html.Raw("active")
+    }
+    }

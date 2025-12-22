@@ -1,0 +1,19 @@
+@model SitefinityWebApp.Mvc.Models.ImageBlockModel
+@using SitefinityWebApp.Core.Extensions
+@{
+    string imageAlt = Model.ImageAlternativeText;
+    if (string.IsNullOrEmpty(imageAlt))
+    {
+        imageAlt = Model.Title;
+    }
+    if (string.IsNullOrEmpty(imageAlt))
+    {
+        imageAlt = Model.ImageTitle + " description";
+    }
+    imageAlt = imageAlt.Truncate(97);
+}
+<div class="clearfix"><div class="image-with-line  bg-@Model.Color"><img src="@Model.ImageUrl" alt="@imageAlt" title="@Model.ImageTitle" /></div></div>
+@if (!string.IsNullOrEmpty(Model.Title))
+{
+    <h3 class="text-center margin-s-top">@Model.Title</h3>
+}

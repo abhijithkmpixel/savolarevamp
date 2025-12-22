@@ -1,0 +1,205 @@
+@model Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models.DynamicContentListViewModel
+@using Prototype.Sitefinity.SitefinityControllers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Web
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using SitefinityWebApp.Core.Extensions
+@using SitefinityWebApp.Core.Models
+@using System.Text.Json;
+@{
+    var isEmpty = Model.Items == null || !Model.Items.Any();
+    var isMoreThanOne = Model.Items != null && Model.Items.Count() != 1 && !SitefinityContext.IsBackend;
+    var style = "";
+    var styleMobile = "";
+    var additionalClass = "";
+    var scrollClass = "";
+    var imageUrl = "";
+    if (!isEmpty && !isMoreThanOne)
+    {
+        style = "";
+        additionalClass = "carousel-slide-white";
+        scrollClass = "hidden";
+        var item = Model.Items.First();
+        if (item.Fields.Image != null)
+        {
+            additionalClass = "";
+            scrollClass = "";
+            style = "background-image: url('" + item.Fields.Image.Fields.MediaUrl.Split('?')[0] + "');";
+            styleMobile = style;
+            imageUrl = item.Fields.Image.Fields.MediaUrl.Split('?')[0];
+        }
+        if (item.Fields.ImageMobile != null)
+        {
+            styleMobile = "background-image: url('" + item.Fields.ImageMobile.Fields.MediaUrl.Split('?')[0] + "');";
+        }
+        if (item.Fields.ImagePosition != null)
+        {
+            style += "background-position: " + item.Fields.ImagePosition + ";";
+            styleMobile += "background-position: " + item.Fields.ImagePosition + ";";
+        }
+    }
+    int idx = 1;
+}
+
+@if (!isEmpty)
+{
+    if (isMoreThanOne)
+    {
+        <section class="hero__banner__homepage">
+            <div class="hero__banner__homepage__slider">
+                @foreach (var item in Model.Items.OrderByDescending(i => i.Fields.SortOrder).ToList())
+                {
+                    LinkObject link = new LinkObject();
+                    try
+                    {
+
+                        var serializedLinkValue = item.Fields.CTA;
+
+                        var options = new JsonSerializerOptions
+                        {
+                            PropertyNameCaseInsensitive = true
+                            // Other options if needed
+                        };
+                        if (!string.IsNullOrWhiteSpace(serializedLinkValue))
+                        {
+                            List<LinkObject> links = JsonSerializer.Deserialize<List<LinkObject>>(serializedLinkValue.ToString(), options);
+                            link = links.FirstOrDefault();
+                        }
+                    }
+                    catch (NullReferenceException ex)
+                    {
+
+                    }
+                    <div class="hero__banner__homepage__slide">
+                        <div class="hero__banner__homepage__slide__image">
+                            @if (item.Fields.Image != null)
+                            {
+                                <img src="@item.Fields.Image.Fields.MediaUrl.Split('?')[0]" alt="" />
+                            }
+                        </div>
+                        <div class="hero__banner__homepage__slide__content">
+                            @if (item.Fields.Text != null)
+                            {
+                                <h1>@Html.Raw(item.Fields.Text)</h1>
+                            }
+                            @if (item.Fields.Title != null)
+                            {
+                                <p>
+                                    @item.Fields.Description
+                                </p>
+                            }
+                            @if (link.Href != null)
+                            {
+                                <a class="btn btn-default " href="@link.Href">@link.Text</a>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </section>
+
+    }
+    else
+    {
+        if (!isEmpty && !isMoreThanOne)
+        {
+            var item = Model.Items.First();
+            var breadcrumb = BreadcrumbModelCreate.GetModel();
+            if (item.Fields.Image != null)
+            {
+                <section class="hero__banner__homepage hero__banner__homepage--innerbanner">
+                    <div class="hero__banner__homepage__slide">
+                        <div class="hero__banner__homepage__slide__image">
+                            @if (item.Fields.Image != null || item.Fields.ImageMobile != null)
+                            {
+                                <picture>
+                                    @if (item.Fields.ImageMobile != null)
+                                    {
+                                        <source media="(max-width: 720px)" srcset="@item.Fields.ImageMobile.Fields.MediaUrl.Split('?')[0]">
+                                    }
+                                    @if (item.Fields.Image != null)
+                                    {
+                                        <img src="@item.Fields.Image.Fields.MediaUrl.Split('?')[0]" alt="" />
+                                    }
+
+                                </picture>
+                            }
+                        </div>
+                        <div class="hero__banner__homepage__slide__content">
+                            @if (item.Fields.Text != null)
+                            {
+                                <h1>@Html.Raw(item.Fields.Text)</h1>
+                            }
+                            @if (item.Fields.Title != null)
+                            {
+                                <p>
+                                    @item.Fields.Title
+                                </p>
+                            }
+
+                            <ul class="bread__crumbs">
+                                @for (int i = 0; i < breadcrumb.SiteMapNodes.Count; i++)
+                                {
+                                    var node = breadcrumb.SiteMapNodes[i];
+                                    var current = i == breadcrumb.SiteMapNodes.Count - 1 && breadcrumb.ShowCurrentPageInTheEnd;
+                                    var className = current ? "active" : "";
+                                    var ariaLabel = node.Title;
+                                    for (int j = 0; j < breadcrumb.SiteMapNodes.Count; j++)
+                                    {
+                                        ariaLabel = breadcrumb.SiteMapNodes[j] + " / ";
+                                        if (breadcrumb.SiteMapNodes[j] == node)
+                                        {
+                                            break;
+                                        }
+                                    }
+                                    if (current)
+                                    {
+                                        <li>@node.Title</li>
+                                    }
+                                    else
+                                    {
+                                        <li><a href="@node.Url">@node.Title</a></li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            }
+            else
+            {
+                item = Model.Items.First();
+                <div class="page__title">
+                    <h1>@Html.Raw(item.Fields.Text)</h1>
+                    <ul class="bread__crumbs">
+                        @for (int i = 0; i < breadcrumb.SiteMapNodes.Count; i++)
+                        {
+                            var node = breadcrumb.SiteMapNodes[i];
+                            var current = i == breadcrumb.SiteMapNodes.Count - 1 && breadcrumb.ShowCurrentPageInTheEnd;
+                            var className = current ? "active" : "";
+                            var ariaLabel = node.Title;
+                            for (int j = 0; j < breadcrumb.SiteMapNodes.Count; j++)
+                            {
+                                ariaLabel = breadcrumb.SiteMapNodes[j] + " / ";
+                                if (breadcrumb.SiteMapNodes[j] == node)
+                                {
+                                    break;
+                                }
+                            }
+
+                            if (current)
+                            {
+                                <li>@node.Title</li>
+                            }
+                            else
+                            {
+                                <li><a href="@node.Url">@node.Title</a></li>
+                            }
+                        }
+                    </ul>
+                </div>
+            }
+        }
+    }
+}

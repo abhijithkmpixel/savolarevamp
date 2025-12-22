@@ -1,0 +1,48 @@
+@model SitefinityWebApp.Mvc.Models.QuoteModel
+@using SitefinityWebApp.Core.Extensions
+@{
+    string imageAlt = Model.ImageAlternativeText;
+    if (string.IsNullOrEmpty(imageAlt))
+    {
+        imageAlt = Model.QuotedText;
+    }
+    if (string.IsNullOrEmpty(imageAlt))
+    {
+        imageAlt = Model.Text;
+    }
+    if (string.IsNullOrEmpty(imageAlt))
+    {
+        imageAlt = Model.ImageTitle;
+    }
+    imageAlt = imageAlt.Truncate(97);
+}
+<div class="container padding-l-top">
+    <div class="row">
+        <div class="col-sm-6"><p><strong>@Model.Author<br>@Model.Text</strong></p><p class="body-small"><i>"@Model.QuotedText"</i></p></div><div class="col-sm-6">
+            <div class="embed-video">
+
+                @if (!string.IsNullOrEmpty(Model.VideoMp4Url) || !string.IsNullOrEmpty(Model.VideoWebmUrl) || !string.IsNullOrEmpty(Model.VideoOgvUrl))
+                {
+                    <a href="#" class="embed-video-play js-video-play"><span class="visually-hidden">Play video</span><span class="embed-video-play-icon icon-play"></span></a><video class="js-video" width="100" poster="@Model.ImageUrl">
+                        @if (!string.IsNullOrEmpty(Model.VideoMp4Url))
+                        {
+                            <source src="@Model.VideoMp4Url" type="video/mp4" />
+                        }
+                        @if (!string.IsNullOrEmpty(Model.VideoWebmUrl))
+                        {
+                            <source src="@Model.VideoWebmUrl" type="video/webm" />
+                        }
+                        @if (!string.IsNullOrEmpty(Model.VideoOgvUrl))
+                        {
+                            <source src="@Model.VideoOgvUrl" type="video/ogg" />
+                        }
+                    </video>
+                }
+                else
+                {
+                    <img width="100" alt="@imageAlt" title="@Model.ImageTitle" src="@Model.ImageUrl" />
+                }
+            </div>
+        </div>
+    </div>
+</div>

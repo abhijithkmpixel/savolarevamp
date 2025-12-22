@@ -1,0 +1,22 @@
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+
+<h4>@Html.Resource("BreadcrumbIncludeOptions")</h4>
+
+<div class="form-group">
+    <label for="color">Color</label>
+    <select id="color" ng-model="properties.Color.PropertyValue" class="form-control">
+        <option value="bg-green">Green</option>
+        <option value="bg-blue">Blue</option>
+        <option value="bg-grey">Grey</option>
+    </select>
+        <br />
+        <br />
+</div>
+
+<div class="form-group">
+    <sf-html-field class="kendo-content-block" sf-model="properties.Text.PropertyValue"
+                   
+               sf-images-settings="@SettingsHelpers.GetMediaSettings("Image")"
+               sf-videos-settings="@SettingsHelpers.GetMediaSettings("Video")"
+               sf-documents-settings="@SettingsHelpers.GetMediaSettings("Document")"></sf-html-field>
+</div>

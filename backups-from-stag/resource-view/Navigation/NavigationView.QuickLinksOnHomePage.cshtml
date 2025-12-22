@@ -1,0 +1,10 @@
+@using Prototype.Sitefinity.SitefinityControllers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@model Telerik.Sitefinity.Frontend.Navigation.Mvc.Models.INavigationModel
+<h2 class="from-h1 text-left">@Html.Resource("QuickLinks")</h2><div class="quick-links"><ul>
+        @foreach (var node in Model.Nodes)
+            {
+            <li><a href="@node.Url" target="@node.LinkTarget" class="link link-grey">@node.Title 
+                    <span class="icon-angle-circled-@(CultureController.IsRtl? "left": "right") color-green"></span></a></li>
+        }
+    </ul></div>

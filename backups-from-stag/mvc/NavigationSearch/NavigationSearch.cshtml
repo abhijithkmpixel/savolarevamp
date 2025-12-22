@@ -1,0 +1,29 @@
+@using Prototype.Sitefinity.SitefinityControllers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using Telerik.Sitefinity.Frontend.Navigation.Mvc.Models;
+@using Telerik.Sitefinity.Modules.Libraries
+@using Telerik.Sitefinity.Pages.Model
+@using Telerik.Sitefinity.Web
+
+<div class="navigationSearch">
+    <button type="button" class="navigationSearch-toggleButton">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="none" class="navigationSearch-toggleButtonIcon">
+            <path stroke="#fff" stroke-width="1.5" d="m11.453 11.53 6.64 6.467m-5.864-5.712c-2.57 2.502-6.734 2.502-9.302 0a6.29 6.29 0 0 1 0-9.061c2.568-2.502 6.733-2.502 9.301 0a6.29 6.29 0 0 1 0 9.06Z" />
+        </svg>
+        <span class="visually-hidden">Search</span>
+    </button>
+    <div class="navigationSearch-formContainer">
+        <form method="get" action="@(CultureController.IsRtl? "" : "/en")/others/search" class="navigationSearch-form">
+            <input type="hidden" name="indexCatalogue" value="full">
+            <input type="hidden" name="wordsMode" value="AllWords">
+            <label for="search-query-menu" class="visually-hidden">Search query in menu</label>
+            <input id="search-query-menu" type="text" data-val="true" data-val-required="Required" placeholder="@Html.Resource("SearchWithDots")" name="searchQuery" class="input-simple navigationSearch-searchField">
+            <button type="submit" class="navigationSearch-submitButton">
+                <span class="visually-hidden">Search</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="none" class="navigationSearch-submitButtonIcon">
+                    <path stroke="#fff" stroke-width="1.5" d="m11.453 11.53 6.64 6.467m-5.864-5.712c-2.57 2.502-6.734 2.502-9.302 0a6.29 6.29 0 0 1 0-9.061c2.568-2.502 6.733-2.502 9.301 0a6.29 6.29 0 0 1 0 9.06Z" />
+                </svg>
+            </button>
+        </form>
+    </div>
+</div>

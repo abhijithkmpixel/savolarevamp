@@ -1,0 +1,278 @@
+@model Telerik.Sitefinity.Frontend.Mvc.Models.ContentDetailsViewModel
+@using Prototype.Sitefinity.SitefinityControllers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using SitefinityWebApp.Core.Utilities
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using SitefinityWebApp.Core.Extensions
+@using System.Linq
+@using Telerik.OpenAccess
+@using Newtonsoft.Json
+@using SitefinityWebApp.Core.Repositories
+
+@using Telerik.Sitefinity.Taxonomies
+@using Telerik.Sitefinity.Taxonomies.Model
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@{
+    var galleryImages = Model.Item.Fields.GalleryImages;
+    var galleryVideos = Model.Item.Fields.GalleryVideos;
+    var taxonomyManager = TaxonomyManager.GetManager();
+    var newstags = taxonomyManager.GetTaxa<FlatTaxon>().Where(t => t.Taxonomy.Name == "news-tags");
+    var breadcrumb = BreadcrumbModelCreate.GetModel();
+    var image = Model.Item.Fields.Banner;
+    var imageUrl = "";
+    if (image != null)
+    {
+        imageUrl = image.Fields.MediaUrl;
+    }
+    var highlightImage = Model.Item.Fields.HighlightImage;
+    var highlightImageUrl = "";
+    if (highlightImage != null)
+    {
+        highlightImageUrl = highlightImage.Fields.MediaUrl;
+    }
+}
+    <section class="media-center-details">
+        <section class="page-section">
+            <div class="container">
+                <div class="row media-page-header">
+                    <div class="@(string.IsNullOrEmpty(imageUrl) ? "col-md-12" : "col-md-6")">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                @foreach (var nt in Model.Item.Fields.newstags)
+                                {
+                                    var ntId = (Guid)nt;
+                                    var newsTag = newstags.First(i => i.Id == ntId);
+
+                                    <div class=" small-header-title" style="background-color:@newsTag.Description">
+                                        <span>
+                                            @newsTag.Title
+                                        </span>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <div class="main-header-title">
+                            @Model.Item.Fields.Title
+                        </div>
+                        <div class="header-date">
+                            @Model.Item.GetDateTimeGregorianCalendar("PublicationDate", "dd/MM/yy")
+                        </div>
+                    </div>
+                    @if (!string.IsNullOrEmpty(imageUrl))
+                    {
+                        <div class="col-md-6">
+                            <div class="header-image"><img src="@imageUrl" /></div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="page-body @(string.IsNullOrEmpty(imageUrl) ? "page-body-no-image" : "")">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <nav>
+                                <ul class="list-inline list-no-padding color-blue body-small" itemscope itemtype="http://schema.org/BreadcrumbList">
+                                    @for (int i = 0; i < breadcrumb.SiteMapNodes.Count; i++)
+                                    {
+                                        var node = breadcrumb.SiteMapNodes[i];
+                                        var current = i == breadcrumb.SiteMapNodes.Count - 1 && breadcrumb.ShowCurrentPageInTheEnd;
+                                        var className = current ? "active" : "";
+                                        var ariaLabel = node.Title;
+                                        for (int j = 0; j < breadcrumb.SiteMapNodes.Count; j++)
+                                        {
+                                            ariaLabel = breadcrumb.SiteMapNodes[j] + " / ";
+                                            if (breadcrumb.SiteMapNodes[j] == node)
+                                            {
+                                                break;
+                                            }
+                                        }
+                                        <li class="@className" itemprop="itemListElement" itemscope
+                                            itemtype="http://schema.org/ListItem">
+                                            @if (current)
+                                            {
+                                                <span itemprop="name">@node.Title</span>
+                                            }
+                                            else
+                                            {
+                                                <a href="@node.Url" class="link link-blue" aria-label="@ariaLabel"><span itemprop="name">@node.Title</span></a>
+                                            }
+                                            <meta itemprop="position" content="@(i + 1)" />
+                                        </li>
+                                        if (i != breadcrumb.SiteMapNodes.Count - 1)
+                                        {
+                                            <li><span class="icon-angle-@(CultureController.IsRtl ? "left" : "right")"></span></li>
+                                        }
+
+                                    }
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    @if (!string.IsNullOrEmpty((string)Model.Item.Fields.Content))
+                    {
+                        <div class="row">
+                            <div class="col-md-12  content-1">
+                                @Html.HtmlSanitize((string)Model.Item.Fields.Content)
+                            </div>
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(highlightImageUrl))
+                    {
+                        <div class="row content-2">
+                            <div class="col-md-5 col-xs-12 content-2-image-wrapper" style="background-image: url('@highlightImageUrl');">
+                                <img class="content-2-image" style="width: 100%; min-height: 353px;"
+                                     src="@highlightImageUrl" />
+                            </div>
+                            <div class="col-md-7 col-xs-12">
+                                <p>
+                                    @Html.HtmlSanitize((string)Model.Item.Fields.HighlightContent)
+                                </p>
+                            </div>
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty((string)Model.Item.Fields.ContentAfterHighlight))
+                    {
+                        <div class="row">
+                            <div class="col-xs-12 content-1">
+                                @Html.HtmlSanitize((string)Model.Item.Fields.ContentAfterHighlight)
+                            </div>
+                        </div>
+                    }
+                    @if ((galleryImages != null && galleryImages.Length > 0) || (galleryVideos != null && galleryVideos.Length > 0))
+                    {
+                        <div class="row">
+                            <div class="col-xs-12 js-carousel-media-wrapper">
+                                <div class="media-post-title">@Html.Resource("MediaGallery", "Labels")</div>
+                                <div class="js-carousel-media media-center-details-gallery">
+                                    @{
+
+                                        if (galleryVideos != null)
+                                        {
+                                            foreach (var galleryVideo in galleryVideos)
+                                            {
+                                                <div data-toggle="modal" data-target="#myModal" class="col-md-3" class="media-center-details-gallery-image-wrapper">
+                                                    <img src="@galleryVideo.Fields.ThumbnailUrl" class="media-center-details-gallery-image hidden-xs" />
+                                                    <img src="/ResourcePackages/Theme/assets/images/play-button.svg" class="media-center-details-gallery-play-button hidden-xs" />
+                                                    <video poster="@galleryVideo.Fields.ThumbnailUrl" src="@galleryVideo.Fields.MediaUrl" controls="controls" class="media-center-details-gallery-image-mobile-video" disablepictureinpicture controlsList="nodownload noremoteplayback"></video>
+                                                    
+                                                </div>
+                                            }
+                                        }
+                                        if (galleryImages != null)
+                                        {
+                                            foreach (var galleryImage in galleryImages)
+                                            {
+                                                <div data-toggle="modal" data-target="#myModal" class="col-md-3">
+                                                    <div style="background-image:url('@galleryImage.Fields.MediaUrl');" class="media-center-details-gallery-image"> </div>
+                                                </div>
+                                            }
+                                        }
+                                    }
+                                </div>
+                                <div class="carousel-nav text-right">
+                                    <div class="carousel-nav-container js-carousel-nav"></div>
+                                    <span class="pagingInfo"></span>
+                                </div>
+                            </div>
+                            <div id="myModal" class="modal hidden-xs hidden-sm">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <div class="slider-for">
+                                        @{
+                                            if (galleryVideos != null)
+                                            {
+                                                foreach (var galleryVideo in galleryVideos)
+                                                {
+                                                    <div data-caption="@galleryVideo.Fields.Description">
+                                                        <video src="@galleryVideo.Fields.MediaUrl" controls="controls" disablepictureinpicture controlsList="nodownload noremoteplayback" playsinline></video>
+                                                    </div>
+                                                }
+                                            }
+                                            if (galleryImages != null)
+                                            {
+                                                foreach (var galleryImage in galleryImages)
+                                                {
+                                                    <div data-caption="@galleryImage.Fields.Description">
+                                                        <img src="@galleryImage.Fields.MediaUrl" alt="@galleryImage.Fields.AlternativeText" />
+                                                    </div>
+                                                }
+                                            }
+                                        }
+                                    </div>
+                                    <div class="carousel-nav text-right">
+                                        <div class="col-xs-6 image-caption">Image Caption ...</div>
+                                        <div class="col-xs-6">
+                                            <div class="carousel-nav-container js-carousel-nav-2"></div>
+                                            <span class="pagingInfo"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </section>
+        @{
+            var newsRepository = new NewsItemsRepository();
+            var realatedNews = newsRepository.GetRelatedNews((Guid)Model.Item.Fields.Id, ((TrackedList<Guid>)Model.Item.Fields.newstags).ToArray(), 3);
+        }
+        @if (realatedNews != null && realatedNews.Any())
+        {
+            <section class="page-section page-section-no-padding articles">
+                <div class="container">
+                    <div class="media-list-title">@Html.Resource("RelatedArticles", "Labels")</div>
+                    <div class="media-list">
+                        <div class="row  text-center">
+                            @foreach (var relatedNewsItem in realatedNews)
+                            {
+                                <div class="col-sm-4 col-xs-12">
+                                    <a href="@relatedNewsItem.FullUrl">
+                                        <div class="card">
+                                            <div class="card-image"
+                                                 @if (relatedNewsItem.Thumbnail != null) { <text> style="background-image: url('@relatedNewsItem.Thumbnail.Url');"
+                                                 </text> }>
+                                            </div>
+                                            <div class="card-title card-title-culture" style="background-color: @relatedNewsItem.Color">
+                                                @relatedNewsItem.NewsTag
+                                            </div>
+                                            <div class="card-body">
+                                                @relatedNewsItem.Title
+                                            </div>
+                                            <div class="card-date">
+                                                @relatedNewsItem.PublicationDateString
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </section>
+        }
+        <div class="social-links-wrapper rs_skip">
+            <div class="social-links">
+                <a id="share-btn">
+                    <span class="share-title">@Html.Resource("Share", "Labels")</span>
+                    <svg viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="none" fill-rule="evenodd">
+                            <circle cx="22.55" cy="22.55" fill="#fff" r="22.05" stroke="#d8d7da" stroke-width=".9" />
+                            <path d="m15.92352 13.36608c-1.19664 0-2.26368.57024-2.94624 1.45152l-5.71536-3.19248c.13392-.38448.20736-.7992.20736-1.22688 0-.432-.07344-.8424-.21168-1.2312l5.71104-3.18816c.67824.8856 1.7496 1.46016 2.95056 1.46016 2.04768 0 3.71952-1.66752 3.71952-3.71952s-1.66752-3.71952-3.71952-3.71952-3.71952 1.66752-3.71952 3.71952c0 .432.07344.84672.21168 1.2312l-5.70672 3.18816c-.67824-.88992-1.7496-1.46016-2.95056-1.46016-2.04768 0-3.71952 1.66752-3.71952 3.71952s1.67184 3.71952 3.72384 3.71952c1.20096 0 2.27232-.57456 2.95488-1.46448l5.71104 3.19248c-.13824.3888-.216.80784-.216 1.23984 0 2.04768 1.66752 3.71952 3.71952 3.71952s3.71952-1.66752 3.71952-3.71952-1.67184-3.71952-3.72384-3.71952zm0-12.19536c1.40832 0 2.55312 1.1448 2.55312 2.55312s-1.1448 2.55312-2.55312 2.55312-2.55312-1.1448-2.55312-2.55312 1.14912-2.55312 2.55312-2.55312zm-12.16512 11.78064c-1.40832 0-2.55312-1.1448-2.55312-2.55312s1.1448-2.55312 2.55312-2.55312 2.55312 1.1448 2.55312 2.55312-1.14912 2.55312-2.55312 2.55312zm12.16512 6.68304c-1.40832 0-2.55312-1.1448-2.55312-2.55312s1.1448-2.55312 2.55312-2.55312 2.55312 1.1448 2.55312 2.55312-1.1448 2.55312-2.55312 2.55312z" fill="#5c666f" fill-rule="nonzero" transform="translate(11.3 12.2)" />
+                        </g>
+                    </svg>
+                </a>
+                    <div class="links" id="links">
+                        <a href="@SocialShareUtilities.Facebook()" title="Share on Facebook" target="_blank"><i class="icon-facebook-circled"></i></a>
+                        <a href="@SocialShareUtilities.Twitter()" target="_blank" title="Tweet"><i class="icon-twitter-circled"></i></a>
+                        <a href="@SocialShareUtilities.Linkedin()" target="_blank" title="Share on LinkedIn"><i class="icon-linkedin-circled"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

@@ -1,0 +1,10 @@
+@using Prototype.Sitefinity.SitefinityControllers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@model SitefinityWebApp.Mvc.Models.PriceQuoteLineModel
+
+<button type="button" class="accessibility-menu-toggle"><span class="visually-hidden">Accessibility Menu</span></button>
+@if (Model != null)
+{
+<span class="padding-right"><a href="@((CultureController.Language == "ar" ? "/" : "/en/") + "about-us/investors/chart")" class="link link-white link-underline margin-xs-right">@Html.Resource("Savola", "Labels")</a>@Model.Price.ToString("F")<span class="body-xlarge color-@(Model.IsUp ? "green" : "red") icon-@(Model.IsUp ? "up" : "down")-dir"></span> @Model.Change.ToString("F")%
+</span>
+}

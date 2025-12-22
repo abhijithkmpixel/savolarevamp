@@ -1,0 +1,6 @@
+@model SitefinityWebApp.Core.DynamicModulesModels.NewsAndMedia.NewsAndMediaModel
+
+<section class="page-section"><div class="container"><h2 class="from-h1"> @Model.Title</h2>
+        @Html.Raw(Model.Description)
+        @Model.DateStr
+    </div></section>

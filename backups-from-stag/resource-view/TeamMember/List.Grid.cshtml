@@ -1,0 +1,88 @@
+@model Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models.DynamicContentListViewModel
+
+@using Telerik.OpenAccess
+@using Telerik.Sitefinity.Publishing
+@using Telerik.Sitefinity.RelatedData
+@using Telerik.Sitefinity.Taxonomies
+@using Telerik.Sitefinity.Taxonomies.Model
+@using SitefinityWebApp.Core.Extensions
+@{
+
+    TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+    var listOfTags = new Dictionary<Guid, string>();
+    listOfTags = taxonomyManager.GetTaxa<FlatTaxon>().Where(t => t.Taxonomy.Name == "team-member-categories")
+        .ToDictionary(i => i.Id, i => i.Title.ToString())
+        .Where(j => Model.Items.Any(i => i.DataItem.GetPropertyValue<TrackedList<Guid>>("teammembercategories").Contains(j.Key)))
+        .ToDictionary(i => i.Key, i => i.Value);
+
+}
+
+<div class="leadershipTabs">
+    @if (listOfTags.Any() && listOfTags.Count > 1)
+    {
+        var isFirst = true;
+
+        <ul class="leadershipTabs-tabList nav nav-tabs" role="tablist">
+            @foreach (var tag in listOfTags)
+            {
+                <li class="leadershipTabs-tabListItem @(isFirst ? "active" : "") padding-bottom" role="presentation">
+                    <a href="#@tag.Key" role="tab" data-toggle="tab" class="leadershipTabs-tabItemLink btn btn-secondary-rev" aria-label="Tab @tag.Value">@tag.Value</a>
+                </li>
+
+                isFirst = false;
+            }
+        </ul>
+    }
+
+    <div class="@Model.CssClass leadershipTabs-tabContent tab-content">
+        @{
+            var isFirstTab = true;
+        }
+        @foreach (var cat in listOfTags)
+        {
+            var items = Model.Items
+                .Where(i => i.DataItem.GetPropertyValue<TrackedList<Guid>>("teammembercategories")
+                .Contains(cat.Key))
+                .OrderBy(i => i.Fields.SortOrder)
+                .ToList();
+
+            <div role="tabpanel" class="leadershipTabs-tabContentItem tab-pane fade @(isFirstTab ? "active" : "")" id="@cat.Key">
+                <div class="leadershipGrid">
+                    @foreach (var item in items)
+                    {
+                        string imageAlt = item.Fields.Image.Fields.AlternativeText.ToString();
+                        if (string.IsNullOrEmpty(imageAlt))
+                        {
+                            imageAlt = item.Fields.Name.ToString();
+                        }
+                        if (string.IsNullOrEmpty(imageAlt))
+                        {
+                            imageAlt = item.Fields.Image.Fields.Title.ToString();
+                        }
+                        imageAlt = imageAlt.Truncate(97);
+                        if (item.Fields.Image != null)
+                        {
+                            <div class="leadershipGrid-item">
+                                <div class="leadershipCard">
+                                    <div class="leadershipCard-body">
+                                        <div class="leadershipCard-media">
+                                            <img src="@item.Fields.Image.Fields.MediaUrl.ToString().Split('?')[0]"
+                                                 alt="@imageAlt"
+                                                 title="@(item.Fields.Image.Fields.Title)" />
+                                        </div>
+                                        <div class="leadershipCard-content">
+                                            <h5 class="leadershipCard-title">@item.Fields.Name</h5>
+                                            <p class="leadershipCard-description">@Html.Raw(item.Fields.Position)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+
+            isFirstTab = false;
+        }
+    </div>
+</div>

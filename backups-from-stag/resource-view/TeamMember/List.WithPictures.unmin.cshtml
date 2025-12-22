@@ -1,0 +1,69 @@
+﻿@model Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models.DynamicContentListViewModel
+
+@using Telerik.OpenAccess
+@using Telerik.Sitefinity.Publishing
+@using Telerik.Sitefinity.RelatedData
+@using Telerik.Sitefinity.Taxonomies
+@using Telerik.Sitefinity.Taxonomies.Model
+@{
+
+    TaxonomyManager taxonomyManager = TaxonomyManager.GetManager();
+    var listOfTags = new Dictionary<Guid, string>();
+    listOfTags = taxonomyManager.GetTaxa<FlatTaxon>().Where(t => t.Taxonomy.Name == "team-member-categories")
+        .ToDictionary(i => i.Id, i => i.Title.ToString())
+        .Where(j => Model.Items.Any(i => i.DataItem.GetPropertyValue<TrackedList<Guid>>("teammembercategories").Contains(j.Key)))
+        .ToDictionary(i => i.Key, i => i.Value);
+
+}
+@if (listOfTags.Any() && listOfTags.Count > 1)
+{
+    var isFirst = true;
+    <ul class="list-inline text-center nav nav-tabs" role="tablist">
+        @foreach (var tag in listOfTags)
+        {
+            <li class="@(isFirst ? "active" : "") padding-bottom" role="presentation">
+                <a href="#@tag.Key" role="tab" data-toggle="tab" class="btn btn-secondary-rev">@tag.Value</a>
+            </li>
+            isFirst = false;
+        }
+    </ul>
+}
+<div class="@Model.CssClass tab-content team-members-block">
+    @{
+        var isFirstTab = true;
+    }
+    @foreach (var cat in listOfTags)
+    {
+        var items = Model.Items.Where(i => i.DataItem.GetPropertyValue<TrackedList<Guid>>("teammembercategories").Contains(cat.Key)).OrderBy(i => i.Fields.SortOrder)/*.Select((x, i) => new {Index = i, Value = x})
+            .GroupBy(x => x.Index/4)
+            .Select(x => x.Select(v => v.Value).ToList())*/
+            .ToList();
+        <div role="tabpanel" class="tab-pane fade @(isFirstTab ? "active" : "")" id="@cat.Key">
+            <div class="row">
+                @foreach (var item in items)
+                {
+
+                    @*@foreach (var item in itemG)
+                {
+                    *@
+                    if (item.Fields.Image != null)
+                    {
+                        <div class="col-xs-6 col-sm-4 col-md-3 text-center person-block" data-mh="team-group-holder-@cat.Key">
+                            <div class="image-with-line  bg-blue">
+                                <div data-mh="team-group-@cat.Key"><img src="@item.Fields.Image.Fields.MediaUrl.ToString().Split('?')[0]"
+     alt="@(item.Fields.Image.Fields.AlternativeText)"
+     title="@(item.Fields.Image.Fields.Title)" />
+</div>                             </div>
+                            <h5>@item.Fields.Name</h5>
+                            <h5 class="text-uppercase"><b>@Html.Raw(item.Fields.Position)</b></h5>
+                        </div>
+                    }
+                    @*}*@
+
+                }
+            </div>
+        </div>
+        isFirstTab = false;
+    }
+
+</div>

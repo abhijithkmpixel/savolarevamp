@@ -1,0 +1,17 @@
+@using Telerik.Sitefinity.Frontend.Navigation.Mvc.Models
+@model Telerik.Sitefinity.Frontend.Navigation.Mvc.Models.INavigationModel
+<ul class="list list-unstyled list-inline">
+    @foreach (var node in Model.Nodes)
+    {
+        <li class="@(Model.Nodes.Last().Url != node.Url ? "border-right-grey" : "")"><a href="@node.Url" target="@node.LinkTarget" class="@GetClass(node) link link-white">@node.Title</a></li>
+    }
+
+</ul>
+
+@helper GetClass(NodeViewModel node)
+{
+if (Model.CurrentSiteMapNode != null && node.OriginalSiteMapNode != null && Model.CurrentSiteMapNode.Key == node.OriginalSiteMapNode.Key)
+{
+        @Html.Raw("active")
+}
+}

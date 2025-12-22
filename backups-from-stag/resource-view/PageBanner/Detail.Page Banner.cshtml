@@ -1,0 +1,33 @@
+@model Telerik.Sitefinity.Frontend.Mvc.Models.ContentDetailsViewModel
+@using Prototype.Sitefinity.SitefinityControllers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Web
+@using Prototype.Sitefinity.SitefinityControllers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Web
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using SitefinityWebApp.Core.Extensions
+@{
+    var idx = "1";
+    var style = "";
+    var styleMobile = "";
+    var additionalClass = "carousel-slide-white";
+    var scrollClass = "hidden";
+    if (Model.Item.Fields.Image != null)
+    {
+        additionalClass = "";
+        scrollClass = "";
+        style = "background-image: url('" + Model.Item.Fields.Image.Fields.MediaUrl.Split('?')[0] + "');";
+        styleMobile = style;
+    }
+    if (Model.Item.Fields.ImageMobile != null)
+    {
+        styleMobile = "background-image: url('" + Model.Item.Fields.ImageMobile.Fields.MediaUrl.Split('?')[0] + "');";
+    }
+    if (Model.Item.Fields.ImagePosition != null)
+    {
+        style += "background-position: " + Model.Item.Fields.ImagePosition + ";";
+        styleMobile += "background-position: " + Model.Item.Fields.ImagePosition + ";";
+    }
+}
+

@@ -1,0 +1,19 @@
+@model SitefinityWebApp.Mvc.Models.ImageBlockModel
+@if (!string.IsNullOrEmpty(Model.Url) && string.IsNullOrEmpty(Model.ButtonText) && string.IsNullOrEmpty(Model.ButtonText))
+{
+    <a href="@Model.Url" class="info-box bg-@(!string.IsNullOrEmpty(Model.Color) ? Model.Color : "green") info-box-link" style="@(!string.IsNullOrEmpty(Model.ImageUrl) ? "background-color: rgba(0,0,0,0.2); background-blend-mode: multiply; background-image: url('" + Model.ImageUrl + "');" : "")" data-mh="info">
+        <h3 class="info-box-title color-@(Model.Color == "transparent" || Model.Color == "yellow" ? "grey" : "white")">@Model.Title</h3>
+    </a>
+}
+else
+{
+<div class="info-box bg-green" style="@(!string.IsNullOrEmpty(Model.ImageUrl) ? "background-color: rgba(0,0,0,0.2); background-blend-mode: multiply; background-image: url('" + Model.ImageUrl + "');" : "")" data-mh="info">
+    <h3 class="info-box-title color-white">@Model.Title</h3><div class="info-box-hover bg-@Model.Color color-white">
+        @Html.Raw(Model.Description)
+        @if (!string.IsNullOrEmpty(Model.Url) && !string.IsNullOrEmpty(Model.ButtonText))
+        {
+<div class="padding-s-top text-center">
+    <a href="@Model.Url" class="btn btn-default" aria-label="@Model.Title @Model.ButtonText">@Model.ButtonText</a>
+</div>}
+    </div>
+</div>}

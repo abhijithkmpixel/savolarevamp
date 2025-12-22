@@ -1,0 +1,1 @@
+<sf-image-selector sf-model="model.selectedItems" sf-deselectable="true" sf-filter="model.filterObject" sf-provider="model.provider" sf-media-settings="sfMediaSettings"></sf-image-selector>

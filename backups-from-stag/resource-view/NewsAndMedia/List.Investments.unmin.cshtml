@@ -1,0 +1,79 @@
+﻿@model Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models.DynamicContentListViewModel
+@using System.Globalization
+@using System.Threading
+@using Prototype.Sitefinity.SitefinityControllers
+@using SitefinityWebApp.Core.Extensions
+@using Telerik.OpenAccess
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Publishing
+@using Telerik.Sitefinity.Taxonomies
+@using Telerik.Sitefinity.Taxonomies.Model
+
+<div class="@Model.CssClass">
+
+    <h1>@Html.Raw(Html.Resource("NewsAndMedia"))</h1>
+
+    <div class="row padding-s-bottom">
+        @foreach (var item in Model.Items)
+        {
+
+            var target = string.Empty;
+            var url = NewsAndMediaExtension.GetNewsAndMediaUrl(item, Model, ViewBag, out target);
+
+            var img = item.Fields.Image != null ? item.Fields.Image.Fields.ThumbnailUrl.Replace("tmb-.jpg", "tmb-348x296.jpg") : "";
+            var imgAlt = item.Fields.Title;
+            var imgTitle = item.Fields.Title;
+            FlatTaxonomy tagTaxonomy = TaxonomyManager.GetManager().GetTaxonomies<FlatTaxonomy>().SingleOrDefault(t => t.Name == "news-and-media-categories");
+            var tagName = "";
+            var tagTitle = "";
+
+            var tagId = item.DataItem.GetPropertyValue<TrackedList<Guid>>("newsandmediacategories").FirstOrDefault();
+            if (tagId != null)
+            {
+                Taxon tag = tagTaxonomy.Taxa.SingleOrDefault(x => x.Id == tagId);
+                tagName = tag.Name;
+                tagTitle = tag.Title;
+
+            }
+            switch (tagName)
+            {
+                case "newsletter":
+                    img = "//savola-web.azureedge.net/images/newsletters.png";
+                    break;
+
+                case "announcement":
+                case "press-release":
+                    img = "//savola-web.azureedge.net/images/graphic2-eng.png";
+                    if (Thread.CurrentThread.CurrentUICulture.Name == "ar")
+                    {
+                        img = "//savola-web.azureedge.net/images/annual-report.png";
+                    }
+                    break;
+            }
+            <div class="col-md-4">
+
+                <div class="media-box">
+                    <a target="@target" href="@(url)">
+                        <img class="img-responsive" src="@img"
+                             alt="@imgAlt"
+                             title="@imgTitle" />
+                    </a>
+                    <div class="media-box-meta">
+                        <span class="media-box-date body-small">@item.GetDateTimeGregorianCalendar("Date", "d MMM yyyy")</span>
+                        <span>&nbsp;@tagTitle</span>
+                        <h2 class="h3 body-large color-white">
+                            <a class="link link-grey" target="@target" href="@(url)">@item.Fields.Title</a>
+                        </h2>
+                    </div>
+
+                </div>
+            </div>
+            }
+
+        </div>
+
+    </div>
+
+
+
+

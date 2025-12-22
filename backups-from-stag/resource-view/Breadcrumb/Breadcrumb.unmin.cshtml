@@ -1,0 +1,25 @@
+@using Prototype.Sitefinity.SitefinityControllers
+<nav class="container padding-s-top breadcrumb @Model.CssClass"><ul class="list-inline list-no-padding color-blue body-small" itemscope itemtype="http://schema.org/BreadcrumbList">
+        @for (int i = 0; i < Model.SiteMapNodes.Count; i++)
+        {
+            var node = Model.SiteMapNodes[i];
+            var current = i == Model.SiteMapNodes.Count - 1 && Model.ShowCurrentPageInTheEnd;
+            var className = current ? "active" : "";
+            <li class="@className" itemprop="itemListElement" itemscope
+                itemtype="http://schema.org/ListItem">
+                @if (current)
+                {
+                    <span itemprop="name">@node.Title</span>
+                }
+                else
+                {
+                    <a href="@node.Url" class="link link-blue"><span itemprop="name">@node.Title</span></a>
+                }
+                <meta itemprop="position" content="@(i + 1)"/></li>
+            if (i != Model.SiteMapNodes.Count - 1)
+            {
+                <li><span class="icon-angle-@(CultureController.IsRtl ? "left" : "right")"></span></li>
+            }
+
+        }
+    </ul></nav>

@@ -1,0 +1,30 @@
+@using Prototype.Sitefinity.SitefinityControllers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@model SitefinityWebApp.Mvc.Models.PriceQuoteLineModel
+
+@*<button type="button" class="accessibility-menu-toggle"><span class="visually-hidden">Accessibility Menu</span></button>*@
+@if (Model != null)
+{
+    <a href="@((CultureController.Language == "ar" ? "/" : "/en/") + "investors/chart")" class="header__links">@Html.Resource("Savola", "Labels")</a>
+    <div class="header__analytics__wrap">
+        <div class="header__analytics__wrap__value header__links">
+            @Model.Price.ToString("F")
+            <span class="header__analytics__wrap__value__status @(Model.IsUp ? "header__analytics__wrap__value__status--up" : "red")">
+                <svg width="12"
+                     height="7"
+                     viewBox="0 0 12 7"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.7091 0.859956C11.7091 1.04662 11.6424 1.21329 11.5091 1.35996L6.50906 6.35996C6.3624 6.50662 6.19573 6.57996 6.00906 6.57996C5.8224 6.57996 5.65573 6.50662 5.50906 6.35996L0.509062 1.35996C0.362396 1.21329 0.289062 1.04662 0.289062 0.859956C0.289062 0.673289 0.362396 0.506623 0.509062 0.359956C0.655729 0.21329 0.822396 0.139956 1.00906 0.139956H11.0091C11.1957 0.139956 11.3624 0.21329 11.5091 0.359956C11.6557 0.506623 11.7224 0.673289 11.7091 0.859956Z"
+                          fill="#B30000" />
+                </svg>
+            </span>
+        </div>
+        <div class="header__analytics__wrap__value header__links">
+            @Model.Change.ToString("F")%
+        </div>
+    </div>
+    @*<span class="padding-right">
+        <a href="@((CultureController.Language == "ar" ? "/" : "/en/") + "investors/investor-relations/share-information")" class="link link-white link-underline margin-xs-right">@Html.Resource("Savola", "Labels")</a>@Model.Price.ToString("F")<span class="body-xlarge color-@(Model.IsUp ? "green" : "red") icon-@(Model.IsUp ? "up" : "down")-dir"></span> @Model.Change.ToString("F")%
+    </span>*@
+}

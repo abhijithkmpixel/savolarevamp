@@ -1,0 +1,20 @@
+
+@model SitefinityWebApp.Mvc.Models.VideoBlockModel
+    @{
+        var id = string.Format("modal{0}", Model.Id);
+    }
+<div class="embed-video">
+    <a class="embed-video-play" href="#" data-toggle="modal" data-target="#@id"><span class="embed-video-play-icon icon-play"></span><span class="visually-hidden">Scroll down</span></a><img class="img-responsive" src="@Model.ImageUrl" alt="@Model.ImageAlternativeText" title="@Model.ImageTitle"></div><div class="modal fade" id="@id" tabindex="-1" role="dialog"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"><video class="js-video" width="100" controls=""  poster="@Model.ImageUrl" preload="none">
+                    @if (!string.IsNullOrEmpty(Model.VideoMp4Url))
+                    {
+                        <source src="@Model.VideoMp4Url" type="video/mp4"/>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.VideoWebmUrl))
+                    {
+                        <source src="@Model.VideoWebmUrl" type="video/webm"/>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.VideoOgvUrl))
+                    {
+                        <source src="@Model.VideoOgvUrl" type="video/ogg"/>
+                    }
+                </video></div></div></div></div>

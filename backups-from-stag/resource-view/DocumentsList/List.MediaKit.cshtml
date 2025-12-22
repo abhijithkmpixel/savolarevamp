@@ -1,0 +1,28 @@
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@model Telerik.Sitefinity.Frontend.Media.Mvc.Models.DocumentsList.DocumentsListViewModel
+
+@{
+    var items = Model.Items.Select((x, i) => new { Index = i, Value = x })
+        .GroupBy(x => x.Index / 4)
+        .Select(x => x.Select(v => v.Value).ToList())
+        .ToList();
+
+}
+<div class="@Model.CssClass">
+    @foreach (var row in items)
+    {
+        <div class="row padding-bottom">
+            @if (Model.Items.Count() == 2)
+                {
+                <div class="col-md-3"></div>
+            }
+            @foreach (var item in row)
+            {
+
+                <div class="col-md-3"><div class="media-post body-small"><h3 class="media-post-title">@item.Fields.Title</h3><p>@item.Fields.Description</p>
+                    <ul class="list-inline list-smaller align-right">
+                    <li><a href="@item.Fields.MediaUrl.ToString()" download="download" class="link link-green text-lowercase" aria-label="@Html.Resource("Download", "Labels") @item.Fields.Title">@Html.Resource("Download", "Labels") <span class="icon-download"></span></a></li></ul></div></div>
+            }
+        </div>
+    }
+</div>

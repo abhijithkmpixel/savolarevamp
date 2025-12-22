@@ -1,0 +1,20 @@
+@model SitefinityWebApp.Mvc.Models.VideoBlockModel
+
+    <!-- <img src="./uploads/video.png" alt=""> -->
+    <div class="full_width__video__widget__innerwrap">
+
+        <video id="myVideo"
+               src="@Model.VideoMp4Url"></video>
+        <div class="overlay__blade" id="overlay__blade"></div>
+        <button type="button" id="playButton">
+            <svg width="25"
+                 height="30"
+                 viewBox="0 0 25 30"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 16.732C25.3333 15.9622 25.3333 14.0378 24 13.268L3 1.14359C1.66666 0.373795 0 1.33605 0 2.87565L0 27.1244C0 28.664 1.66667 29.6262 3 28.8564L24 16.732Z"
+                      fill="white" />
+            </svg>
+        </button>
+    </div>
+

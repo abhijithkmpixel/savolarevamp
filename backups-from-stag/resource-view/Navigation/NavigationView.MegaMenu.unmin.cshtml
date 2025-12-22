@@ -1,0 +1,98 @@
+﻿@model INavigationModel
+
+@using Prototype.Sitefinity.SitefinityControllers
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using Telerik.Sitefinity.Frontend.Navigation.Mvc.Models;
+@using Telerik.Sitefinity.Modules.Libraries
+@using Telerik.Sitefinity.Pages.Model
+@using Telerik.Sitefinity.Web
+<nav class="nav-main" >
+    <div class="container">
+        <div class="inline-block nav-main-col-small">
+            <a class="nav-main-logo" href="@(CultureController.IsRtl? "/" : "/en")">
+                <img src="//savola-web.azureedge.net/images/logo.svg" class="logo" alt="Savola">
+            </a>
+        </div>
+        <div class="nav-main-col-big inline-block align-right">
+            <ul class="nav-main-list list-unstyled list-inline visible-md visible-lg">
+                @foreach (var node in Model.Nodes)
+                {
+                    @RenderSubLevelsRecursive(node)
+                }
+                <li class="js-nav-main-with-sub has-dropdown">
+                    <span class="icon icon-search body-xlarge link link-default"></span>
+                    <div class="nav-main-dropdown is-search is-right js-nav-main-sub">
+                        <form method="get" action="@(CultureController.IsRtl? "" : "/en")/others/search">
+                            <input type="hidden" name="indexCatalogue" value="full">
+                            <input type="hidden" name="wordsMode" value="AllWords">
+                            <input type="text" data-val="true" data-val-required="Required" placeholder="@Html.Resource("SearchWithDots")" name="searchQuery" class="input-simple">
+                        </form>
+                    </div>
+                </li>
+            </ul><button class="burger-button nav-main-toggle js-burger-button"><span></span></button>
+        </div>
+
+    </div>
+</nav>
+
+@helper RenderSubLevelsRecursive(NodeViewModel node, bool insideDropdown = false)
+{
+    <li class="@GetClass(node) @Html.Raw(node.ChildNodes.Any() ? "has-dropdown js-nav-main-with-sub" : "")">
+        <a href="@node.Url" target="@node.LinkTarget" class="@GetClass(node) @(insideDropdown ? "mobile-nav-dropdown-item link link-white" : "link link-default")">@node.Title</a>
+        @if (node.ChildNodes.Count > 0)
+        {
+            PageSiteNode pageNode = node.OriginalSiteMapNode as PageSiteNode;
+            var thumbnail = ((Telerik.Sitefinity.Libraries.Model.Image) pageNode.GetCustomFieldValue("Image"));
+            <div class="nav-main-dropdown align-left is-full js-nav-main-sub" data-mh="main-menu">
+                <div class="row">
+                    <div class="col-md-3 nav-main-dropdown-col with-border">
+                        @if (thumbnail != null)
+                        {
+                            <img src="@thumbnail.ResolveThumbnailUrl(true).Replace(".tmb-.", ".tmb-238x160.").Split('?')[0]" class="img-responsive" alt="@thumbnail.AlternativeText">
+                        }
+                    </div>
+                    @foreach (var childNode in node.ChildNodes)
+                    {
+                        if (!childNode.ChildNodes.Any())
+                        {
+                            <div class="col-md-3 nav-main-dropdown-col">
+                                <a href="@childNode.Url" class="@GetClass(childNode) link link-default body-large text-heavy">@childNode.Title</a>
+                            </div>
+                        }
+                        else
+                        {
+                            PageSiteNode childNodePageNode = childNode.OriginalSiteMapNode as PageSiteNode;
+                            <div class="col-md-@(node.ChildNodes.Count<3 && node.ChildNodes.Last().Title == childNode.Title ? "4":"3") nav-main-dropdown-col">
+                                <ul class="list-unstyled body-small align-left">
+                                    @if (childNodePageNode.NodeType == NodeType.Standard || node.ChildNodes.Any(i => (i.OriginalSiteMapNode as PageSiteNode).NodeType == NodeType.Standard))
+                                    {
+                                        <li class="margin-xs-bottom">
+                                            <a href="@childNode.Url" class="@GetClass(childNode) link link-default body-large text-heavy">@childNode.Title</a>
+                                        </li>
+                                    }
+                                    @foreach (var ccn in childNode.ChildNodes)
+                                    {
+                                        <li>
+                                            <a href="@ccn.Url" class="@GetClass(ccn) link link-default body-small @(ccn.ChildNodes.Any() || childNode.ChildNodes.Any(i => i.ChildNodes.Any()) ? "text-heavy" : "")">@ccn.Title</a>
+                                        </li>
+                                        foreach (var cccn in ccn.ChildNodes)
+                                        {
+                                            <li><a href="@cccn.Url" class="@GetClass(cccn) link body-small link-default">@cccn.Title</a></li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        }
+    </li>
+}
+@helper GetClass(NodeViewModel node)
+{
+if (Model.CurrentSiteMapNode != null && node.OriginalSiteMapNode != null && Model.CurrentSiteMapNode.Key == node.OriginalSiteMapNode.Key)
+{
+        @Html.Raw("active")
+}
+}

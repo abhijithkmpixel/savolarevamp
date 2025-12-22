@@ -1,0 +1,3 @@
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@model Quotes.Core.Models.Quote
+<div class="margin-xl-bottom text-center"><h3 class="h3">@Html.Resource("TheCompanyCapital")</h3><h3 class="shareholder-timeline-title color-green">SR @(string.Format("{0:N0}",Model.NumberOfShares* 10000000))</h3><div class="padding-s-top padding-s-bottom"><span class="h2 icon-down-dir"></span></div><h3 class="h3">@Html.Resource("DevidedInto")</h3><h3 class="shareholder-timeline-title color-green">@(string.Format("{0:N0}", Model.NumberOfShares * 1000000).Replace("$", "")) SHARES</h3></div>

@@ -1,0 +1,4 @@
+@model SitefinityWebApp.Mvc.Models.ButtonBlockModel
+<div class="btn-block-@Model.Align @(Model.MarginTop ? "margin-top" : "")  @(Model.MarginBottom ? "margin-bottom" : "")">
+    <a class="btn btn-default" href="@string.Format("{0}{1}", Model.Url, Model.Query)" aria-label="@Model.AriaLabel">@Model.Text</a>
+</div>

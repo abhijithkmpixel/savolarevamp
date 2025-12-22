@@ -1,0 +1,59 @@
+﻿@model Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models.DynamicContentListViewModel
+
+@using System.Globalization
+@using System.Threading
+@using Prototype.Sitefinity.SitefinityControllers
+@using SitefinityWebApp.Core.Extensions
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using SitefinityWebApp.Core.Extensions
+@{
+    var isTop = true;
+}
+<h1 class="page-section-title center h2">@Html.Resource("OurHistory", "Labels")</h1>
+<div class="@Model.CssClass">
+
+
+    <div class="horizontal-scroll padding-xl-top padding-xl-bottom js-horizontal-scroll">
+
+        <ul class="history-line js-history padding-xl-top padding-xl-bottom">
+            @foreach (var item in Model.Items.OrderByDescending(i => i.Fields.Date))
+            {
+                var timeCorrection = 4;
+                var date = (DateTime)item.Fields.GetMemberValue("Date");
+                date = date.AddHours(timeCorrection);
+                <li>
+                    
+@if (!string.IsNullOrEmpty(item.Fields.Url))
+{
+    <a class="history-popover history-popover-@(isTop ? "top" : "bottom")" href="@item.Fields.Url">
+        <h3 class="history-popover-title">@item.Fields.Title</h3>
+        <span class="history-popover-arrow icon-angle-circled-@(CultureController.Language == "ar" ? "left" :"right") color-white"></span>
+    </a>
+}
+else
+{
+    <div class="history-popover history-popover-@(isTop ? "top" : "bottom")">
+        <h3 class="history-popover-title">@item.Fields.Title</h3>
+    </div>
+}
+                    <div class="history-line-point">
+                        <span></span>
+                    </div>
+                    <p class="history-line-point-title">@date.ToStringGregorianCalendar("MMM yyyy")</p>  
+                </li>
+                isTop = !isTop;
+            }
+        </ul>
+
+
+
+    </div>
+
+    <div class="text-right margin-s-top">
+        <div class="carousel-nav-container h2 container text-right">
+            <span class="carousel-nav-prev icon-angle-@(CultureController.IsRtl ? "right" : "left") slick-arrow js-scroll-@(CultureController.IsRtl ? "right" : "left")" style="display: inline;"></span>
+            <span class="carousel-nav-next icon-angle-@(!CultureController.IsRtl ? "right" : "left") slick-arrow js-scroll-@(!CultureController.IsRtl ? "right" : "left")" style="display: inline;"></span>
+        </div>
+    </div>
+
+</div>
