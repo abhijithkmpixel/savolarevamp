@@ -3904,6 +3904,12 @@ section:not(.section-carousel).share__price__and__details h2.primary__title {
   left: 0;
   transform: translate(50%, -50%);
 }
+[dir=rtl] .page__title {
+  background: radial-gradient(97.91% 292.09% at 94.05% 82.15%, rgba(169, 194, 63, 0.3) 28.74%, rgba(239, 209, 159, 0.3) 91.49%), linear-gradient(135deg, rgba(238, 243, 218, 0) 69.95%, var(--color-primary) 100%);
+}
+[dir=rtl] .bg-grey-light {
+  background: radial-gradient(66.03% 66.89% at 0% 0.11%, rgba(239, 209, 159, 0.47) 0%, rgba(238, 243, 218, 0.188) 44%, rgba(169, 194, 63, 0.0705) 69.06%) !important;
+}
 
 /** @format */
 .page-section-title,
