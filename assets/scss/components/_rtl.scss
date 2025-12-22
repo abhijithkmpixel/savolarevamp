@@ -381,6 +381,7 @@
   .btn.btn-default img {
     margin-right: 10px;
     margin-left: 0 !important;
+    transform: scaleX(-1);
   }
   .latest__news__section
     .latest__news__section__actions
@@ -433,5 +434,20 @@
   .hero__banner__homepage .hero__banner__homepage__slider svg,
   .strategic__investment__row .strategic__investment__card a svg {
     transform: scaleX(-1);
+  }
+  .strategic__investment__row .strategic__investment__card::before {
+    background: radial-gradient(
+        100% 100% at 100% 0%,
+        rgba(239, 150, 0, 0.6) 0%,
+        rgba(239, 150, 0, 0.16) 50%,
+        rgba(239, 209, 159, 0.1) 75.42%,
+        rgba(239, 209, 159, 0.09) 100%
+      ),
+      linear-gradient(0deg, #ffffff 0%, #ffffff 100%);
+  }
+  .principles__row .principles__card::before {
+    right: 0;
+    left: 0;
+    transform: translate(50%, -50%);
   }
 }

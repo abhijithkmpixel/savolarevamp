@@ -590,7 +590,8 @@ input.form-control {
 
   .row > div {
     padding: 0;
-    border: 1px solid var(--color-gray) 38;
+    // border: 1px solid var(--color-gray) 38;
+    border: 1px solid #d6dad5;
 
     /* 👇 overlap borders */
     margin-left: -1px;
@@ -767,8 +768,17 @@ section.page-section:has(.timeline__and__history__primary__slider) {
 .btn {
   text-transform: capitalize;
 }
-.pb-0{
+.pb-0 {
   padding-bottom: 0 !important;
+}
+.quick__navigation__links__outer {
+  .dash {
+    display: none;
+  }
+}
+.greenColorContrast .accessibility-menu-col-info img {
+  filter: invert(41%) sepia(27%) saturate(360%) hue-rotate(96deg)
+    brightness(78%) contrast(96%);
 }
 // arabic styles
 [dir="rtl"] {

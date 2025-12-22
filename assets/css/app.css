@@ -3859,6 +3859,7 @@ section:not(.section-carousel).share__price__and__details h2.primary__title {
 [dir=rtl] .btn.btn-default img {
   margin-right: 10px;
   margin-left: 0 !important;
+  transform: scaleX(-1);
 }
 [dir=rtl] .latest__news__section .latest__news__section__actions .latest__news__slider__nav .latest__news__nav svg,
 [dir=rtl] .latest__news__section .latest__news__section__actions .latest__news__slider__nav .latest__news__nav img {
@@ -3894,6 +3895,14 @@ section:not(.section-carousel).share__price__and__details h2.primary__title {
 [dir=rtl] .hero__banner__homepage .hero__banner__homepage__slider svg,
 [dir=rtl] .strategic__investment__row .strategic__investment__card a svg {
   transform: scaleX(-1);
+}
+[dir=rtl] .strategic__investment__row .strategic__investment__card::before {
+  background: radial-gradient(100% 100% at 100% 0%, rgba(239, 150, 0, 0.6) 0%, rgba(239, 150, 0, 0.16) 50%, rgba(239, 209, 159, 0.1) 75.42%, rgba(239, 209, 159, 0.09) 100%), linear-gradient(0deg, #ffffff 0%, #ffffff 100%);
+}
+[dir=rtl] .principles__row .principles__card::before {
+  right: 0;
+  left: 0;
+  transform: translate(50%, -50%);
 }
 
 /** @format */
@@ -4586,7 +4595,7 @@ input.form-control:focus {
 }
 .food-brands .row > div {
   padding: 0;
-  border: 1px solid var(--color-gray) 38;
+  border: 1px solid #d6dad5;
   /* 👇 overlap borders */
   margin-left: -1px;
   margin-top: -1px;
@@ -4765,6 +4774,14 @@ section.page-section:has(.timeline__and__history__primary__slider) {
 
 .pb-0 {
   padding-bottom: 0 !important;
+}
+
+.quick__navigation__links__outer .dash {
+  display: none;
+}
+
+.greenColorContrast .accessibility-menu-col-info img {
+  filter: invert(41%) sepia(27%) saturate(360%) hue-rotate(96deg) brightness(78%) contrast(96%);
 }
 
 [dir=rtl] .page-section-title,
