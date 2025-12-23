@@ -2670,11 +2670,12 @@ section:not(.section-carousel).share__price__and__details h2.primary__title {
   font-size: 14px;
   line-height: 24px;
   color: var(--color-gray);
+  min-height: 72px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
   position: relative;
-  line-clamp: 3;
+  -webkit-line-clamp: 3;
 }
 .latest__news__slider .latest__news__slide__item .latest__news__card__item .latest__news__card__item__header {
   display: flex;
