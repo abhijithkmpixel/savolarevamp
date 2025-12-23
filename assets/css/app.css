@@ -3911,6 +3911,10 @@ section:not(.section-carousel).share__price__and__details h2.primary__title {
 [dir=rtl] .bg-grey-light {
   background: radial-gradient(66.03% 66.89% at 0% 0.11%, rgba(239, 209, 159, 0.47) 0%, rgba(238, 243, 218, 0.188) 44%, rgba(169, 194, 63, 0.0705) 69.06%) !important;
 }
+[dir=rtl] .latest__news__slider .latest__news__slide__item .latest__news__card__item .latest__news__card__item__header h6 {
+  padding-right: 18px;
+  padding-left: 0;
+}
 
 /** @format */
 .page-section-title,

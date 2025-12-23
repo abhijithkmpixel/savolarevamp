@@ -48,7 +48,7 @@
         {
             <div role="tabpanel" class="documentTabs-tabContentItem tab-pane fade @(isFirstTab ? "active" : "")" id="@itemsG.TagId">
                 <div class="documentsGrid">
-                    @foreach (var item in itemsG.Docs.OrderByDescending(i => (DateTime)i.Fields.GetMemberValue("PublicationDate")).ThenByDescending(i => i.Fields.Title))
+                    @foreach (var item in itemsG.Docs.OrderByDescending(i => i.Fields.Title))
                     {
                         <div class="documentsGrid-item">
                             <div class="documentCard">

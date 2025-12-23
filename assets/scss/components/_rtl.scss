@@ -471,4 +471,12 @@
     ) !important
 ;
   }
+  .latest__news__slider
+    .latest__news__slide__item
+    .latest__news__card__item
+    .latest__news__card__item__header
+    h6 {
+    padding-right: 18px;
+    padding-left: 0;
+  }
 }
