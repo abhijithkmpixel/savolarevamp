@@ -222,9 +222,9 @@
         filter: blur(40px);
       }
       p {
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 24px;
+        font-weight: 800;
+        font-size: 22px;
+        line-height: 1.4;
         color: var(--color-gray);
         min-height: 72px;
         display: -webkit-box;
@@ -232,6 +232,7 @@
         overflow: hidden;
         position: relative;
         -webkit-line-clamp: 3;
+        max-width: unset;
       }
       .latest__news__card__item__header {
         display: flex;
