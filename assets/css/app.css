@@ -3916,6 +3916,9 @@ section:not(.section-carousel).share__price__and__details h2.primary__title {
   padding-right: 18px;
   padding-left: 0;
 }
+[dir=rtl] .latest__news__slider .latest__news__slide__item .latest__news__card__item p {
+  min-height: 92px;
+}
 
 /** @format */
 .page-section-title,
