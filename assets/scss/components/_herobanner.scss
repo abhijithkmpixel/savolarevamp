@@ -1,5 +1,4 @@
 /** @format */
-
 .hero__banner__homepage {
   position: relative;
   .btn-default {
@@ -17,12 +16,12 @@
 
   .hero__banner__homepage__slider {
     width: 100%;
-    height: 90dvh;
+    height: 90vh;
 
     position: relative;
     margin-bottom: 0;
     @media (max-width: 720px) {
-      height: 90dvh;
+      height: 80vh;
     }
     .slick-dots {
       position: absolute;
