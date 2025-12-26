@@ -169,6 +169,20 @@ h5,
     }
   }
 }
+.greenColorContrast .bg-green {
+  &:hover {
+    background: var(--color-primary);
+    h2 {
+      color: #fff;
+    }
+    @media (min-width: 1200px) {
+      background: var(--color-gray);
+      h2 {
+        color: #fff;
+      }
+    }
+  }
+}
 .new__contact__card .new__contact__card__header {
   // background-color: #e0e0e0;
   background: radial-gradient(
@@ -779,6 +793,22 @@ section.page-section:has(.timeline__and__history__primary__slider) {
 .greenColorContrast .accessibility-menu-col-info img {
   filter: invert(41%) sepia(27%) saturate(360%) hue-rotate(96deg)
     brightness(78%) contrast(96%);
+}
+.greenColorContrast
+  .leadershipTabs
+  .leadershipTabs-tabList
+  .leadershipTabs-tabListItem.active
+  a.leadershipTabs-tabItemLink,
+.documentTabs
+  .documentTabs-tabsList
+  .documentTabs-tabListItem.active
+  a.documentTabs-tabItemLink {
+  color: #fff !important;
+}
+@media (max-width: 720px) {
+  .documentTabs .documentTabs-tabsList {
+    display: block;
+  }
 }
 // arabic styles
 [dir="rtl"] {

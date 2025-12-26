@@ -65,7 +65,7 @@
                                 <h5>@item.Fields.Title</h5>
                                 <p>
                                
-                                @item.Fields.Extension.ToUpper()
+                                @item.Fields.Extension.TrimStart('.').ToUpper()
                                 @FormatFileSize(item.Fields.TotalSize)
                                 <a href="@item.Fields.MediaUrl.ToString().Split('?')[0]" target="_blank" 
                                     ><img src="https://savola.blob.core.windows.net/website/docs/default-source/custom-azure-uploads/download-pdf-icon.svg?sfvrsn=d30fdcd7_1&Status=Master" alt=""

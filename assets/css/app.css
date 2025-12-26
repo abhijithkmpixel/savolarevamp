@@ -4151,6 +4151,21 @@ h5 b,
   }
 }
 
+.greenColorContrast .bg-green:hover {
+  background: var(--color-primary);
+}
+.greenColorContrast .bg-green:hover h2 {
+  color: #fff;
+}
+@media (min-width: 1200px) {
+  .greenColorContrast .bg-green:hover {
+    background: var(--color-gray);
+  }
+  .greenColorContrast .bg-green:hover h2 {
+    color: #fff;
+  }
+}
+
 .new__contact__card .new__contact__card__header {
   background: radial-gradient(123.91% 242.09% at 23.95% 82.15%, rgba(169, 194, 63, 0.3) 28.74%, rgba(239, 209, 159, 0.3) 91.49%), linear-gradient(225deg, rgba(238, 243, 218, 0) 69.95%, var(--color-primary) 100%);
 }
@@ -4799,6 +4814,16 @@ section.page-section:has(.timeline__and__history__primary__slider) {
   filter: invert(41%) sepia(27%) saturate(360%) hue-rotate(96deg) brightness(78%) contrast(96%);
 }
 
+.greenColorContrast .leadershipTabs .leadershipTabs-tabList .leadershipTabs-tabListItem.active a.leadershipTabs-tabItemLink,
+.documentTabs .documentTabs-tabsList .documentTabs-tabListItem.active a.documentTabs-tabItemLink {
+  color: #fff !important;
+}
+
+@media (max-width: 720px) {
+  .documentTabs .documentTabs-tabsList {
+    display: block;
+  }
+}
 [dir=rtl] .page-section-title,
 [dir=rtl] .from-h1 {
   text-align: right;
