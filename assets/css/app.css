@@ -285,7 +285,7 @@ header .header__top .header__top__inner .header__top__inner__right .header__quic
 }
 @media (min-width: 1200px) {
   header .header__top .header__top__inner .header__top__inner__right .header__quick__links li a:hover {
-    color: #000;
+    color: var(--color-gray);
   }
 }
 header .header__top .header__top__inner .header__analytics__wrap {

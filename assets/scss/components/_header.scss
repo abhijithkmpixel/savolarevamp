@@ -78,7 +78,7 @@ header {
               }
               &:hover {
                 @media (min-width: 1200px) {
-                  color: #000;
+                  color: var(--color-gray);
                 }
               }
             }
