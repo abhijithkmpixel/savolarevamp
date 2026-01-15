@@ -1199,7 +1199,7 @@ header .navigationSearch-toggleButton svg path {
   }
 }
 .top__footer .top__footer__inner p {
-  font-size: 40px;
+  font-size: 28px;
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.5px;
@@ -1211,7 +1211,7 @@ header .navigationSearch-toggleButton svg path {
 }
 @media (max-width: 1200px) {
   .top__footer .top__footer__inner p {
-    font-size: 36px;
+    font-size: 28px;
   }
 }
 .top__footer .contact-section-details .list-unstyled.list-with-icon li {
