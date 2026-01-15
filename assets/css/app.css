@@ -278,11 +278,6 @@ header .header__top .header__top__inner .header__top__inner__right .header__quic
   color: #fff;
   transition: 0.2s color ease-in-out;
 }
-@media (max-width: 1500px) {
-  header .header__top .header__top__inner .header__top__inner__right .header__quick__links li a {
-    font-size: 12px;
-  }
-}
 @media (min-width: 1200px) {
   header .header__top .header__top__inner .header__top__inner__right .header__quick__links li a:hover {
     color: var(--color-gray);
@@ -635,11 +630,6 @@ header .header__links {
   font-weight: 600;
   line-height: 1.1;
   color: #fff;
-}
-@media (max-width: 1500px) {
-  header .header__links {
-    font-size: 14px;
-  }
 }
 header .accessibility__menu__toggle {
   width: 20px;
@@ -1199,7 +1189,7 @@ header .navigationSearch-toggleButton svg path {
   }
 }
 .top__footer .top__footer__inner p {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: -0.5px;
@@ -1211,7 +1201,7 @@ header .navigationSearch-toggleButton svg path {
 }
 @media (max-width: 1200px) {
   .top__footer .top__footer__inner p {
-    font-size: 28px;
+    font-size: 20px;
   }
 }
 .top__footer .contact-section-details .list-unstyled.list-with-icon li {
@@ -1395,17 +1385,22 @@ footer h5 {
   font-size: 18px;
   font-weight: 600;
   line-height: 2;
-  color: var(--color-gray);
+  color: #fff;
   margin: 0;
   margin-bottom: 8px;
 }
 footer h5 a {
-  color: var(--color-gray);
+  color: #fff;
   font-weight: inherit;
   transition: 0.2s all ease-in-out;
 }
 footer h5 a:hover {
-  color: #000;
+  color: #fff;
+}
+@media (min-width: 1200px) {
+  footer h5 a:hover {
+    opacity: 0.6;
+  }
 }
 @media (max-width: 1500px) {
   footer h5 {
@@ -1424,11 +1419,16 @@ footer ul li a {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
-  color: var(--color-gray);
+  color: #fff;
   transition: 0.2s all ease-in-out;
 }
 footer ul li a:hover {
-  color: #000;
+  color: #fff;
+}
+@media (min-width: 1200px) {
+  footer ul li a:hover {
+    opacity: 0.6;
+  }
 }
 @media (max-width: 1500px) {
   footer ul li a {

@@ -74,7 +74,7 @@ header {
               color: #fff;
               transition: 0.2s color ease-in-out;
               @media (max-width: 1500px) {
-                font-size: 12px;
+                // font-size: 12px;
               }
               &:hover {
                 @media (min-width: 1200px) {
@@ -415,7 +415,7 @@ header {
     // color: var(--color-gray);
     color: #fff;
     @media (max-width: 1500px) {
-      font-size: 14px;
+      // font-size: 14px;
     }
   }
   .accessibility__menu__toggle {
