@@ -4831,6 +4831,14 @@ section.page-section:has(.timeline__and__history__primary__slider) {
     display: block;
   }
 }
+.loader .uil-flickr-css > div:nth-of-type(1), .dataTables_processing .uil-flickr-css > div:nth-of-type(1) {
+  background: var(--color-primary) !important;
+}
+
+.loader .uil-flickr-css > div:nth-of-type(2), .dataTables_processing .uil-flickr-css > div:nth-of-type(2) {
+  background: var(--color-gray) !important;
+}
+
 [dir=rtl] .page-section-title,
 [dir=rtl] .from-h1 {
   text-align: right;
