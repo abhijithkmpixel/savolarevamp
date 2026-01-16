@@ -817,6 +817,14 @@ section.page-section:has(.timeline__and__history__primary__slider) {
 .loader .uil-flickr-css > div:nth-of-type(2), .dataTables_processing .uil-flickr-css > div:nth-of-type(2){
   background: var(--color-gray) !important;
 }
+.search-results .pagination li ,
+.search-results .pagination li a{
+  color: var(--color-gray) !important;
+}
+.search-results .pagination li.active a{
+  color: var(--color-primary) !important;
+  
+}
 // arabic styles
 [dir="rtl"] {
   .page-section-title,

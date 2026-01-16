@@ -4839,6 +4839,15 @@ section.page-section:has(.timeline__and__history__primary__slider) {
   background: var(--color-gray) !important;
 }
 
+.search-results .pagination li,
+.search-results .pagination li a {
+  color: var(--color-gray) !important;
+}
+
+.search-results .pagination li.active a {
+  color: var(--color-primary) !important;
+}
+
 [dir=rtl] .page-section-title,
 [dir=rtl] .from-h1 {
   text-align: right;
